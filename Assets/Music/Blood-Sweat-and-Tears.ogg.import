@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Blood-Sweat-and-Tears.ogg-908ff96a0ee8df0b3cbfecdce8b68442.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/Blood-Sweat-and-Tears.ogg"
+dest_files=[ "res://.import/Blood-Sweat-and-Tears.ogg-908ff96a0ee8df0b3cbfecdce8b68442.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

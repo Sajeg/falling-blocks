@@ -1,0 +1,283 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://FontData/Title.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Fonts/ROCK.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/BlockPink.png" type="Texture" id=3]
+[ext_resource path="res://Assets/BlockGreen.png" type="Texture" id=4]
+[ext_resource path="res://Assets/BlockBlue.png" type="Texture" id=5]
+[ext_resource path="res://Assets/nothing.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=7]
+[ext_resource path="res://Assets/gear.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("UiElements/Start/LabelStart:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 620, 572.165 ), Vector2( 316.201, 572.165 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("UiElements/Quit/Labelquit:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 620, 652.138 ), Vector2( 406.25, 652.138 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "mode"
+tracks/0/type = "value"
+tracks/0/path = NodePath("UiElements/Start/LabelStart:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 316.201, 572.165 ), Vector2( 620, 572.165 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("UiElements/Quit/Labelquit:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 406.25, 652.138 ), Vector2( 620.25, 652.138 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("UiElements/Mode/Normal/LabelModeNormal:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 620, 572.165 ), Vector2( 250, 572.165 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("UiElements/Mode/Death/LabelModeDeath:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 620, 652.165 ), Vector2( 350, 652.165 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "out"
+
+[sub_resource type="Animation" id=5]
+resource_name = "start"
+
+[sub_resource type="DynamicFont" id=6]
+size = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 100
+font_data = ExtResource( 2 )
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.41425
+margin_top = -1.41425
+margin_right = 1.41425
+margin_bottom = -1.41431
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="BlockGreen" type="Sprite" parent="."]
+position = Vector2( 638.759, 656.268 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BlockBlue" type="Sprite" parent="."]
+position = Vector2( 61.457, 599.251 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BlockPink" type="Sprite" parent="."]
+position = Vector2( 323.658, 983.267 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="settings" type="TouchScreenButton" parent="."]
+position = Vector2( 16.2076, 1042.28 )
+scale = Vector2( 0.0699735, 0.0641829 )
+normal = ExtResource( 8 )
+pressed = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Welcome" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Welcome"]
+visible = false
+margin_top = 1002.0
+margin_right = 617.0
+margin_bottom = 1077.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Welcome"]
+visible = false
+margin_left = 4.19128
+margin_top = 1010.93
+margin_right = 525.191
+margin_bottom = 1058.93
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Willkommen zurück! Johann"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="RichTextLabel" parent="Welcome"]
+margin_left = -17.8179
+margin_top = 138.98
+margin_right = 685.182
+margin_bottom = 509.98
+rect_rotation = -15.0
+custom_fonts/normal_font = ExtResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Falling
+	Block"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/in = SubResource( 2 )
+anims/mode = SubResource( 3 )
+anims/out = SubResource( 4 )
+anims/start = SubResource( 5 )
+
+[node name="UiElements" type="Node2D" parent="."]
+
+[node name="Start" type="Node2D" parent="UiElements"]
+
+[node name="start" type="TouchScreenButton" parent="UiElements/Start"]
+position = Vector2( 300.055, 584.025 )
+scale = Vector2( 2.51233, 1.50113 )
+normal = ExtResource( 6 )
+
+[node name="LabelStart" type="Label" parent="UiElements/Start"]
+margin_left = 620.0
+margin_top = 572.165
+margin_right = 828.0
+margin_bottom = 690.165
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Node2D" parent="UiElements"]
+
+[node name="quit" type="TouchScreenButton" parent="UiElements/Quit"]
+position = Vector2( 409.813, 680.647 )
+scale = Vector2( 2.11362, 1.33409 )
+normal = ExtResource( 6 )
+
+[node name="Labelquit" type="Label" parent="UiElements/Quit"]
+margin_left = 620.0
+margin_top = 652.138
+margin_right = 815.0
+margin_bottom = 770.138
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mode" type="Node2D" parent="UiElements"]
+
+[node name="Normal" type="Node2D" parent="UiElements/Mode"]
+
+[node name="LabelModeNormal" type="Label" parent="UiElements/Mode/Normal"]
+margin_left = 620.0
+margin_top = 572.165
+margin_right = 960.0
+margin_bottom = 690.165
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Normal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Normal" type="TouchScreenButton" parent="UiElements/Mode/Normal"]
+position = Vector2( 300.055, 584.025 )
+scale = Vector2( 2.51233, 1.50113 )
+normal = ExtResource( 6 )
+
+[node name="Death" type="Node2D" parent="UiElements/Mode"]
+
+[node name="LabelModeDeath" type="Label" parent="UiElements/Mode/Death"]
+margin_left = 620.0
+margin_top = 652.165
+margin_right = 890.0
+margin_bottom = 770.165
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Death"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="death" type="TouchScreenButton" parent="UiElements/Mode/Death"]
+position = Vector2( 409.813, 680.647 )
+scale = Vector2( 2.11362, 1.33409 )
+normal = ExtResource( 6 )
+
+[connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="UiElements/Start/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="UiElements/Quit/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="UiElements/Mode/Normal/Normal" to="." method="_on_Normal_pressed"]
+[connection signal="pressed" from="UiElements/Mode/Death/death" to="." method="_on_death_pressed"]
