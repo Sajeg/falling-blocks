@@ -1,0 +1,169 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/Fonts/ROCKB.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Fonts/ROCK.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/BlockBlue.png" type="Texture" id=3]
+[ext_resource path="res://Assets/BlockGreen.png" type="Texture" id=4]
+[ext_resource path="res://Assets/BlockPink.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/gameover.gd" type="Script" id=6]
+[ext_resource path="res://Assets/nothing.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 150
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 65
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 100
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -7.30808
+margin_top = -4.49493
+margin_right = -7.30811
+margin_bottom = -4.49487
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -17.8179
+margin_top = 138.98
+margin_right = 685.182
+margin_bottom = 509.98
+rect_rotation = -15.0
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Game
+	Over"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlockGreen2" type="Sprite" parent="."]
+position = Vector2( 638.759, 656.268 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+
+[node name="BlockBlue" type="Sprite" parent="."]
+position = Vector2( 61.457, 599.251 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 3 )
+
+[node name="BlockPink" type="Sprite" parent="."]
+position = Vector2( 323.658, 983.267 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+
+[node name="Score2" type="Node2D" parent="."]
+
+[node name="Score" type="Label" parent="Score2"]
+margin_left = 212.163
+margin_top = 964.563
+margin_right = 428.163
+margin_bottom = 1203.56
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="Score2"]
+margin_left = 216.0
+margin_top = 882.0
+margin_right = 431.0
+margin_bottom = 959.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.996078, 0.996078, 0.996078, 1 )
+text = "Record"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Node2D" parent="."]
+
+[node name="Score" type="Label" parent="Score"]
+margin_left = 19.3511
+margin_top = 574.644
+margin_right = 235.351
+margin_bottom = 813.644
+custom_fonts/font = SubResource( 2 )
+text = "1000
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="Score"]
+margin_left = 4.0
+margin_top = 409.0
+margin_right = 265.0
+margin_bottom = 527.0
+custom_fonts/font = SubResource( 4 )
+text = "Score"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="main" type="Node2D" parent="."]
+
+[node name="Main" type="TouchScreenButton" parent="main"]
+position = Vector2( 362.619, 680.647 )
+scale = Vector2( 2.77183, 1.33409 )
+normal = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="main"]
+margin_left = 366.25
+margin_top = 652.138
+margin_right = 821.25
+margin_bottom = 770.138
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="again" type="Node2D" parent="."]
+
+[node name="again" type="TouchScreenButton" parent="again"]
+position = Vector2( 291.56, 561.372 )
+scale = Vector2( 3.24043, 1.50113 )
+normal = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="again"]
+margin_left = 295.0
+margin_top = 542.0
+margin_right = 595.0
+margin_bottom = 781.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "restart
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="main/Main" to="." method="_on_Main_pressed"]
+[connection signal="pressed" from="again/again" to="." method="_on_again_pressed"]
