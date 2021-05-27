@@ -1,14 +1,13 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://FontData/Title.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Assets/Fonts/ROCK.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://FontData/Text_menu.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/BlockPink.png" type="Texture" id=3]
 [ext_resource path="res://Assets/BlockGreen.png" type="Texture" id=4]
 [ext_resource path="res://Assets/BlockBlue.png" type="Texture" id=5]
 [ext_resource path="res://Assets/nothing.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=7]
 [ext_resource path="res://Assets/gear.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Fonts/Neu/RobotoSlab-Regular.ttf" type="DynamicFontData" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "in"
@@ -89,7 +88,7 @@ tracks/3/keys = {
 "values": [ Vector2( 620, 652.165 ), Vector2( 350, 652.165 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
 resource_name = "out"
 length = 0.5
 tracks/0/type = "value"
@@ -119,14 +118,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=4]
 resource_name = "start"
-
-[sub_resource type="DynamicFont" id=5]
-size = 100
-font_data = ExtResource( 9 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 100
-font_data = ExtResource( 2 )
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -174,7 +165,7 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/in = SubResource( 1 )
 anims/mode = SubResource( 2 )
-anims/out = SubResource( 7 )
+anims/out = SubResource( 3 )
 anims/start = SubResource( 4 )
 
 [node name="UiElements" type="Node2D" parent="."]
@@ -191,7 +182,7 @@ margin_left = 620.0
 margin_top = 572.165
 margin_right = 848.0
 margin_bottom = 705.165
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Start"
 __meta__ = {
@@ -208,9 +199,9 @@ normal = ExtResource( 6 )
 [node name="Labelquit" type="Label" parent="UiElements/Quit"]
 margin_left = 620.0
 margin_top = 652.138
-margin_right = 815.0
-margin_bottom = 770.138
-custom_fonts/font = SubResource( 6 )
+margin_right = 816.0
+margin_bottom = 785.138
+custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Quit"
 __meta__ = {
@@ -226,7 +217,7 @@ margin_left = 620.0
 margin_top = 572.165
 margin_right = 960.0
 margin_bottom = 690.165
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Normal"
 __meta__ = {
@@ -245,7 +236,7 @@ margin_left = 620.0
 margin_top = 652.165
 margin_right = 890.0
 margin_bottom = 770.165
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Death"
 __meta__ = {

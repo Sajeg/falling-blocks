@@ -3,5 +3,5 @@
 [ext_resource path="res://Assets/Fonts/Neu/RobotoSlab-Regular.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 60
+size = 100
 font_data = ExtResource( 1 )

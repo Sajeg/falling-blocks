@@ -4,6 +4,7 @@ var score = G.score
 var highscore = G.highscore
 
 func _ready():
+	$AnimationPlayer.play("In")
 	if G.mode_dead == false:
 		G.load_data()
 		$Score/Score.text = str(G.score)
@@ -12,9 +13,10 @@ func _ready():
 		if highscore < score:
 			highscore = score
 			save(highscore)
-			
+			G.highscore = highscore
+		
+		
 		$Score2/Score.text = str(highscore)
-		G.highscore = highscore
 	else:
 		G.load_dead_data()
 		$Score/Score.text = str(G.score)
@@ -23,9 +25,11 @@ func _ready():
 		if highscore < score:
 			highscore = score
 			dead_save(highscore)
-			
+			G.dead_highscore = highscore
+		
+		
 		$Score2/Score.text = str(highscore)
-		G.dead_highscore = highscore
+		
 
 
 func save(content):
@@ -41,7 +45,9 @@ func dead_save(content):
 	file.close()
 
 func _on_Main_pressed():
+	$AnimationPlayer.play("out")
 	get_tree().change_scene("res://Scenes/Main.tscn")
 
 func _on_again_pressed():
+	$AnimationPlayer.play("out")
 	get_tree().change_scene("res://Scenes/Game.tscn")
