@@ -1,17 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Blue.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Pink.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Green.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Fonts/ROCKB.TTF" type="DynamicFontData" id=6]
+[ext_resource path="res://FontData/Text_menu.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Assets/nothing.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Music/Song04.wav" type="AudioStream" id=8]
-
-[sub_resource type="DynamicFont" id=1]
-size = 100
-font_data = ExtResource( 6 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -42,7 +38,7 @@ margin_left = 221.632
 margin_top = 12.6211
 margin_right = 386.632
 margin_bottom = 251.622
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "100
 "

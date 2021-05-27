@@ -54,15 +54,15 @@ text = "
 
 
 
-		Gamedesign, Programming:
+		Gamedesign, Programming, Music:
 				Johann Specht
 				
 		Settings-gear Picture:
 				Samuel1983 auf Pixabay
 		
-		Music:
-				https://audiotrimmer.com/de/
-				lizenzfreie-musik/
+		Font.
+				Roboto Slap
+		
 				
 			
 "
@@ -94,7 +94,7 @@ margin_right = 374.582
 margin_bottom = 1008.09
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Zurück"
+text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -103,5 +103,6 @@ __meta__ = {
 position = Vector2( 200.942, 868.849 )
 scale = Vector2( 2.5625, 3.62761 )
 normal = ExtResource( 5 )
+
 [connection signal="pressed" from="TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]
 [connection signal="pressed" from="Back/Back" to="." method="_on_Back_pressed"]
