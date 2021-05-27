@@ -8,4 +8,4 @@ Falling Blocks is a small mobile Game, where you are a block. There are other Bl
 
 
 ## Screenshots
-<img src="screenshots/screen_1.jpeg">
+<img src="https://github.com/Sajeg/falling-blocks/blob/main/screenshots/screen_1.jpg">
