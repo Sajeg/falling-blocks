@@ -9,7 +9,8 @@ func _ready():
 		G.load_data()
 		$Score/Score.text = str(G.score)
 		highscore = G.highscore
-		
+		if highscore != null:
+			highscore = 0
 		if highscore < score:
 			highscore = score
 			save(highscore)

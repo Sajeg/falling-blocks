@@ -2,7 +2,7 @@ extends Node2D
 const pos1 = 100
 const pos2 = 310
 const pos3 = 520
-export var speed = 1
+export var speed = 6
 var score = 0
 var PlayerX = 310
 var crash = [false,false,false,false,false,false]
@@ -12,7 +12,7 @@ var freeze = false
 
 func _ready():
 	
-	speed = 1
+	speed = 6
 	freeze = false
 	if bool(G.audio) == true:
 		music()
@@ -25,10 +25,6 @@ func _ready():
 		$Player/BlockPink.visible = true
 
 func _process(delta):
-	if Input.is_key_pressed(KEY_SHIFT):
-		freeze = true
-	else:
-		freeze = false
 	if freeze == false:
 		G.score = score
 		
