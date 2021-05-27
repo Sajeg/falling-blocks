@@ -86,7 +86,6 @@ func _process(delta):
 				freeze = true
 
 func invisible(block, num):
-	print(G.mode_dead)
 	var anim = get_node(str(block)+"/AnimationPlayer")
 	if crash[num] == false:
 		if G.mode_dead == false:

@@ -88,5 +88,6 @@ func _on_death_pressed():
 
 
 func _on_Normal_pressed():
+	G.mode_dead = false
 	get_tree().change_scene("res://Scenes/Game.tscn")
 	$"/root/G".visible = false
