@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Fonts/ROCKB.TTF" type="DynamicFontData" id=6]
 [ext_resource path="res://Assets/nothing.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Music/Song02.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Music/Song04.wav" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
