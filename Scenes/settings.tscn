@@ -127,13 +127,13 @@ normal = ExtResource( 8 )
 [node name="Back" type="Node2D" parent="."]
 
 [node name="BackLabel" type="Label" parent="Back"]
-margin_left = 280.757
+margin_left = 281.0
 margin_top = 1034.0
-margin_right = 377.757
-margin_bottom = 1070.0
+margin_right = 378.0
+margin_bottom = 1075.0
 custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Zurück"
+text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -142,6 +142,7 @@ __meta__ = {
 position = Vector2( 199.355, 999.016 )
 scale = Vector2( 2.5625, 1.59375 )
 normal = ExtResource( 8 )
+
 [connection signal="toggled" from="Music/Music" to="." method="_on_Music_toggled"]
 [connection signal="toggled" from="Vibrate/Vibrate" to="." method="_on_Vibrate_toggled"]
 [connection signal="pressed" from="Credits/Credits" to="." method="_on_Credits_pressed"]
