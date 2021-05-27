@@ -11,6 +11,7 @@ var freeze = false
 
 
 func _ready():
+	speed = 6
 	freeze = false
 	if bool(G.audio) == true:
 		music()

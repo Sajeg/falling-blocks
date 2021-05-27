@@ -63,6 +63,7 @@ func load_settings():
 
 
 func _on_quit_pressed():
+	$AnimationPlayer.play("out")
 	get_tree().quit()
 
 
@@ -77,8 +78,10 @@ func _on_start_pressed():
 
 
 func _on_settings_pressed():
+	$AnimationPlayer.play("Settings_open")
 	get_tree().change_scene("res://Scenes/settings.tscn")
 	$"/root/G".visible = false
+
 
 
 func _on_death_pressed():
@@ -91,3 +94,4 @@ func _on_Normal_pressed():
 	G.mode_dead = false
 	get_tree().change_scene("res://Scenes/Game.tscn")
 	$"/root/G".visible = false
+
