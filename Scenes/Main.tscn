@@ -148,10 +148,10 @@ scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 3 )
 
 [node name="Title" type="RichTextLabel" parent="."]
-margin_left = -18.0
-margin_top = 139.0
-margin_right = 733.0
-margin_bottom = 564.0
+margin_left = -10.8647
+margin_top = 105.702
+margin_right = 740.135
+margin_bottom = 530.702
 rect_rotation = -15.0
 rect_scale = Vector2( 0.9, 0.9 )
 custom_fonts/normal_font = ExtResource( 1 )
