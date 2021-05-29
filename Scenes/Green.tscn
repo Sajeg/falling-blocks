@@ -4,10 +4,7 @@
 [ext_resource path="res://Assets/nothing.png" type="Texture" id=2]
 [ext_resource path="res://Assets/BlockGreenCrash.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 100.271, 93.5474 )
-
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "crash"
 length = 4.0
 tracks/0/type = "value"
@@ -23,7 +20,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 3 ), ExtResource( 2 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -39,7 +36,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 1 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("BlockGreen:texture")
@@ -54,22 +51,25 @@ tracks/0/keys = {
 "values": [ ExtResource( 2 ), ExtResource( 1 ) ]
 }
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 85.7766, 85.9995 )
+
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 100.491, 92.9205 )
+extents = Vector2( 86.7205, 85.0556 )
 
 [node name="Green" type="KinematicBody2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
 
 [node name="BlockGreen" type="Sprite" parent="."]
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/crash = SubResource( 2 )
-anims/idle = SubResource( 3 )
-anims/special = SubResource( 4 )
+anims/crash = SubResource( 1 )
+anims/idle = SubResource( 2 )
+anims/special = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
