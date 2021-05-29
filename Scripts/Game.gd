@@ -8,10 +8,12 @@ var PlayerX = 310
 var crash = [false,false,false,false,false,false]
 var audiostream: AudioStream = preload("res://Assets/Music/Song04.wav")
 var freeze = false
-
+var playername = null
+var vibrate
 
 func _ready():
-	
+	if bool(G.vibration) == true:
+		Input.vibrate_handheld(5)
 	speed = 6
 	freeze = false
 	if bool(G.audio) == true:
@@ -19,10 +21,13 @@ func _ready():
 	var rand = randi()%3
 	if rand == 0:
 		$Player/BlockBlue.visible = true
+		playername = "blue"
 	if rand == 1:
 		$Player/BlockGreen.visible = true
+		playername = "green"
 	if rand == 2:
 		$Player/BlockPink.visible = true
+		playername = "pink"
 
 func _process(delta):
 	if freeze == false:
@@ -64,28 +69,54 @@ func _process(delta):
 		
 		
 		
-		for body in $Player/Area2D.get_overlapping_bodies():
-			if body.name == "Blue" and $Player/BlockBlue.visible == true or body.name == "Green" and $Player/BlockGreen.visible == true or body.name == "Pink" and $Player/BlockPink.visible == true or body.name == "Blue2" and $Player/BlockBlue.visible == true or body.name == "Green2" and $Player/BlockGreen.visible == true or body.name == "Pink2" and $Player/BlockPink.visible == true:
+		
+		touching() 
+
+func touching():
+	for body in $Player/Area2D.get_overlapping_bodies():
+		if body != null:
+			if playername == "blue" and body.name == "Blue":
 				score += 1
 				speed +=0.01
 				if bool(G.vibration) == true:
 					Input.vibrate_handheld(5)
-				if body.name == "Blue":
-					crash[0] = true
-				if body.name == "Blue2":
-					crash[1] = true
-				if body.name == "Green":
-					crash[2] = true
-				if body.name == "Green2":
-					crash[3] = true
-				if body.name == "Pink":
-					crash[4] = true
-				if body.name == "Pink2":
-					crash[5] = true
+				crash[0] = true
+			elif playername == "green" and body.name == "Green":
+				score += 1
+				speed +=0.01
+				if bool(G.vibration) == true:
+					Input.vibrate_handheld(5)
+				crash[2] = true
+			elif playername == "pink" and body.name == "Pink":
+				score += 1
+				speed +=0.01
+				if bool(G.vibration) == true:
+					Input.vibrate_handheld(5)
+				crash[4] = true
+			elif playername == "blue" and body.name == "Blue2":
+				score += 1
+				speed +=0.01
+				if bool(G.vibration) == true:
+					Input.vibrate_handheld(5)
+				crash[1] = true
+			elif playername == "green" and body.name == "Green2":
+				score += 1
+				speed +=0.01
+				if bool(G.vibration) == true:
+					Input.vibrate_handheld(5)
+				crash[5] = true
+			elif playername == "pink" and body.name == "Pink2":
+				score += 1
+				speed +=0.01
+				if bool(G.vibration) == true:
+					Input.vibrate_handheld(5)
+				crash[5] = true
 			else:
-				
 				$Timer.start()
 				freeze = true
+		else:
+			return
+
 
 func invisible(block, num):
 	var anim = get_node(str(block)+"/AnimationPlayer")
