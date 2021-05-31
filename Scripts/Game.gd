@@ -79,7 +79,7 @@ func touching():
 				score += 1
 				speed +=0.01
 				if bool(G.vibration) == true:
-					Input.vibrate_handheld(5)
+					Input.vibrate_handheld()
 				crash[0] = true
 			elif playername == "green" and body.name == "Green":
 				score += 1
@@ -104,7 +104,7 @@ func touching():
 				speed +=0.01
 				if bool(G.vibration) == true:
 					Input.vibrate_handheld(5)
-				crash[5] = true
+				crash[3] = true
 			elif playername == "pink" and body.name == "Pink2":
 				score += 1
 				speed +=0.01
