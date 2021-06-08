@@ -11,7 +11,7 @@ func _ready():
 		highscore = G.highscore
 		if highscore != null:
 			highscore = 0
-		if int(highscore) < int(score):
+		if highscore < score:
 			highscore = score
 			save(highscore)
 			G.highscore = highscore
