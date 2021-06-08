@@ -3,7 +3,7 @@ extends Control
 var score = G.score
 var highscore = G.highscore
 
-func _ready():
+func end():
 	$AnimationPlayer.play("In")
 	if G.mode_dead == false:
 		G.load_data()

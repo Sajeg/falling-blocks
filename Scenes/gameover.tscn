@@ -137,7 +137,7 @@ margin_top = 964.563
 margin_right = 428.163
 margin_bottom = 1203.56
 custom_fonts/font = ExtResource( 8 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
 __meta__ = {
@@ -150,7 +150,7 @@ margin_top = 882.0
 margin_right = 431.0
 margin_bottom = 959.0
 custom_fonts/font = ExtResource( 9 )
-custom_colors/font_color = Color( 0.996078, 0.996078, 0.996078, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Record"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -164,6 +164,7 @@ margin_top = 574.644
 margin_right = 235.351
 margin_bottom = 813.644
 custom_fonts/font = ExtResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1000
 "
 align = 1
@@ -177,6 +178,7 @@ margin_top = 409.0
 margin_right = 265.0
 margin_bottom = 527.0
 custom_fonts/font = ExtResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Score"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -224,5 +226,6 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/In = SubResource( 1 )
 anims/out = SubResource( 2 )
+
 [connection signal="pressed" from="main/Main" to="." method="_on_Main_pressed"]
 [connection signal="pressed" from="again/again" to="." method="_on_again_pressed"]
