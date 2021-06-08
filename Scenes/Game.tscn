@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Blue.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://FontData/Text_menu.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Assets/nothing.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Music/Song04.wav" type="AudioStream" id=8]
+[ext_resource path="res://Scenes/gameover.tscn" type="PackedScene" id=9]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -68,6 +69,13 @@ normal = ExtResource( 7 )
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 310, 820 )
 stream = ExtResource( 8 )
+
+[node name="Control" parent="." instance=ExtResource( 9 )]
+visible = false
+margin_left = -0.433568
+margin_top = 21.1046
+margin_right = -0.433568
+margin_bottom = 21.1047
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="pos1" to="." method="_on_pos1_pressed"]

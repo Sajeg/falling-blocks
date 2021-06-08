@@ -112,6 +112,21 @@ func touching():
 			else:
 				$Timer.start()
 				freeze = true
+				$Music.stop()
+				$Control.visible = true
+				$Control.end()
+				$Label.visible = false
+				$Blue.visible = false
+				$Blue2.visible = false
+				$Green.visible = false
+				$Green2.visible = false
+				$Pink.visible = false
+				$Pink2.visible = false
+				
+				for block in [$Blue, $Blue2, $Green, $Green2, $Pink, $Pink2]:
+					
+					$Green.scale += -0.05
+					pass
 		else:
 			return
 
@@ -166,7 +181,3 @@ func _on_pos3_pressed():
 func _on_Music_finished():
 	music()
 
-
-func _on_Timer_timeout():
-	freeze = false
-	get_tree().change_scene("res://Scenes/gameover.tscn")
