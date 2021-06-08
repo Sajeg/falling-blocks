@@ -12,8 +12,6 @@ var playername = null
 var vibrate
 
 func _ready():
-	if bool(G.vibration) == true:
-		Input.vibrate_handheld(5)
 	speed = 6
 	freeze = false
 	if bool(G.audio) == true:
@@ -78,26 +76,38 @@ func touching():
 			if playername == "blue" and body.name == "Blue":
 				score += 1
 				speed +=0.01
+				if bool(G.vibration) == true:
+					Input.vibrate_handheld(5)
 				crash[0] = true
 			elif playername == "green" and body.name == "Green":
 				score += 1
 				speed +=0.01
+				if bool(G.vibration) == true:
+					Input.vibrate_handheld(5)
 				crash[2] = true
 			elif playername == "pink" and body.name == "Pink":
 				score += 1
 				speed +=0.01
+				if bool(G.vibration) == true:
+					Input.vibrate_handheld(5)
 				crash[4] = true
 			elif playername == "blue" and body.name == "Blue2":
 				score += 1
 				speed +=0.01
+				if bool(G.vibration) == true:
+					Input.vibrate_handheld(5)
 				crash[1] = true
 			elif playername == "green" and body.name == "Green2":
 				score += 1
 				speed +=0.01
+				if bool(G.vibration) == true:
+					Input.vibrate_handheld(5)
 				crash[3] = true
 			elif playername == "pink" and body.name == "Pink2":
 				score += 1
 				speed +=0.01
+				if bool(G.vibration) == true:
+					Input.vibrate_handheld(5)
 				crash[5] = true
 			else:
 				$Timer.start()
