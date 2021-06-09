@@ -19,7 +19,7 @@ run/main_scene="res://Scenes/Main.tscn"
 config/use_custom_user_dir=true
 boot_splash/image="res://Assets/splash_screen.png"
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
-config/icon="res://Assets/FallingBlock.png"
+config/icon="res://icon.png"
 
 [autoload]
 
