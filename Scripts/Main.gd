@@ -17,7 +17,8 @@ func _ready():
 	dead_highscore = load_dead_data()
 	load_settings()
 
-func load_data():
+func load_data(): 
+	#loads the highscore data
 	var file = File.new()
 	if file.file_exists("user://save.fall"):
 		file.open("user://save.fall", File.READ)
@@ -32,6 +33,7 @@ func load_data():
 		file.close()
 
 func load_dead_data():
+	#loads the highscore data in Death mode
 	var file = File.new()
 	if file.file_exists("user://dead_score.fall"):
 		file.open("user://dead_score.fall", File.READ)
@@ -46,6 +48,7 @@ func load_dead_data():
 		file.close()
 
 func load_settings():
+	#loads the settings
 	var config = ConfigFile.new()
 	var default_options = {
 			"sound": true,
