@@ -122,6 +122,15 @@ func touching():
 				$Music.stop()
 				$Label.visible = false
 				
+				if G.mode_dead == true:
+					$Blue/AnimationPlayer.play("idle")
+					$Blue2/AnimationPlayer.play("idle")
+					$Green/AnimationPlayer.play("idle")
+					$Green2/AnimationPlayer.play("idle")
+					$Pink/AnimationPlayer.play("idle")
+					$Pink2/AnimationPlayer.play("idle")
+				
+				
 				for block in [$Blue, $Blue2, $Green, $Green2, $Pink, $Pink2]:
 					for i in 25: 
 						block.scale.x += -0.01
