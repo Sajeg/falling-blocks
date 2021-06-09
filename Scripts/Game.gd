@@ -16,6 +16,7 @@ func _ready():
 	freeze = false
 	if bool(G.audio) == true:
 		music()
+	#Player Color:
 	var rand = randi()%3
 	if rand == 0:
 		$Player/BlockBlue.visible = true
@@ -32,21 +33,25 @@ func _process(delta):
 	if freeze == false:
 		G.score = score
 		
-		invisible("Blue", 0)
-		invisible("Green", 2)
-		invisible("Pink", 4)
-		invisible("Blue2", 1)
-		invisible("Green2", 3)
-		invisible("Pink2", 5)
+		animation("Blue", 0)
+		animation("Green", 2)
+		animation("Pink", 4)
+		animation("Blue2", 1)
+		animation("Green2", 3)
+		animation("Pink2", 5)
 		
-		
+		#Displays the Score
 		$Label.text = str(score)
+		
+		#The Script for falling
 		$Blue.position.y += speed
 		$Blue2.position.y += speed
 		$Green.position.y += speed
 		$Green2.position.y += speed
 		$Pink.position.y += speed
 		$Pink2.position.y += speed
+		
+		#Detects the postions from the blocks
 		if $Blue.position.y >1200:
 			crash[0] = false
 			new_pos($Blue)
@@ -72,6 +77,8 @@ func _process(delta):
 		touching() 
 
 func touching():
+	#This Script checks when a block is touching another whether 
+	#the player gets a point or die
 	for body in $Player/Area2D.get_overlapping_bodies():
 		if body != null:
 			if playername == "blue" and body.name == "Blue":
@@ -132,7 +139,8 @@ func touching():
 			return
 
 
-func invisible(block, num):
+func animation(block, num):
+	#animation script
 	var anim = get_node(str(block)+"/AnimationPlayer")
 	if crash[num] == false:
 		if G.mode_dead == false:
@@ -148,6 +156,8 @@ func invisible(block, num):
 
 
 func new_pos(Block):
+	#if a block isn't visible this script
+	#set the block on the top with a new postion
 	Block.position.y = -100
 	var randpos = randi()%3
 	if randpos == 0:
@@ -159,10 +169,12 @@ func new_pos(Block):
 	Block.visible = true
 
 func music():
+	#Music Script
 	$Music.set_stream(audiostream)
 	$Music.play()
 
 
+#Player positions
 func _on_pos1_pressed():
 	PlayerX = 100
 func _on_pos2_pressed():
