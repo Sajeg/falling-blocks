@@ -7,9 +7,11 @@ var score = 0
 var PlayerX = 310
 var crash = [false,false,false,false,false,false]
 var audiostream: AudioStream = preload("res://Assets/Music/Song04.wav")
+var effects: AudioStream = preload("res://Assets/sound fx/block.wav")
 var freeze = false
 var playername = null
 var vibrate
+var gameover = false
 
 func _ready():
 	speed = 6
@@ -118,32 +120,7 @@ func touching():
 					Input.vibrate_handheld(5)
 				crash[5] = true
 			else:
-				freeze = true
-				$Music.stop()
-				$Label.visible = false
-				
-				if G.mode_dead == true:
-					$Blue/AnimationPlayer.play("idle")
-					$Blue2/AnimationPlayer.play("idle")
-					$Green/AnimationPlayer.play("idle")
-					$Green2/AnimationPlayer.play("idle")
-					$Pink/AnimationPlayer.play("idle")
-					$Pink2/AnimationPlayer.play("idle")
-				
-				
-				for block in [$Blue, $Blue2, $Green, $Green2, $Pink, $Pink2]:
-					for i in 25: 
-						block.scale.x += -0.01
-						block.scale.y += -0.01
-						yield(get_tree().create_timer(0.01), "timeout")
-					block.visible = false
-				PlayerX = 310
-				for i in 50:
-					yield(get_tree().create_timer(0.01), "timeout")
-					$Player.position.y += 1
-				$Player.visible = false
-				$Control.visible = true
-				$Control.end()
+				gameover()
 		else:
 			return
 
@@ -160,7 +137,36 @@ func animation(block, num):
 		get_node(str(block)+"/AnimationPlayer").play("crash")
 
 
-
+func gameover(): #Changes the Game screen to Gameover Screen
+	freeze = true
+	$Music.stop()
+	$Label.visible = false
+	
+	if G.mode_dead == true:
+		$Blue/AnimationPlayer.play("idle")
+		$Blue2/AnimationPlayer.play("idle")
+		$Green/AnimationPlayer.play("idle")
+		$Green2/AnimationPlayer.play("idle")
+		$Pink/AnimationPlayer.play("idle")
+		$Pink2/AnimationPlayer.play("idle")
+	
+	gameover = true
+	
+	for block in [$Blue, $Blue2, $Green, $Green2, $Pink, $Pink2]:
+		$Music.set_stream(effects)
+		$Music.play()
+		for i in 25: 
+			block.scale.x += -0.01
+			block.scale.y += -0.01
+			yield(get_tree().create_timer(0.01), "timeout")
+		block.visible = false
+	PlayerX = 310
+	for i in 60:
+		yield(get_tree().create_timer(0.001), "timeout")
+		$Player.position.y += 1
+	$Player.visible = false
+	$Control.visible = true
+	$Control.end()
 
 
 
@@ -193,5 +199,6 @@ func _on_pos3_pressed():
 
 
 func _on_Music_finished():
-	music()
+	if gameover == false:
+		music()
 

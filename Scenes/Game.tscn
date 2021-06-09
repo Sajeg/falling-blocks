@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://FontData/Text_menu.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Assets/nothing.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Music/Song04.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/sound fx/block.wav" type="AudioStream" id=8]
 [ext_resource path="res://Scenes/gameover.tscn" type="PackedScene" id=9]
 
 [node name="Game" type="Node2D"]
