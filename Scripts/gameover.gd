@@ -1,6 +1,5 @@
 extends Control
 
-var score = G.score
 var highscore = G.highscore
 
 func end():
@@ -10,10 +9,8 @@ func end():
 		G.load_data()
 		$Score/Score.text = str(G.score)
 		highscore = G.highscore
-		if highscore != null:
-			highscore = 0
-		if highscore < score:
-			highscore = score
+		if highscore < G.score:
+			highscore = G.score
 			save(highscore)
 			G.highscore = highscore
 		
@@ -25,8 +22,8 @@ func end():
 		$Score/Score.text = str(G.score)
 		highscore = G.dead_highscore
 		
-		if highscore < score:
-			highscore = score
+		if highscore < G.score:
+			highscore = G.score
 			dead_save(highscore)
 			G.dead_highscore = highscore
 		
