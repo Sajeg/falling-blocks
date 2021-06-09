@@ -28,6 +28,7 @@ func _ready():
 		playername = "pink"
 
 func _process(delta):
+	$Player.position.x = PlayerX
 	if freeze == false:
 		G.score = score
 		
@@ -38,7 +39,7 @@ func _process(delta):
 		invisible("Green2", 3)
 		invisible("Pink2", 5)
 		
-		$Player.position.x = PlayerX
+		
 		$Label.text = str(score)
 		$Blue.position.y += speed
 		$Blue2.position.y += speed
@@ -110,23 +111,23 @@ func touching():
 					Input.vibrate_handheld(5)
 				crash[5] = true
 			else:
-				$Timer.start()
 				freeze = true
 				$Music.stop()
-				$Control.visible = true
-				$Control.end()
 				$Label.visible = false
-				$Blue.visible = false
-				$Blue2.visible = false
-				$Green.visible = false
-				$Green2.visible = false
-				$Pink.visible = false
-				$Pink2.visible = false
 				
 				for block in [$Blue, $Blue2, $Green, $Green2, $Pink, $Pink2]:
-					
-					$Green.scale += -0.05
-					pass
+					for i in 25: 
+						block.scale.x += -0.01
+						block.scale.y += -0.01
+						yield(get_tree().create_timer(0.01), "timeout")
+					block.visible = false
+				PlayerX = 310
+				for i in 50:
+					yield(get_tree().create_timer(0.01), "timeout")
+					$Player.position.y += 1
+				$Player.visible = false
+				$Control.visible = true
+				$Control.end()
 		else:
 			return
 
@@ -158,16 +159,8 @@ func new_pos(Block):
 	Block.visible = true
 
 func music():
-	#var rand = randi()%3
-	#if rand == 0:
 	$Music.set_stream(audiostream)
 	$Music.play()
-	#if rand == 1:
-	#	$Music.set_stream(audiostream1)
-	#	$Music.play()
-	#if rand == 2:
-	#	$Music.set_stream(audiostream2)
-	#	$Music.play()
 
 
 func _on_pos1_pressed():
