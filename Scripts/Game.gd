@@ -151,15 +151,17 @@ func gameover(): #Changes the Game screen to Gameover Screen
 		$Pink2/AnimationPlayer.play("idle")
 	
 	gameover = true
-	
+	#Block animation
 	for block in [$Blue, $Blue2, $Green, $Green2, $Pink, $Pink2]:
-		$Music.set_stream(effects)
-		$Music.play()
+		if G.sounds == true:
+			$Music.set_stream(effects)
+			$Music.play()
 		for i in 25: 
 			block.scale.x += -0.01
 			block.scale.y += -0.01
 			yield(get_tree().create_timer(0.01), "timeout")
 		block.visible = false
+	#Player animation
 	PlayerX = 310
 	for i in 60:
 		yield(get_tree().create_timer(0.001), "timeout")

@@ -8,6 +8,7 @@ var player_name = "Player"
 var _config_file = ConfigFile.new()
 export var audio = true
 export var vibration = true
+export var sounds = true
 var path = "user://settings.cfg"
 
 func _ready():
@@ -28,6 +29,7 @@ func load_data():
 		return content
 	else:
 		$"/root/G".visible = false
+# warning-ignore:return_value_discarded
 		get_tree().change_scene("res://Scenes/Tutorial.tscn")
 		file.open("user://save.fall", File.WRITE)
 		file.close()
@@ -43,6 +45,7 @@ func load_dead_data():
 		return content
 	else:
 		$"/root/G".visible = false
+# warning-ignore:return_value_discarded
 		get_tree().change_scene("res://Scenes/Tutorial.tscn")
 		file.open("user://dead_score.fall", File.WRITE)
 		file.close()
@@ -51,15 +54,17 @@ func load_settings():
 	#loads the settings
 	var config = ConfigFile.new()
 	var default_options = {
-			"sound": true,
-			"vibrate": true
+			"music": true,
+			"vibrate": true,
+			"effects": true
 			}
 	var err = config.load(path)
 	if err != OK:
 		return default_options
 	var options = {}
-	audio = config.get_value("general", "sound", default_options.sound)
+	audio = config.get_value("sounds", "music", default_options.music)
 	vibration = config.get_value("general", "vibrate", default_options.vibrate)
+	sounds = config.get_value("sounds", "effects", default_options.effects)
 	return options
 
 
@@ -82,6 +87,7 @@ func _on_start_pressed():
 
 func _on_settings_pressed():
 	$AnimationPlayer.play("Settings_open")
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Scenes/settings.tscn")
 	$"/root/G".visible = false
 
@@ -89,12 +95,14 @@ func _on_settings_pressed():
 
 func _on_death_pressed():
 	G.mode_dead = true
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Scenes/Game.tscn")
 	$"/root/G".visible = false
 
 
 func _on_Normal_pressed():
 	G.mode_dead = false
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Scenes/Game.tscn")
 	$"/root/G".visible = false
 
