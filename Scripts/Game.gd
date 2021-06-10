@@ -212,10 +212,10 @@ func _on_pause2_pressed():
 	$pos2.visible = false
 	$pos3.visible = false
 	freeze = true
-	$Music.pause_mode = true
+	$Music.set_stream_paused(true)
 	$play.visible = true
 	$pause.visible = false
-	
+	$Label.visible = false
 
 
 func _on_play_pressed():
@@ -223,7 +223,7 @@ func _on_play_pressed():
 	$pos2.visible = true
 	$pos3.visible = true
 	freeze = false
-	$Music.pause_mode = false
+	$Music.set_stream_paused(false)
 	$play.visible = false
 	$pause.visible = true
-	
+	$Label.visible = true
