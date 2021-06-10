@@ -54,10 +54,10 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 87.6643, 83.1678 )
+extents = Vector2( 74.9148, 73.8131 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 86.7205, 83.1678 )
+extents = Vector2( 73.58, 74.4805 )
 
 [node name="Blue" type="KinematicBody2D"]
 

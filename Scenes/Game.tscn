@@ -84,7 +84,6 @@ position = Vector2( 59.6198, 61.3007 )
 scale = Vector2( 0.15, 0.15 )
 
 [node name="pause" type="Sprite" parent="pause"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 11 )
 
 [node name="pause2" type="TouchScreenButton" parent="pause"]
