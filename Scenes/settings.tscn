@@ -55,10 +55,10 @@ text = "Settings"
 [node name="Music" type="Node2D" parent="."]
 
 [node name="Music" type="CheckButton" parent="Music"]
-margin_left = 26.0
-margin_top = 471.0
-margin_right = 102.0
-margin_bottom = 512.0
+margin_left = 473.357
+margin_top = 561.817
+margin_right = 549.357
+margin_bottom = 610.817
 rect_scale = Vector2( 2, 2 )
 custom_fonts/font = ExtResource( 7 )
 __meta__ = {
@@ -66,10 +66,35 @@ __meta__ = {
 }
 
 [node name="MusicLabel" type="Label" parent="Music"]
-margin_left = 48.3051
-margin_top = 446.868
-margin_right = 148.305
-margin_bottom = 482.868
+margin_left = 502.389
+margin_top = 537.685
+margin_right = 602.389
+margin_bottom = 578.685
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Music"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Effects" type="Node2D" parent="."]
+
+[node name="sounds" type="CheckButton" parent="Effects"]
+margin_left = 480.477
+margin_top = 687.454
+margin_right = 556.477
+margin_bottom = 736.454
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicLabel" type="Label" parent="Effects"]
+margin_left = 499.896
+margin_top = 666.89
+margin_right = 604.896
+margin_bottom = 707.89
 custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Sounds"
@@ -80,10 +105,10 @@ __meta__ = {
 [node name="Vibrate" type="Node2D" parent="."]
 
 [node name="VibrateLabel" type="Label" parent="Vibrate"]
-margin_left = 44.0823
-margin_top = 609.11
-margin_right = 174.082
-margin_bottom = 645.11
+margin_left = 44.9232
+margin_top = 614.155
+margin_right = 180.923
+margin_bottom = 655.155
 custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Vibration"
@@ -140,6 +165,7 @@ scale = Vector2( 2.5625, 1.59375 )
 normal = ExtResource( 8 )
 
 [connection signal="toggled" from="Music/Music" to="." method="_on_Music_toggled"]
+[connection signal="toggled" from="Effects/sounds" to="." method="_on_sounds_toggled"]
 [connection signal="toggled" from="Vibrate/Vibrate" to="." method="_on_Vibrate_toggled"]
 [connection signal="pressed" from="Credits/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="Back/Back" to="." method="_on_Back_pressed"]

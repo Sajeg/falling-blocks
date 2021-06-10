@@ -3,13 +3,15 @@ extends Control
 func _ready():
 	$Vibrate/Vibrate.pressed = G.vibration
 	$Music/Music.pressed = G.audio
+	$Effects/sounds.pressed = G.sounds
 
 
 func save_settings():
 	#Saves the configuartion
 	var config = ConfigFile.new()
-	config.set_value("general", "sound", G.audio)
+	config.set_value("sounds", "music", G.audio)
 	config.set_value("general", "vibrate", G.vibration)
+	config.set_value("sounds", "effects", G.sounds)
 	var err = config.save(G.path)
 
 
@@ -32,3 +34,7 @@ func _on_Credits_pressed():
 
 
 
+
+
+func _on_sounds_toggled(button_pressed):
+	G.sounds = button_pressed
