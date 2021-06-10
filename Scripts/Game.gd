@@ -139,6 +139,7 @@ func animation(block, num):
 
 func gameover(): #Changes the Game screen to Gameover Screen
 	freeze = true
+	$pause.visible = false
 	$Music.stop()
 	$Label.visible = false
 	
@@ -204,3 +205,25 @@ func _on_Music_finished():
 	if gameover == false:
 		music()
 
+
+
+func _on_pause2_pressed():
+	$pos1.visible = false
+	$pos2.visible = false
+	$pos3.visible = false
+	freeze = true
+	$Music.pause_mode = true
+	$play.visible = true
+	$pause.visible = false
+	
+
+
+func _on_play_pressed():
+	$pos1.visible = true
+	$pos2.visible = true
+	$pos3.visible = true
+	freeze = false
+	$Music.pause_mode = false
+	$play.visible = false
+	$pause.visible = true
+	

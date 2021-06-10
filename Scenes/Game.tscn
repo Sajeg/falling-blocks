@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Blue.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Assets/nothing.png" type="Texture" id=7]
 [ext_resource path="res://Assets/sound fx/block.wav" type="AudioStream" id=8]
 [ext_resource path="res://Scenes/gameover.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/play1.png" type="Texture" id=10]
+[ext_resource path="res://Assets/pause.png" type="Texture" id=11]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -52,18 +54,18 @@ __meta__ = {
 wait_time = 0.5
 
 [node name="pos1" type="TouchScreenButton" parent="."]
-position = Vector2( 0, -2.53516 )
-scale = Vector2( 2, 17.1959 )
+position = Vector2( 0, 221.036 )
+scale = Vector2( 2, 13.7026 )
 normal = ExtResource( 7 )
 
 [node name="pos2" type="TouchScreenButton" parent="."]
-position = Vector2( 206.636, 7.55548 )
-scale = Vector2( 2, 17.0908 )
+position = Vector2( 206.636, 214.477 )
+scale = Vector2( 2, 13.8576 )
 normal = ExtResource( 7 )
 
 [node name="pos3" type="TouchScreenButton" parent="."]
-position = Vector2( 420, 4.19208 )
-scale = Vector2( 2.10511, 17.0907 )
+position = Vector2( 420, 213.492 )
+scale = Vector2( 2.10511, 13.8204 )
 normal = ExtResource( 7 )
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
@@ -77,8 +79,35 @@ margin_top = 21.1046
 margin_right = -0.433568
 margin_bottom = 21.1047
 
+[node name="pause" type="Node2D" parent="."]
+position = Vector2( 59.6198, 61.3007 )
+scale = Vector2( 0.15, 0.15 )
+
+[node name="pause" type="Sprite" parent="pause"]
+scale = Vector2( 1, 1 )
+texture = ExtResource( 11 )
+
+[node name="pause2" type="TouchScreenButton" parent="pause"]
+position = Vector2( -292.601, -311.478 )
+scale = Vector2( 6.4798, 9.56438 )
+normal = ExtResource( 7 )
+
+[node name="play" type="Node2D" parent="."]
+visible = false
+
+[node name="play" type="TouchScreenButton" parent="play"]
+position = Vector2( 99.2257, 348.131 )
+scale = Vector2( 4.17088, 6.22932 )
+normal = ExtResource( 7 )
+
+[node name="play2" type="Sprite" parent="play"]
+position = Vector2( 310, 550 )
+texture = ExtResource( 10 )
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="pos1" to="." method="_on_pos1_pressed"]
 [connection signal="pressed" from="pos2" to="." method="_on_pos2_pressed"]
 [connection signal="pressed" from="pos3" to="." method="_on_pos3_pressed"]
 [connection signal="finished" from="Music" to="." method="_on_Music_finished"]
+[connection signal="pressed" from="pause/pause2" to="." method="_on_pause2_pressed"]
+[connection signal="pressed" from="play/play" to="." method="_on_play_pressed"]
