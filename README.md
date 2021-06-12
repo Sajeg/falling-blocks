@@ -23,3 +23,8 @@ Falling Blocks is a small mobile Game, where you are a block. There are other bl
 1. Download the .zip file from <a href="https://github.com/Sajeg/falling-blocks/releases">releases</a>.
 2. Extrakt this file.
 3. run the .86_64 file.
+
+### Windows
+1. Download the .zip file from <a href="https://github.com/Sajeg/falling-blocks/releases">releases</a>.
+2. Extrakt this file.
+3. run the .exe file.
