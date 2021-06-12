@@ -1,8 +1,8 @@
 # Falling Blocks
-<a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#overview">Overview</a>
-<a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#features">Features</a>
-<a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#screenshots">Screenshots</a>
-<a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#installation">Installation</a>
+- <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#overview">Overview</a>
+- <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#features">Features</a>
+- <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#screenshots">Screenshots</a>
+- <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#installation">Installation</a>
 
 ## Overview
 Falling Blocks is a small mobile Game, where you are a block. There are other blocks, which are falling down, and you're not allowed to touch the blocks if your block has an other color. Made with <a href="https://github.com/godotengine/godot">Godot Engine</a>. 
