@@ -3,19 +3,22 @@ const pos1 = 100
 const pos2 = 310
 const pos3 = 520
 export var speed = 6
+export var multiplicator = 0.01
 var score = 0
 var PlayerX = 310
 var crash = [false,false,false,false,false,false]
-var audiostream: AudioStream = preload("res://Assets/Music/Song04.wav")
-var effects: AudioStream = preload("res://Assets/sound fx/block.wav")
+var audiostream: AudioStream = preload("res://Assets/Music/Be Faste.wav")
+var effects: AudioStream = preload("res://Assets/sound fx/crash_new.wav")
 var freeze = false
 var playername = null
 var vibrate
 var gameover = false
+var lastblock_num = 1
 
 func _ready():
 	if G.system == "Windows" or "X11":
 		speed = 3
+		multiplicator = 0.005
 	else:
 		speed = 6
 	freeze = false
@@ -194,11 +197,23 @@ func new_pos(Block):
 	Block.position.y = -100
 	var randpos = randi()%3
 	if randpos == 0:
-		Block.position.x = pos1
+		if lastblock_num == 0:
+			new_pos(Block)
+		else:
+			Block.position.x = pos1
+			lastblock_num = 0
 	if randpos == 1:
-		Block.position.x = pos2
+		if lastblock_num == 1:
+			new_pos(Block)
+		else:
+			Block.position.x = pos2
+			lastblock_num = 1
 	if randpos == 2:
-		Block.position.x = pos3
+		if lastblock_num == 2:
+			new_pos(Block)
+		else:
+			Block.position.x = pos3
+			lastblock_num = 2
 	Block.visible = true
 
 func music():
