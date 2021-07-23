@@ -14,7 +14,10 @@ var vibrate
 var gameover = false
 
 func _ready():
-	speed = 6
+	if G.system == "Windows" or "X11":
+		speed = 3
+	else:
+		speed = 6
 	freeze = false
 	if bool(G.audio) == true:
 		music()
@@ -33,6 +36,18 @@ func _ready():
 func _process(delta):
 	$Player.position.x = PlayerX
 	if freeze == false:
+		#Controls for the Desktop version
+		
+		if Input.is_action_just_pressed("left"):
+			PlayerX = pos1
+		if Input.is_action_just_pressed("middle"):
+			PlayerX = pos2
+		if Input.is_action_just_pressed("right"):
+			PlayerX = pos3
+		
+		
+		
+		
 		G.score = score
 		
 		animation("Blue", 0)

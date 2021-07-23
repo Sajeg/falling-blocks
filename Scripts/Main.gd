@@ -1,4 +1,5 @@
 extends Control
+var system 
 var score = 0
 var highscore = 0
 var dead_highscore = 0
@@ -12,6 +13,7 @@ export var sounds = true
 var path = "user://settings.cfg"
 
 func _ready():
+	system = OS.get_name()
 	$UiElements/Mode.visible = false
 	$AnimationPlayer.play("in")
 	highscore = load_data()
