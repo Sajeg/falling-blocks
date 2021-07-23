@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/BlockGreen.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 99.6115, 94.3253 )
+extents = Vector2( 76.567, 71.9541 )
 
 [node name="Player" type="Node2D"]
 

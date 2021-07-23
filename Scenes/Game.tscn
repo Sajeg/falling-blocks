@@ -54,17 +54,17 @@ __meta__ = {
 wait_time = 0.5
 
 [node name="pos1" type="TouchScreenButton" parent="."]
-position = Vector2( 0, 221.036 )
+position = Vector2( 0, 223.036 )
 scale = Vector2( 2, 13.7026 )
 normal = ExtResource( 7 )
 
 [node name="pos2" type="TouchScreenButton" parent="."]
-position = Vector2( 206.636, 214.477 )
+position = Vector2( 205.514, 214.477 )
 scale = Vector2( 2, 13.8576 )
 normal = ExtResource( 7 )
 
 [node name="pos3" type="TouchScreenButton" parent="."]
-position = Vector2( 420, 213.492 )
+position = Vector2( 420, 211.604 )
 scale = Vector2( 2.10511, 13.8204 )
 normal = ExtResource( 7 )
 
