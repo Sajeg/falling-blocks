@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Blue.tscn" type="PackedScene" id=2]
@@ -11,6 +11,59 @@
 [ext_resource path="res://Scenes/gameover.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/play1.png" type="Texture" id=10]
 [ext_resource path="res://Assets/pause.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Music/Song04.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Music/Be Faste.wav" type="AudioStream" id=13]
+
+[sub_resource type="Animation" id=1]
+resource_name = "MusicFade1000"
+tracks/0/type = "value"
+tracks/0/path = NodePath("MusicUnder1000:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 2.2974, 1 ),
+"update": 0,
+"values": [ 0.0, -80.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MusicOver1000:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -80.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MusicOver1000:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MusicUnder1000:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -68,9 +121,21 @@ position = Vector2( 420, 211.604 )
 scale = Vector2( 2.10511, 13.8204 )
 normal = ExtResource( 7 )
 
-[node name="Music" type="AudioStreamPlayer2D" parent="."]
+[node name="MusicUnder1000" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 310, 820 )
+stream = ExtResource( 12 )
+volume_db = -80.0
+
+[node name="MusicOver1000" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 310, 820 )
+stream = ExtResource( 13 )
+
+[node name="SoundFX" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 310, 820 )
 stream = ExtResource( 8 )
+
+[node name="MusicFade" type="AnimationPlayer" parent="."]
+anims/MusicFade1000 = SubResource( 1 )
 
 [node name="Control" parent="." instance=ExtResource( 9 )]
 visible = false
@@ -107,6 +172,8 @@ texture = ExtResource( 10 )
 [connection signal="pressed" from="pos1" to="." method="_on_pos1_pressed"]
 [connection signal="pressed" from="pos2" to="." method="_on_pos2_pressed"]
 [connection signal="pressed" from="pos3" to="." method="_on_pos3_pressed"]
-[connection signal="finished" from="Music" to="." method="_on_Music_finished"]
+[connection signal="finished" from="MusicUnder1000" to="." method="_on_Music_finished"]
+[connection signal="finished" from="MusicOver1000" to="." method="_on_Music_finished"]
+[connection signal="finished" from="SoundFX" to="." method="_on_Music_finished"]
 [connection signal="pressed" from="pause/pause2" to="." method="_on_pause2_pressed"]
 [connection signal="pressed" from="play/play" to="." method="_on_play_pressed"]

@@ -7,23 +7,24 @@ export var multiplicator = 0.01
 var score = 0
 var PlayerX = 310
 var crash = [false,false,false,false,false,false]
-var audiostream: AudioStream = preload("res://Assets/Music/Be Faste.wav")
-var effects: AudioStream = preload("res://Assets/sound fx/crash_new.wav")
 var freeze = false
 var playername = null
 var vibrate
 var gameover = false
 var lastblock_num = 1
+var music_changed = false
 
 func _ready():
+	print(G.system)
 	if G.system == "Windows" or "X11":
 		speed = 3
 		multiplicator = 0.005
-	else:
+	if G.system == "Android":
 		speed = 6
 	freeze = false
 	if bool(G.audio) == true:
-		music()
+		$MusicUnder1000.volume_db = 0
+		$MusicUnder1000.play()
 	#Player Color:
 	var rand = randi()%3
 	if rand == 0:
@@ -91,8 +92,8 @@ func _process(delta):
 			new_pos($Pink2)
 			crash[5] = false
 		
-		
-		
+		if score >= 1000 and music_changed == false:
+			music_change()
 		
 		touching() 
 
@@ -103,37 +104,37 @@ func touching():
 		if body != null:
 			if playername == "blue" and body.name == "Blue":
 				score += 1
-				speed +=0.01
+				speed += multiplicator
 				if bool(G.vibration) == true:
 					Input.vibrate_handheld(5)
 				crash[0] = true
 			elif playername == "green" and body.name == "Green":
 				score += 1
-				speed +=0.01
+				speed += multiplicator
 				if bool(G.vibration) == true:
 					Input.vibrate_handheld(5)
 				crash[2] = true
 			elif playername == "pink" and body.name == "Pink":
 				score += 1
-				speed +=0.01
+				speed += multiplicator
 				if bool(G.vibration) == true:
 					Input.vibrate_handheld(5)
 				crash[4] = true
 			elif playername == "blue" and body.name == "Blue2":
 				score += 1
-				speed +=0.01
+				speed += multiplicator
 				if bool(G.vibration) == true:
 					Input.vibrate_handheld(5)
 				crash[1] = true
 			elif playername == "green" and body.name == "Green2":
 				score += 1
-				speed +=0.01
+				speed += multiplicator
 				if bool(G.vibration) == true:
 					Input.vibrate_handheld(5)
 				crash[3] = true
 			elif playername == "pink" and body.name == "Pink2":
 				score += 1
-				speed +=0.01
+				speed += multiplicator
 				if bool(G.vibration) == true:
 					Input.vibrate_handheld(5)
 				crash[5] = true
@@ -158,7 +159,8 @@ func animation(block, num):
 func gameover(): #Changes the Game screen to Gameover Screen
 	freeze = true
 	$pause.visible = false
-	$Music.stop()
+	$MusicUnder1000.stop()
+	$MusicOver1000.stop()
 	$Label.visible = false
 	
 	if G.mode_dead == true:
@@ -173,8 +175,7 @@ func gameover(): #Changes the Game screen to Gameover Screen
 	#Block animation
 	for block in [$Blue, $Blue2, $Green, $Green2, $Pink, $Pink2]:
 		if G.sounds == true:
-			$Music.set_stream(effects)
-			$Music.play()
+			$SoundFX.play()
 		for i in 25: 
 			block.scale.x += -0.01
 			block.scale.y += -0.01
@@ -216,10 +217,6 @@ func new_pos(Block):
 			lastblock_num = 2
 	Block.visible = true
 
-func music():
-	#Music Script
-	$Music.set_stream(audiostream)
-	$Music.play()
 
 
 #Player positions
@@ -231,9 +228,12 @@ func _on_pos3_pressed():
 	PlayerX = 520
 
 
-func _on_Music_finished():
-	if gameover == false:
-		music()
+func music_change():
+	$MusicFade.play("MusicFade1000")
+	music_changed = true
+
+
+
 
 
 
