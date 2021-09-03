@@ -1,4 +1,6 @@
 # Falling Blocks
+
+
 - <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#overview">Overview</a>
 - <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#features">Features</a>
 - <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#screenshots">Screenshots</a>
@@ -19,16 +21,16 @@ Falling Blocks is a small mobile Game, where you are a block. There are other bl
 
 ## Installation
 ### Android
-1. Download the .apk file from <a href="https://github.com/Sajeg/falling-blocks/releases">releases</a>.
+1. Download the .apk file from <a href="https://github.com/Sajeg/falling-blocks/releases">releases</a> or from <a href="https://sajeg.itch.io/falling-blocks/download/nnzx7eP507TuSkONp8TcyfQZHvD_qMEZDi5ajL4u">itch.io</a>.
 2. Click on the downloaded file. If you become a warning "For you security, your phone is not allowed to install unknown apps from this source.", go to settings and allow install unknown apps from this source.
 3. Click on install and Android will automatic install this app.
 
 ### Linux
-1. Download the .zip file from <a href="https://github.com/Sajeg/falling-blocks/releases">releases</a>.
+1. Download the .zip file from <a href="https://github.com/Sajeg/falling-blocks/releases">releases</a> or from <a href="https://sajeg.itch.io/falling-blocks/download/nnzx7eP507TuSkONp8TcyfQZHvD_qMEZDi5ajL4u">itch.io</a>.
 2. Extrakt this file.
 3. run the .86_64 file.
 
 ### Windows
-1. Download the .zip file from <a href="https://github.com/Sajeg/falling-blocks/releases">releases</a>.
+1. Download the .zip file from <a href="https://github.com/Sajeg/falling-blocks/releases">releases</a> or from <a href="https://sajeg.itch.io/falling-blocks/download/nnzx7eP507TuSkONp8TcyfQZHvD_qMEZDi5ajL4u">itch.io</a>.
 2. Extrakt this file.
 3. run the .exe file.
