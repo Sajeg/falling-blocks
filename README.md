@@ -1,5 +1,5 @@
 # Falling Blocks
-<iframe frameborder="0" src="https://itch.io/embed/1124410" width="552" height="167"><a href="https://sajeg.itch.io/falling-blocks">Falling Blocks by Sajeg</a></iframe>
+
 
 - <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#overview">Overview</a>
 - <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#features">Features</a>
