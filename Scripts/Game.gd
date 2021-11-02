@@ -11,7 +11,7 @@ var freeze = false
 var playername = null
 var vibrate
 var gameover = false
-var lastblock_num = 1
+var lastblock_num = 0
 var music_changed = false
 
 func _ready():
@@ -92,7 +92,7 @@ func _process(delta):
 			new_pos($Pink2)
 			crash[5] = false
 		
-		if score >= 1000 and music_changed == false:
+		if score >= 1000 and music_changed == false and bool(G.audio) == true:
 			music_change()
 		
 		touching() 

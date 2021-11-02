@@ -13,7 +13,7 @@ export var sounds = true
 var path = "user://settings.cfg"
 
 func _ready():
-	system = OS.get_name()
+	#system = OS.get_name()
 	$UiElements/Mode.visible = false
 	$AnimationPlayer.play("in")
 	highscore = load_data()

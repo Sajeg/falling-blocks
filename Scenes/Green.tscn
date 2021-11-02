@@ -55,7 +55,7 @@ tracks/0/keys = {
 extents = Vector2( 73.4562, 77.6834 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 73.0107, 77.2379 )
+extents = Vector2( 98.8476, 86.1468 )
 
 [node name="Green" type="KinematicBody2D"]
 
