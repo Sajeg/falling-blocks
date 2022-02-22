@@ -154,8 +154,8 @@ margin_right = 740.135
 margin_bottom = 530.702
 rect_rotation = -15.0
 rect_scale = Vector2( 0.9, 0.9 )
-custom_fonts/normal_font = ExtResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 1 )
 text = "Falling
 	Blocks"
 __meta__ = {
@@ -182,8 +182,8 @@ margin_left = 620.0
 margin_top = 572.165
 margin_right = 848.0
 margin_bottom = 705.165
-custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "Start"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -201,8 +201,8 @@ margin_left = 620.0
 margin_top = 652.138
 margin_right = 816.0
 margin_bottom = 785.138
-custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -217,8 +217,8 @@ margin_left = 620.0
 margin_top = 572.165
 margin_right = 960.0
 margin_bottom = 690.165
-custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "Normal"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -236,8 +236,8 @@ margin_left = 620.0
 margin_top = 652.165
 margin_right = 890.0
 margin_bottom = 770.165
-custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "Death"
 __meta__ = {
 "_edit_use_anchors_": false
