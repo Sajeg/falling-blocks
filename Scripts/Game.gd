@@ -73,22 +73,22 @@ func _process(delta):
 		$Pink2.position.y += speed
 		
 		#Detects the postions from the blocks
-		if $Blue.position.y >1200:
+		if $Blue.position.y >1400:
 			crash[0] = false
 			new_pos($Blue)
-		if $Blue2.position.y >1200:
+		if $Blue2.position.y >1400:
 			new_pos($Blue2)
 			crash[1] = false
-		if $Green.position.y >1200:
+		if $Green.position.y >1400:
 			new_pos($Green)
 			crash[2] = false
-		if $Green2.position.y >1200:
+		if $Green2.position.y >1400:
 			new_pos($Green2)
 			crash[3] = false
-		if $Pink.position.y >1200:
+		if $Pink.position.y >1400:
 			new_pos($Pink)
 			crash[4] = false
-		if $Pink2.position.y >1200:
+		if $Pink2.position.y >1400:
 			new_pos($Pink2)
 			crash[5] = false
 		
