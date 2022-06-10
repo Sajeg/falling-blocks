@@ -137,9 +137,19 @@ position = Vector2( 638.759, 656.268 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 4 )
 
+[node name="BlockGreen2" type="Sprite" parent="."]
+position = Vector2( -35.2991, 1153.94 )
+scale = Vector2( 0.363122, 0.384176 )
+texture = ExtResource( 4 )
+
 [node name="BlockBlue" type="Sprite" parent="."]
 position = Vector2( 61.457, 599.251 )
 scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 5 )
+
+[node name="BlockBlue2" type="Sprite" parent="."]
+position = Vector2( 491.09, 1323.71 )
+scale = Vector2( 0.261131, 0.28324 )
 texture = ExtResource( 5 )
 
 [node name="BlockPink" type="Sprite" parent="."]
@@ -251,13 +261,13 @@ normal = ExtResource( 6 )
 [node name="settings" type="Node2D" parent="UiElements"]
 
 [node name="gear" type="Sprite" parent="UiElements/settings"]
-position = Vector2( 29.9727, 1071.34 )
+position = Vector2( 589.378, 30.6451 )
 rotation = 0.174533
 scale = Vector2( 0.08, 0.08 )
 texture = ExtResource( 8 )
 
 [node name="settings" type="TouchScreenButton" parent="UiElements/settings"]
-position = Vector2( -6.4666, 1013.93 )
+position = Vector2( 527.74, 5.99298 )
 scale = Vector2( 0.90992, 1.3241 )
 normal = ExtResource( 6 )
 pressed = ExtResource( 6 )
