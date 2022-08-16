@@ -13,10 +13,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 0.890869
 margin_right = 0.890869
+rect_pivot_offset = Vector2( -731.955, -77.3008 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="BlockGreen2" type="Sprite" parent="."]
+position = Vector2( -35.2991, 1153.94 )
+scale = Vector2( 0.363122, 0.384176 )
+texture = ExtResource( 4 )
+
+[node name="BlockBlue2" type="Sprite" parent="."]
+position = Vector2( 491.09, 1323.71 )
+scale = Vector2( 0.261131, 0.28324 )
+texture = ExtResource( 6 )
+
+[node name="BlockPink2" type="Sprite" parent="."]
+position = Vector2( 114.088, 1543.9 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 5 )
 
 [node name="BlockGreen" type="Sprite" parent="."]
 position = Vector2( 638.759, 656.268 )
@@ -48,8 +61,8 @@ margin_top = 122.23
 margin_right = 594.937
 margin_bottom = 299.23
 rect_rotation = -15.0
-custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "Settings"
 
 [node name="Music" type="Node2D" parent="."]
@@ -70,8 +83,8 @@ margin_left = 502.389
 margin_top = 537.685
 margin_right = 602.389
 margin_bottom = 578.685
-custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
 text = "Music"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -95,8 +108,8 @@ margin_left = 499.896
 margin_top = 666.89
 margin_right = 604.896
 margin_bottom = 707.89
-custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
 text = "Sounds"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -109,8 +122,8 @@ margin_left = 44.9232
 margin_top = 614.155
 margin_right = 180.923
 margin_bottom = 655.155
-custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
 text = "Vibration"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -133,8 +146,8 @@ margin_left = 278.685
 margin_top = 916.964
 margin_right = 382.685
 margin_bottom = 952.964
-custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
 text = "Credits"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -152,8 +165,8 @@ margin_left = 281.0
 margin_top = 1034.0
 margin_right = 378.0
 margin_bottom = 1075.0
-custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
