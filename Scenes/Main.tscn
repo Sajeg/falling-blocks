@@ -257,7 +257,7 @@ normal = ExtResource( 6 )
 [node name="settings" type="Node2D" parent="UiElements"]
 
 [node name="gear" type="Sprite" parent="UiElements/settings"]
-position = Vector2( 589.378, 30.6451 )
+position = Vector2( 581.347, 40.6832 )
 rotation = 0.174533
 scale = Vector2( 0.08, 0.08 )
 texture = ExtResource( 8 )
