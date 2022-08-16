@@ -157,6 +157,11 @@ position = Vector2( 323.658, 983.267 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 3 )
 
+[node name="BlockPink2" type="Sprite" parent="."]
+position = Vector2( 114.088, 1543.9 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 3 )
+
 [node name="Title" type="RichTextLabel" parent="."]
 margin_left = -10.8647
 margin_top = 105.702
@@ -183,21 +188,18 @@ anims/start = SubResource( 4 )
 [node name="Start" type="Node2D" parent="UiElements"]
 
 [node name="start" type="TouchScreenButton" parent="UiElements/Start"]
-position = Vector2( 300.055, 584.025 )
+position = Vector2( 313.596, 596.902 )
 scale = Vector2( 2.51233, 1.50113 )
 normal = ExtResource( 6 )
 
 [node name="LabelStart" type="Label" parent="UiElements/Start"]
-margin_left = 620.0
+margin_left = 316.201
 margin_top = 572.165
-margin_right = 848.0
+margin_right = 544.201
 margin_bottom = 705.165
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
 text = "Start"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Quit" type="Node2D" parent="UiElements"]
 
@@ -207,16 +209,13 @@ scale = Vector2( 2.11362, 1.33409 )
 normal = ExtResource( 6 )
 
 [node name="Labelquit" type="Label" parent="UiElements/Quit"]
-margin_left = 620.0
+margin_left = 406.25
 margin_top = 652.138
-margin_right = 816.0
+margin_right = 602.25
 margin_bottom = 785.138
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
 text = "Quit"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Mode" type="Node2D" parent="UiElements"]
 
@@ -225,8 +224,8 @@ __meta__ = {
 [node name="LabelModeNormal" type="Label" parent="UiElements/Mode/Normal"]
 margin_left = 620.0
 margin_top = 572.165
-margin_right = 960.0
-margin_bottom = 690.165
+margin_right = 979.0
+margin_bottom = 705.165
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
 text = "Normal"
@@ -244,14 +243,11 @@ normal = ExtResource( 6 )
 [node name="LabelModeDeath" type="Label" parent="UiElements/Mode/Death"]
 margin_left = 620.0
 margin_top = 652.165
-margin_right = 890.0
-margin_bottom = 770.165
+margin_right = 893.0
+margin_bottom = 785.165
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
 text = "Death"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="death" type="TouchScreenButton" parent="UiElements/Mode/Death"]
 position = Vector2( 409.813, 680.647 )
