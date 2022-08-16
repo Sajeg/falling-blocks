@@ -57,7 +57,7 @@ func load_settings():
 	var config = ConfigFile.new()
 	var default_options = {
 			"music": true,
-			"vibrate": true,
+			"vibrate": false,
 			"effects": true
 			}
 	var err = config.load(path)
