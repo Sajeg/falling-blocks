@@ -2,7 +2,7 @@
 .export_presets.cfg
 export_presets.cfg
 .import/
-idea/
+.idea/
 android/build/local.properties
 android/build/build/
 android/build/keystore.properties

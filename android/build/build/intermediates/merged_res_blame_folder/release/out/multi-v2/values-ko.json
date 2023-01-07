@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Johann\\Documents\\Programmieren\\Godot Projects\\falling-blocks\\android\\build\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-ko\\values-ko.xml",
+            "outputFile": "org.sajeg.fallingblocks-mergeReleaseResources-9:/values-ko/values-ko.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Johann\\.gradle\\caches\\transforms-3\\9617710e59968e2412aeb3b23f549743\\transformed\\core-1.2.0\\res\\values-ko\\values-ko.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "24",
-                        "startColumns": "4",
-                        "startOffsets": "1605",
-                        "endColumns": "100",
-                        "endOffsets": "1701"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Johann\\.gradle\\caches\\transforms-3\\0d2259d9d7cfc11a376316903c9b467e\\transformed\\jetified-godot-lib.release\\res\\values-ko\\values-ko.xml",
+                    "source": "C:\\Users\\Johann\\.gradle\\caches\\transforms-3\\07e7b9e500544fa3dd44dd397e048501\\transformed\\jetified-godot-lib.release\\res\\values-ko\\values-ko.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -52,6 +35,23 @@
                         "startOffsets": "55",
                         "endColumns": "68",
                         "endOffsets": "119"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Johann\\.gradle\\caches\\transforms-3\\31605dab2b8b9c570dbdfbf47572e29d\\transformed\\core-1.2.0\\res\\values-ko\\values-ko.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "24",
+                        "startColumns": "4",
+                        "startOffsets": "1605",
+                        "endColumns": "100",
+                        "endOffsets": "1701"
                     }
                 }
             ]

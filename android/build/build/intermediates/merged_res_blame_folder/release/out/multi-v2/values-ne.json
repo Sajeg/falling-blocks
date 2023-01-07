@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Johann\\Documents\\Programmieren\\Godot Projects\\falling-blocks\\android\\build\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-ne\\values-ne.xml",
+            "outputFile": "org.sajeg.fallingblocks-mergeReleaseResources-9:/values-ne/values-ne.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Johann\\.gradle\\caches\\transforms-3\\9617710e59968e2412aeb3b23f549743\\transformed\\core-1.2.0\\res\\values-ne\\values-ne.xml",
+                    "source": "C:\\Users\\Johann\\.gradle\\caches\\transforms-3\\31605dab2b8b9c570dbdfbf47572e29d\\transformed\\core-1.2.0\\res\\values-ne\\values-ne.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

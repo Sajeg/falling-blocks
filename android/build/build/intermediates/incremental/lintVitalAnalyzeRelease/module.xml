@@ -4,14 +4,14 @@
     name=":"
     type="APP"
     maven=":build:"
-    gradle="7.0.3"
+    gradle="7.3.1"
     buildFolder="build"
     bootClassPath="C:\Users\Johann\AppData\Local\Android\Sdk\platforms\android-32\android.jar;C:\Users\Johann\AppData\Local\Android\Sdk\build-tools\32.0.0\core-lambda-stubs.jar"
     javaSourceLevel="11"
     compileTarget="android-32"
     neverShrinking="true">
   <lintOptions
-      disable="UnusedResources,MissingTranslation"
+      disable="MissingTranslation,UnusedResources"
       absolutePaths="true"
       checkReleaseBuilds="true"
       explainIssues="true">
