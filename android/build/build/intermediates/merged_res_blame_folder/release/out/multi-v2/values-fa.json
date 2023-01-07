@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Johann\\Documents\\Programmieren\\Godot Projects\\falling-blocks\\android\\build\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-fa\\values-fa.xml",
+            "outputFile": "org.sajeg.fallingblocks-mergeReleaseResources-9:/values-fa/values-fa.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Johann\\.gradle\\caches\\transforms-3\\0d2259d9d7cfc11a376316903c9b467e\\transformed\\jetified-godot-lib.release\\res\\values-fa\\values-fa.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,109,183,241,301,370,440,618,791,893,972",
-                        "endColumns": "53,73,57,59,68,69,177,172,101,78,70",
-                        "endOffsets": "104,178,236,296,365,435,613,786,888,967,1038"
-                    },
-                    "to": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "225,279,353,411,471,540,610,788,961,1063,1142",
-                        "endColumns": "53,73,57,59,68,69,177,172,101,78,70",
-                        "endOffsets": "274,348,406,466,535,605,783,956,1058,1137,1208"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Johann\\.gradle\\caches\\transforms-3\\9617710e59968e2412aeb3b23f549743\\transformed\\core-1.2.0\\res\\values-fa\\values-fa.xml",
+                    "source": "C:\\Users\\Johann\\.gradle\\caches\\transforms-3\\31605dab2b8b9c570dbdfbf47572e29d\\transformed\\core-1.2.0\\res\\values-fa\\values-fa.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -35,6 +18,23 @@
                         "startOffsets": "124",
                         "endColumns": "100",
                         "endOffsets": "220"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Johann\\.gradle\\caches\\transforms-3\\07e7b9e500544fa3dd44dd397e048501\\transformed\\jetified-godot-lib.release\\res\\values-fa\\values-fa.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,109,183,241,301,370,440,618,791,893,972",
+                        "endColumns": "53,73,57,59,68,69,177,172,101,78,70",
+                        "endOffsets": "104,178,236,296,365,435,613,786,888,967,1038"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "225,279,353,411,471,540,610,788,961,1063,1142",
+                        "endColumns": "53,73,57,59,68,69,177,172,101,78,70",
+                        "endOffsets": "274,348,406,466,535,605,783,956,1058,1137,1208"
                     }
                 },
                 {

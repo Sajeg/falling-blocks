@@ -26,6 +26,11 @@ plugins {
 
 apply from: 'config.gradle'
 
+// Load keystore
+def keystorePropertiesFile = rootProject.file("keystore.properties");
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
 allprojects {
     repositories {
         google()
@@ -112,11 +117,11 @@ android {
         }
 
         manifestPlaceholders = [godotEditorVersion: getGodotEditorVersion()]
+        applicationId 'org.sajeg.fallingblocks'
+        versionCode 1
+        versionName '1.4'
 
         // Feel free to modify the application id to your own.
-        applicationId getExportPackageName()
-        versionCode getExportVersionCode()
-        versionName getExportVersionName()
         minSdkVersion getExportMinSdkVersion()
         targetSdkVersion getExportTargetSdkVersion()
 
@@ -153,14 +158,12 @@ android {
         }
 
         release {
-            File keystoreFile = new File(getReleaseKeystoreFile())
-            if (keystoreFile.isFile()) {
-                storeFile keystoreFile
-                storePassword getReleaseKeystorePassword()
-                keyAlias getReleaseKeyAlias()
-                keyPassword getReleaseKeystorePassword()
-            }
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
         }
+        
     }
 
     buildTypes {

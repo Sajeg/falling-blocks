@@ -38,7 +38,7 @@
 25        android:allowBackup="false"
 25-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:30:68-95
 26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-26-->[androidx.core:core:1.2.0] C:\Users\Johann\.gradle\caches\transforms-3\9617710e59968e2412aeb3b23f549743\transformed\core-1.2.0\AndroidManifest.xml:24:18-86
+26-->[androidx.core:core:1.2.0] C:\Users\Johann\.gradle\caches\transforms-3\31605dab2b8b9c570dbdfbf47572e29d\transformed\core-1.2.0\AndroidManifest.xml:24:18-86
 27        android:hasFragileUserData="true"
 27-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:30:118-152
 28        android:icon="@mipmap/icon"
@@ -51,7 +51,7 @@
 31-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:30:153-197
 32        <activity
 32-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:65:9-88:20
-33            android:name="com.godot.game.GodotApp"
+33            android:name="org.sajeg.fallingblocks.GodotApp"
 33-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:66:13-37
 34            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
 34-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:73:13-141
@@ -66,7 +66,7 @@
 39            android:resizeableActivity="true"
 39-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:74:13-47
 40            android:screenOrientation="portrait"
-40-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:72:13-50
+40-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:72:13-49
 41            android:theme="@style/GodotAppSplashTheme" >
 41-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:68:13-55
 42            <intent-filter>
@@ -91,28 +91,28 @@
 54        <!-- Records the version of the Godot editor used for building -->
 55        <meta-data
 56            android:name="org.godotengine.editor.version"
-57            android:value="3.5.1.stable" /> <!-- Records the version of the Godot library -->
+57            android:value="custom_build" /> <!-- Records the version of the Godot library -->
 58        <meta-data
-58-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\0d2259d9d7cfc11a376316903c9b467e\transformed\jetified-godot-lib.release\AndroidManifest.xml:13:9-15:44
+58-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\07e7b9e500544fa3dd44dd397e048501\transformed\jetified-godot-lib.release\AndroidManifest.xml:13:9-15:44
 59            android:name="org.godotengine.library.version"
-59-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\0d2259d9d7cfc11a376316903c9b467e\transformed\jetified-godot-lib.release\AndroidManifest.xml:14:13-59
+59-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\07e7b9e500544fa3dd44dd397e048501\transformed\jetified-godot-lib.release\AndroidManifest.xml:14:13-59
 60            android:value="3.5.1.stable" />
-60-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\0d2259d9d7cfc11a376316903c9b467e\transformed\jetified-godot-lib.release\AndroidManifest.xml:15:13-41
+60-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\07e7b9e500544fa3dd44dd397e048501\transformed\jetified-godot-lib.release\AndroidManifest.xml:15:13-41
 61
 62        <service android:name="org.godotengine.godot.GodotDownloaderService" />
-62-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\0d2259d9d7cfc11a376316903c9b467e\transformed\jetified-godot-lib.release\AndroidManifest.xml:17:9-80
-62-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\0d2259d9d7cfc11a376316903c9b467e\transformed\jetified-godot-lib.release\AndroidManifest.xml:17:18-77
+62-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\07e7b9e500544fa3dd44dd397e048501\transformed\jetified-godot-lib.release\AndroidManifest.xml:17:9-80
+62-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\07e7b9e500544fa3dd44dd397e048501\transformed\jetified-godot-lib.release\AndroidManifest.xml:17:18-77
 63
 64        <activity
-64-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\0d2259d9d7cfc11a376316903c9b467e\transformed\jetified-godot-lib.release\AndroidManifest.xml:19:9-23:75
+64-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\07e7b9e500544fa3dd44dd397e048501\transformed\jetified-godot-lib.release\AndroidManifest.xml:19:9-23:75
 65            android:name="org.godotengine.godot.utils.ProcessPhoenix"
-65-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\0d2259d9d7cfc11a376316903c9b467e\transformed\jetified-godot-lib.release\AndroidManifest.xml:20:13-70
+65-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\07e7b9e500544fa3dd44dd397e048501\transformed\jetified-godot-lib.release\AndroidManifest.xml:20:13-70
 66            android:exported="false"
-66-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\0d2259d9d7cfc11a376316903c9b467e\transformed\jetified-godot-lib.release\AndroidManifest.xml:21:13-37
+66-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\07e7b9e500544fa3dd44dd397e048501\transformed\jetified-godot-lib.release\AndroidManifest.xml:21:13-37
 67            android:process=":phoenix"
-67-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\0d2259d9d7cfc11a376316903c9b467e\transformed\jetified-godot-lib.release\AndroidManifest.xml:22:13-39
+67-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\07e7b9e500544fa3dd44dd397e048501\transformed\jetified-godot-lib.release\AndroidManifest.xml:22:13-39
 68            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-68-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\0d2259d9d7cfc11a376316903c9b467e\transformed\jetified-godot-lib.release\AndroidManifest.xml:23:13-72
+68-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\07e7b9e500544fa3dd44dd397e048501\transformed\jetified-godot-lib.release\AndroidManifest.xml:23:13-72
 69    </application>
 70
 71</manifest>

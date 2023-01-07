@@ -1,12 +1,12 @@
 <variant
     name="release"
-    package="com.godot.game"
+    package="org.sajeg.fallingblocks"
     minSdkVersion="19"
     targetSdkVersion="32"
     mergedManifest="build\intermediates\merged_manifest\release\AndroidManifest.xml"
-    manifestMergeReport="build\outputs\logs\manifest-merger-release-report.txt"
-    proguardFiles="build\intermediates\default_proguard_files\global\proguard-android.txt-7.0.3"
-    partialResultsDir="build\intermediates\lint_vital_partial_results\release\out">
+    proguardFiles="build\intermediates\default_proguard_files\global\proguard-android.txt-7.3.1"
+    partialResultsDir="build\intermediates\lint_vital_partial_results\release\out"
+    desugaredMethodsFiles="C:\Users\Johann\.gradle\caches\transforms-3\d59465e7639d60b6ab3ec79735582937\transformed\D8BackportedDesugaredMethods.txt">
   <buildFeatures
       namespacing="REQUIRED"/>
   <sourceProviders>
@@ -22,23 +22,13 @@
         assetsDirectories="src\release\assets"/>
   </sourceProviders>
   <testSourceProviders>
-    <sourceProvider
-        manifest="src\test\AndroidManifest.xml"
-        javaDirectories="src\test\java;src\test\kotlin"
-        resDirectories="src\test\res"
-        assetsDirectories="src\test\assets"
-        unitTest="true"/>
-    <sourceProvider
-        manifest="src\testRelease\AndroidManifest.xml"
-        javaDirectories="src\testRelease\java;src\testRelease\kotlin"
-        resDirectories="src\testRelease\res"
-        assetsDirectories="src\testRelease\assets"
-        unitTest="true"/>
   </testSourceProviders>
+  <testFixturesSourceProviders>
+  </testFixturesSourceProviders>
   <manifestPlaceholders>
     <placeholder
         name="godotEditorVersion"
-        value="3.5.1.stable" />
+        value="custom_build" />
   </manifestPlaceholders>
   <mainArtifact
       classOutputs="build\intermediates\javac\release\classes;build\tmp\kotlin-classes\release;build\kotlinToolingMetadata;build\intermediates\compile_and_runtime_not_namespaced_r_class_jar\release\R.jar"
@@ -46,6 +36,4 @@
       generatedSourceFolders="build\generated\ap_generated_sources\release\out;build\generated\aidl_source_output_dir\release\out;build\generated\source\buildConfig\release;build\generated\renderscript_source_output_dir\release\out"
       generatedResourceFolders="build\generated\res\rs\release;build\generated\res\resValues\release">
   </mainArtifact>
-  <testArtifact>
-  </testArtifact>
 </variant>

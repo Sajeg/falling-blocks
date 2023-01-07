@@ -30,7 +30,7 @@
         android:label="@string/godot_project_name_string"
         android:requestLegacyExternalStorage="false" >
         <activity
-            android:name="com.godot.game.GodotApp"
+            android:name="org.sajeg.fallingblocks.GodotApp"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
             android:excludeFromRecents="false"
             android:exported="true"
@@ -54,7 +54,7 @@
         <!-- Records the version of the Godot editor used for building -->
         <meta-data
             android:name="org.godotengine.editor.version"
-            android:value="3.5.1.stable" /> <!-- Records the version of the Godot library -->
+            android:value="custom_build" /> <!-- Records the version of the Godot library -->
         <meta-data
             android:name="org.godotengine.library.version"
             android:value="3.5.1.stable" />
