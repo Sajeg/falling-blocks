@@ -1,0 +1,110 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/Credits.gd" type="Script" id=1]
+[ext_resource path="res://FontData/Title.tres" type="DynamicFont" id=2]
+[ext_resource path="res://FontData/Text.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/BlockPink.png" type="Texture" id=4]
+[ext_resource path="res://Assets/nothing.png" type="Texture" id=5]
+[ext_resource path="res://Assets/BlockGreen.png" type="Texture" id=6]
+[ext_resource path="res://Assets/BlockBlue.png" type="Texture" id=7]
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlockPink" type="Sprite" parent="."]
+position = Vector2( 323.658, 983.267 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BlockBlue" type="Sprite" parent="."]
+position = Vector2( 61.457, 599.251 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BlockGreen" type="Sprite" parent="."]
+position = Vector2( 638.759, 656.268 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_right = 616.0
+margin_bottom = 1098.0
+custom_fonts/normal_font = ExtResource( 3 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "
+
+
+
+
+
+
+
+
+			Gamedesign, 
+			Programming, 
+			Music:
+				Johann Specht
+				
+			Settings-gear Picture:
+				Samuel1983 auf Pixabay
+		
+			Font:
+				Roboto Slap
+		
+				
+			
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 22.6274
+margin_top = 107.48
+margin_right = 567.627
+margin_bottom = 284.48
+rect_rotation = -15.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Credits"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2( 116.868, 587.336 )
+scale = Vector2( 4.55848, 1.32775 )
+normal = ExtResource( 5 )
+
+[node name="Back" type="Node2D" parent="."]
+
+[node name="BackLabel" type="Label" parent="Back"]
+margin_left = 277.582
+margin_top = 972.091
+margin_right = 374.582
+margin_bottom = 1008.09
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="TouchScreenButton" parent="Back"]
+position = Vector2( 200.942, 868.849 )
+scale = Vector2( 2.5625, 3.62761 )
+normal = ExtResource( 5 )
+
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]
+[connection signal="pressed" from="Back/Back" to="." method="_on_Back_pressed"]

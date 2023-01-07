@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/BlockBlue.png" type="Texture" id=2]
+[ext_resource path="res://Assets/BlockPink.png" type="Texture" id=3]
+[ext_resource path="res://Assets/BlockGreen.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 76.567, 71.9541 )
+
+[node name="Player" type="Node2D"]
+
+[node name="BlockBlue" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+
+[node name="BlockGreen" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 4 )
+
+[node name="BlockPink" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
