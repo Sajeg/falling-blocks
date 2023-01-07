@@ -63,3 +63,6 @@ export_presets.cfg
 .idea/falling-blocks.iml
 .idea/modules.xml
 .idea/vcs.xml
+.idea/misc.xml
+android/build/local.properties
+android/build/build
