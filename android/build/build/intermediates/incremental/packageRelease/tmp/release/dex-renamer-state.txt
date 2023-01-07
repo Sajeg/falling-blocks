@@ -1,4 +1,0 @@
-#Sat Jan 07 21:33:47 CET 2023
-base.0=C\:\\Users\\Johann\\Documents\\Programmieren\\Godot Projects\\falling-blocks\\android\\build\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
