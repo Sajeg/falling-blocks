@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\Johann\\Documents\\Programmieren\\Godot Projects\\falling-blocks\\android\\build\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-zh\\values-zh.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Johann\\Documents\\Programmieren\\Godot Projects\\falling-blocks\\android\\build\\res\\values-zh\\godot_project_name_string.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "1",
+                        "startOffsets": "112",
+                        "endColumns": "65",
+                        "endOffsets": "176"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "68",
+                        "endOffsets": "119"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,184 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/settings.gd" type="Script" id=1]
+[ext_resource path="res://FontData/Title.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/BlockGreen.png" type="Texture" id=4]
+[ext_resource path="res://Assets/BlockPink.png" type="Texture" id=5]
+[ext_resource path="res://Assets/BlockBlue.png" type="Texture" id=6]
+[ext_resource path="res://FontData/Text.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Assets/nothing.png" type="Texture" id=8]
+
+[node name="settings" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.890869
+margin_right = 0.890869
+rect_pivot_offset = Vector2( -731.955, -77.3008 )
+script = ExtResource( 1 )
+
+[node name="BlockGreen2" type="Sprite" parent="."]
+position = Vector2( -35.2991, 1153.94 )
+scale = Vector2( 0.363122, 0.384176 )
+texture = ExtResource( 4 )
+
+[node name="BlockBlue2" type="Sprite" parent="."]
+position = Vector2( 491.09, 1323.71 )
+scale = Vector2( 0.261131, 0.28324 )
+texture = ExtResource( 6 )
+
+[node name="BlockPink2" type="Sprite" parent="."]
+position = Vector2( 114.088, 1543.9 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 5 )
+
+[node name="BlockGreen" type="Sprite" parent="."]
+position = Vector2( 638.759, 656.268 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BlockBlue" type="Sprite" parent="."]
+position = Vector2( 61.457, 599.251 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BlockPink" type="Sprite" parent="."]
+position = Vector2( 323.658, 983.267 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Title" type="Label" parent="."]
+margin_left = 7.93695
+margin_top = 122.23
+margin_right = 594.937
+margin_bottom = 299.23
+rect_rotation = -15.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Settings"
+
+[node name="Music" type="Node2D" parent="."]
+
+[node name="Music" type="CheckButton" parent="Music"]
+margin_left = 473.357
+margin_top = 561.817
+margin_right = 549.357
+margin_bottom = 610.817
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicLabel" type="Label" parent="Music"]
+margin_left = 502.389
+margin_top = 537.685
+margin_right = 602.389
+margin_bottom = 578.685
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "Music"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Effects" type="Node2D" parent="."]
+
+[node name="sounds" type="CheckButton" parent="Effects"]
+margin_left = 480.477
+margin_top = 687.454
+margin_right = 556.477
+margin_bottom = 736.454
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicLabel" type="Label" parent="Effects"]
+margin_left = 499.896
+margin_top = 666.89
+margin_right = 604.896
+margin_bottom = 707.89
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "Sounds"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vibrate" type="Node2D" parent="."]
+
+[node name="VibrateLabel" type="Label" parent="Vibrate"]
+margin_left = 44.9232
+margin_top = 614.155
+margin_right = 180.923
+margin_bottom = 655.155
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "Vibration"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vibrate" type="CheckButton" parent="Vibrate"]
+margin_left = 35.372
+margin_top = 634.151
+margin_right = 111.372
+margin_bottom = 674.151
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Node2D" parent="."]
+
+[node name="CreditsLabel" type="Label" parent="Credits"]
+margin_left = 278.685
+margin_top = 916.964
+margin_right = 382.685
+margin_bottom = 952.964
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="TouchScreenButton" parent="Credits"]
+position = Vector2( 200.818, 868.327 )
+scale = Vector2( 2.56712, 1.99325 )
+normal = ExtResource( 8 )
+
+[node name="Back" type="Node2D" parent="."]
+
+[node name="BackLabel" type="Label" parent="Back"]
+margin_left = 281.0
+margin_top = 1034.0
+margin_right = 378.0
+margin_bottom = 1075.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="TouchScreenButton" parent="Back"]
+position = Vector2( 199.355, 999.016 )
+scale = Vector2( 2.5625, 1.59375 )
+normal = ExtResource( 8 )
+
+[connection signal="toggled" from="Music/Music" to="." method="_on_Music_toggled"]
+[connection signal="toggled" from="Effects/sounds" to="." method="_on_sounds_toggled"]
+[connection signal="toggled" from="Vibrate/Vibrate" to="." method="_on_Vibrate_toggled"]
+[connection signal="pressed" from="Credits/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="Back/Back" to="." method="_on_Back_pressed"]
