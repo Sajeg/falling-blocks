@@ -1,0 +1,118 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="org.sajeg.fallingblocks"
+4    android:installLocation="auto"
+5    android:versionCode="1"
+6    android:versionName="1.4" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
+7    <uses-sdk
+8        android:minSdkVersion="19"
+9        android:targetSdkVersion="32" />
+10
+11    <supports-screens
+11-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:12:5-16:40
+12        android:largeScreens="true"
+12-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:15:9-36
+13        android:normalScreens="true"
+13-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:14:9-37
+14        android:smallScreens="true"
+14-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:13:9-36
+15        android:xlargeScreens="true" />
+15-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:16:9-37
+16
+17    <uses-feature
+17-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\src\release\AndroidManifest.xml:10:5-78
+18        android:glEsVersion="0x00030000"
+18-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\src\release\AndroidManifest.xml:10:19-51
+19        android:required="true" />
+19-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\src\release\AndroidManifest.xml:10:52-75
+20
+21    <uses-permission android:name="android.permission.VIBRATE" />
+21-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\src\release\AndroidManifest.xml:11:5-66
+21-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\src\release\AndroidManifest.xml:11:22-63
+22    <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY" />
+22-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\src\release\AndroidManifest.xml:12:5-80
+22-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\src\release\AndroidManifest.xml:12:22-77
+23
+24    <application
+24-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:30:5-94:19
+25        android:allowBackup="false"
+25-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:30:68-95
+26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+26-->[androidx.core:core:1.2.0] C:\Users\Johann\.gradle\caches\transforms-3\9617710e59968e2412aeb3b23f549743\transformed\core-1.2.0\AndroidManifest.xml:24:18-86
+27        android:hasFragileUserData="true"
+27-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:30:118-152
+28        android:icon="@mipmap/icon"
+28-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:30:238-265
+29        android:isGame="true"
+29-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:30:96-117
+30        android:label="@string/godot_project_name_string"
+30-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:30:18-67
+31        android:requestLegacyExternalStorage="false" >
+31-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:30:153-197
+32        <activity
+32-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:65:9-88:20
+33            android:name="com.godot.game.GodotApp"
+33-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:66:13-37
+34            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
+34-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:73:13-141
+35            android:excludeFromRecents="false"
+35-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:70:13-47
+36            android:exported="true"
+36-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:71:13-36
+37            android:label="@string/godot_project_name_string"
+37-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:67:13-62
+38            android:launchMode="singleTask"
+38-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:69:13-44
+39            android:resizeableActivity="true"
+39-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:74:13-47
+40            android:screenOrientation="portrait"
+40-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:72:13-50
+41            android:theme="@style/GodotAppSplashTheme" >
+41-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:68:13-55
+42            <intent-filter>
+42-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:80:13-87:29
+43                <action android:name="android.intent.action.MAIN" />
+43-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:81:17-69
+43-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:81:25-66
+44
+45                <category android:name="android.intent.category.LAUNCHER" />
+45-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:82:17-77
+45-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:82:27-74
+46
+47                <!--
+48                Enable access to OpenXR on Oculus mobile devices, no-op on other Android
+49                platforms.
+50                -->
+51                <category android:name="com.oculus.intent.category.VR" />
+51-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:86:17-74
+51-->C:\Users\Johann\Documents\Programmieren\Godot Projects\falling-blocks\android\build\AndroidManifest.xml:86:27-71
+52            </intent-filter>
+53        </activity>
+54        <!-- Records the version of the Godot editor used for building -->
+55        <meta-data
+56            android:name="org.godotengine.editor.version"
+57            android:value="3.5.1.stable" /> <!-- Records the version of the Godot library -->
+58        <meta-data
+58-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\0d2259d9d7cfc11a376316903c9b467e\transformed\jetified-godot-lib.release\AndroidManifest.xml:13:9-15:44
+59            android:name="org.godotengine.library.version"
+59-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\0d2259d9d7cfc11a376316903c9b467e\transformed\jetified-godot-lib.release\AndroidManifest.xml:14:13-59
+60            android:value="3.5.1.stable" />
+60-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\0d2259d9d7cfc11a376316903c9b467e\transformed\jetified-godot-lib.release\AndroidManifest.xml:15:13-41
+61
+62        <service android:name="org.godotengine.godot.GodotDownloaderService" />
+62-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\0d2259d9d7cfc11a376316903c9b467e\transformed\jetified-godot-lib.release\AndroidManifest.xml:17:9-80
+62-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\0d2259d9d7cfc11a376316903c9b467e\transformed\jetified-godot-lib.release\AndroidManifest.xml:17:18-77
+63
+64        <activity
+64-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\0d2259d9d7cfc11a376316903c9b467e\transformed\jetified-godot-lib.release\AndroidManifest.xml:19:9-23:75
+65            android:name="org.godotengine.godot.utils.ProcessPhoenix"
+65-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\0d2259d9d7cfc11a376316903c9b467e\transformed\jetified-godot-lib.release\AndroidManifest.xml:20:13-70
+66            android:exported="false"
+66-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\0d2259d9d7cfc11a376316903c9b467e\transformed\jetified-godot-lib.release\AndroidManifest.xml:21:13-37
+67            android:process=":phoenix"
+67-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\0d2259d9d7cfc11a376316903c9b467e\transformed\jetified-godot-lib.release\AndroidManifest.xml:22:13-39
+68            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+68-->[godot-lib.release.aar] C:\Users\Johann\.gradle\caches\transforms-3\0d2259d9d7cfc11a376316903c9b467e\transformed\jetified-godot-lib.release\AndroidManifest.xml:23:13-72
+69    </application>
+70
+71</manifest>
