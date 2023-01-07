@@ -8,3 +8,6 @@ android/build/build/
 android/build/keystore.properties
 android/.idea/
 android/build/.idea/
+android/build/gradlew.bat
+android/build/gradlew
+android/build/gradle/wrapper/gradle-wrapper.jar
