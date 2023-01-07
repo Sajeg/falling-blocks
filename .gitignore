@@ -11,3 +11,4 @@ android/build/.idea/
 android/build/gradlew.bat
 android/build/gradlew
 android/build/gradle/
+android/build/.gradle/
