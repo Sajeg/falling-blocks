@@ -1,0 +1,1 @@
+added support for larger displays
