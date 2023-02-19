@@ -1,5 +1,10 @@
 # Falling Blocks
 
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
+    alt="Get it on F-Droid"
+    height="80">](https://f-droid.org/packages/org.sajeg.fallingblocks/)
+
+
 - <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#overview">Overview</a>
 - <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#features">Features</a>
 - <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#screenshots">Screenshots</a>
