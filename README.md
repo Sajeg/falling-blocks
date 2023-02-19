@@ -1,5 +1,4 @@
 # Falling Blocks
-[![Github All Releases](https://img.shields.io/github/downloads/Sajeg/falling-blocks/total.svg)](https://github.com/Sajeg/falling-blocks/releases)<br>
 
 - <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#overview">Overview</a>
 - <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#features">Features</a>
