@@ -55,7 +55,7 @@ tracks/0/keys = {
 extents = Vector2( 73.4562, 77.6834 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 98.8476, 86.1468 )
+extents = Vector2( 98.8476, 93.3218 )
 
 [node name="Green" type="KinematicBody2D"]
 
@@ -71,7 +71,8 @@ anims/special = SubResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 4 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Green" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Green"]
+position = Vector2( 0, 0.047802 )
 shape = SubResource( 5 )

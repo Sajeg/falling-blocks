@@ -1,10 +1,8 @@
 extends Control
 
 func _ready():
-	$Vibrate/Vibrate.pressed = G.vibration
-	$Music/Music.pressed = G.audio
-	$Effects/sounds.pressed = G.sounds
-
+	$AnimationPlayer.play("start")
+	update_Labels()
 
 func save_settings():
 	#Saves the configuartion
@@ -17,24 +15,42 @@ func save_settings():
 
 
 func _on_Back_pressed():
+	$AnimationPlayer.play_backwards("start")
 	save_settings()
+	yield(get_node("AnimationPlayer"), "animation_finished")
 	get_tree().change_scene("res://Scenes/Main.tscn")
 
 
-func _on_Vibrate_toggled(button_pressed):
-	G.vibration = button_pressed
+func _on_MusicButton_pressed():
+	G.audio = !G.audio
+	save_settings()
+	update_Labels()
 
 
-func _on_Music_toggled(button_pressed):
-	G.audio = button_pressed
+func _on_SoundButton_pressed():
+	G.sounds = !G.sounds
+	save_settings()
+	update_Labels()
 
 
-func _on_Credits_pressed():
-	get_tree().change_scene("res://Scenes/Credits.tscn")
+func _on_VibrationButton_pressed():
+	G.vibration = !G.vibration
+	save_settings()
+	update_Labels()
 
-
-
-
-
-func _on_sounds_toggled(button_pressed):
-	G.sounds = button_pressed
+func update_Labels():
+	print("update")
+	if G.vibration:
+		$VBoxContainer/Vibration.text = "Vibration: ON"
+	else:
+		$VBoxContainer/Vibration.text = "Vibration: OFF"
+	
+	if G.audio:
+		$VBoxContainer/Music.text = "Music: ON"
+	else:
+		$VBoxContainer/Music.text = "Music: OFF"
+	
+	if G.sounds:
+		$VBoxContainer/Sound.text = "Sound: ON"
+	else:
+		$VBoxContainer/Sound.text = "Sound: OFF"
