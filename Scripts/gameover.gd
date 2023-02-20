@@ -45,7 +45,8 @@ func dead_save(content): #Save the highscore in DEATH mode
 	file.close()
 
 func _on_Main_pressed(): #Button for the Main screen
-	$AnimationPlayer.play("out")
+	$AnimationPlayer.play("change_scene")
+	yield(get_node("AnimationPlayer"), "animation_finished")
 	get_tree().change_scene("res://Scenes/Main.tscn")
 
 func _on_again_pressed(): #Button for restart game
