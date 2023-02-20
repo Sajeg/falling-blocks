@@ -1,41 +1,53 @@
-extends Node2D
+extends Control
+
 const pos1 = 100
 const pos2 = 310
 const pos3 = 520
+
 export var speed = 6
 export var multiplicator = 0.01
+
 var score = 0
-var PlayerX = 310
-var crash = [false,false,false,false,false,false]
+
 var freeze = false
 var playername = null
 var vibrate
 var gameover = false
 var lastblock_num = 0
 var music_changed = false
+var is_touching = false
+var still_touching = false
+
+var PlayerX = 310
+var blocks = ["Blocks/Blue", "Blocks/Blue2", "Blocks/Green", "Blocks/Green2", "Blocks/Pink", "Blocks/Pink2"]
 
 func _ready():
-	print(G.system)
+	
 	if G.system == "Windows" or "X11":
 		speed = 3
 		multiplicator = 0.005
 	if G.system == "Android":
 		speed = 6
+	
 	freeze = false
 	if bool(G.audio) == true:
-		$MusicUnder1000.volume_db = 0
-		$MusicUnder1000.play()
+		$Sound/MusicUnder1000.volume_db = 0
+		$Sound/MusicUnder1000.play()
+	
+	for BlockNum in blocks.size():
+		blocks[BlockNum] = get_node(blocks[BlockNum])
+	
 	#Player Color:
 	var rand = randi()%3
 	if rand == 0:
 		$Player/BlockBlue.visible = true
-		playername = "blue"
+		playername = "Blue"
 	if rand == 1:
 		$Player/BlockGreen.visible = true
-		playername = "green"
+		playername = "Green"
 	if rand == 2:
 		$Player/BlockPink.visible = true
-		playername = "pink"
+		playername = "Pink"
 
 func _process(delta):
 	$Player.position.x = PlayerX
@@ -49,138 +61,90 @@ func _process(delta):
 		if Input.is_action_just_pressed("right"):
 			PlayerX = pos3
 		
-		
-		
-		
 		G.score = score
 		
-		animation("Blue", 0)
-		animation("Green", 2)
-		animation("Pink", 4)
-		animation("Blue2", 1)
-		animation("Green2", 3)
-		animation("Pink2", 5)
-		
 		#Displays the Score
-		$Label.text = str(score)
+		$UI/Score.text = str(score)
 		
-		#The Script for falling
-		$Blue.position.y += speed
-		$Blue2.position.y += speed
-		$Green.position.y += speed
-		$Green2.position.y += speed
-		$Pink.position.y += speed
-		$Pink2.position.y += speed
 		
-		#Detects the postions from the blocks
-		if $Blue.position.y >1400:
-			crash[0] = false
-			new_pos($Blue)
-		if $Blue2.position.y >1400:
-			new_pos($Blue2)
-			crash[1] = false
-		if $Green.position.y >1400:
-			new_pos($Green)
-			crash[2] = false
-		if $Green2.position.y >1400:
-			new_pos($Green2)
-			crash[3] = false
-		if $Pink.position.y >1400:
-			new_pos($Pink)
-			crash[4] = false
-		if $Pink2.position.y >1400:
-			new_pos($Pink2)
-			crash[5] = false
+		for BlockNum in blocks.size():
+			animation(blocks[BlockNum], BlockNum)
+			
+			#The Script for falling
+			blocks[BlockNum].position.y += speed
+			
+			#Detects the postions from the blocks
+			if blocks[BlockNum].position.y > 1400:
+				new_pos(blocks[BlockNum])
+		
 		
 		if score >= 1000 and music_changed == false and bool(G.audio) == true:
 			music_change()
 		
-		touching() 
+		if is_touching:
+			if bool(G.vibration) == true:
+				Input.vibrate_handheld(5)
+			score += 1
+			speed += multiplicator
 
-func touching():
-	#This Script checks when a block is touching another whether 
-	#the player gets a point or die
-	for body in $Player/Area2D.get_overlapping_bodies():
-		if body != null:
-			if playername == "blue" and body.name == "Blue":
-				score += 1
-				speed += multiplicator
-				if bool(G.vibration) == true:
-					Input.vibrate_handheld(5)
-				crash[0] = true
-			elif playername == "green" and body.name == "Green":
-				score += 1
-				speed += multiplicator
-				if bool(G.vibration) == true:
-					Input.vibrate_handheld(5)
-				crash[2] = true
-			elif playername == "pink" and body.name == "Pink":
-				score += 1
-				speed += multiplicator
-				if bool(G.vibration) == true:
-					Input.vibrate_handheld(5)
-				crash[4] = true
-			elif playername == "blue" and body.name == "Blue2":
-				score += 1
-				speed += multiplicator
-				if bool(G.vibration) == true:
-					Input.vibrate_handheld(5)
-				crash[1] = true
-			elif playername == "green" and body.name == "Green2":
-				score += 1
-				speed += multiplicator
-				if bool(G.vibration) == true:
-					Input.vibrate_handheld(5)
-				crash[3] = true
-			elif playername == "pink" and body.name == "Pink2":
-				score += 1
-				speed += multiplicator
-				if bool(G.vibration) == true:
-					Input.vibrate_handheld(5)
-				crash[5] = true
-			else:
-				gameover()
-		else:
-			return
-
-
-func animation(block, num):
-	#animation script
-	var anim = get_node(str(block)+"/AnimationPlayer")
-	if crash[num] == false:
-		if G.mode_dead == false:
-			get_node(str(block)+"/AnimationPlayer").play("idle")
-		else:
-			get_node(str(block)+"/AnimationPlayer").play("special")
+func _on_Area2D_area_entered(area: Area2D):
+	if playername == area.name:
+		score += 1
+		speed += multiplicator
+		if bool(G.vibration) == true:
+			Input.vibrate_handheld(5)
+		is_touching = true
+		for child in area.get_parent().get_children():
+			if child is AnimationPlayer:
+				child.play("crash")
 	else:
-		get_node(str(block)+"/AnimationPlayer").play("crash")
+		still_touching = true
+		freeze = true
+		yield(get_tree().create_timer(0.1), "timeout")
+		if not still_touching:
+			freeze = false
+			return
+		if bool(G.vibration) == true:
+			Input.vibrate_handheld(60)
+		gameover()
+
+func _on_Area2D_area_exited(area: Area2D):
+	is_touching = false
+	still_touching = false
+
+func animation(block: KinematicBody2D, num):
+	#animation script
+	for child in block.get_children():
+		if child is AnimationPlayer:
+			
+			if G.mode_dead == false:
+				if child.current_animation != "crash":
+					child.play("idle")
+			else:
+				child.play("special")
 
 
 func gameover(): #Changes the Game screen to Gameover Screen
 	freeze = true
-	$pause.visible = false
-	$MusicUnder1000.stop()
-	$MusicOver1000.stop()
-	$Label.visible = false
+	$UI/Pause.visible = false
+	$Sound/MusicUnder1000.stop()
+	$Sound/MusicOver1000.stop()
+	$UI/Score.visible = false
 	
 	if G.mode_dead == true:
-		$Blue/AnimationPlayer.play("idle")
-		$Blue2/AnimationPlayer.play("idle")
-		$Green/AnimationPlayer.play("idle")
-		$Green2/AnimationPlayer.play("idle")
-		$Pink/AnimationPlayer.play("idle")
-		$Pink2/AnimationPlayer.play("idle")
+		for BlockNum in blocks.size():
+			blocks[BlockNum].play("idle")
 	
 	gameover = true
 	#Block animation
-	for block in [$Blue, $Blue2, $Green, $Green2, $Pink, $Pink2]:
+	for BlockNum in blocks.size():
 		if G.sounds == true:
-			$SoundFX.play()
+			$Sound/SoundFX.play()
 		for i in 25: 
-			block.scale.x += -0.01
-			block.scale.y += -0.01
+			blocks[BlockNum].scale.x += -0.01
+			blocks[BlockNum].scale.y += -0.01
 			yield(get_tree().create_timer(0.01), "timeout")
-		block.visible = false
+		blocks[BlockNum].visible = false
 	#Player animation
 	PlayerX = 310
 	for i in 60:
@@ -199,7 +163,7 @@ func new_pos(Block):
 	var randpos = randi()%3
 	if randpos == 0:
 		if lastblock_num == 0:
-			new_pos(Block)
+			Block 
 		else:
 			Block.position.x = pos1
 			lastblock_num = 0
@@ -216,6 +180,10 @@ func new_pos(Block):
 			Block.position.x = pos3
 			lastblock_num = 2
 	Block.visible = true
+	
+	for child in Block.get_children():
+		if child is AnimationPlayer:
+			child.play("idle")
 
 
 
@@ -229,12 +197,8 @@ func _on_pos3_pressed():
 
 
 func music_change():
-	$MusicFade.play("MusicFade1000")
+	$Sound/MusicFade.play("MusicFade1000")
 	music_changed = true
-
-
-
-
 
 
 func _on_pause2_pressed():
@@ -242,11 +206,11 @@ func _on_pause2_pressed():
 	$pos2.visible = false
 	$pos3.visible = false
 	freeze = true
-	$MusicUnder1000.set_stream_paused(true)
-	$MusicOver1000.set_stream_paused(true)
-	$play.visible = true
-	$pause.visible = false
-	$Label.visible = false
+	$Sound/MusicUnder1000.set_stream_paused(true)
+	$Sound/MusicOver1000.set_stream_paused(true)
+	$UI/Play.visible = true
+	$UI/Pause.visible = false
+	$UI/Score.visible = false
 
 
 func _on_play_pressed():
@@ -255,9 +219,14 @@ func _on_play_pressed():
 	$pos3.visible = true
 	freeze = false
 	if score > 1000:
-		$MusicOver1000.set_stream_paused(false)
+		$Sound/MusicOver1000.set_stream_paused(false)
 	else:
-		$MusicUnder1000.set_stream_paused(false)
-	$play.visible = false
-	$pause.visible = true
-	$Label.visible = true
+		$Sound/MusicUnder1000.set_stream_paused(false)
+	$UI/Play.visible = false
+	$UI/Pause.visible = true
+	$UI/Score.visible = true
+
+
+
+
+

@@ -1,12 +1,116 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/settings.gd" type="Script" id=1]
+[ext_resource path="res://Assets/angle-left-solid.png" type="Texture" id=2]
 [ext_resource path="res://FontData/Title.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/BlockGreen.png" type="Texture" id=4]
 [ext_resource path="res://Assets/BlockPink.png" type="Texture" id=5]
 [ext_resource path="res://Assets/BlockBlue.png" type="Texture" id=6]
 [ext_resource path="res://FontData/Text.tres" type="DynamicFont" id=7]
 [ext_resource path="res://Assets/nothing.png" type="Texture" id=8]
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:material:shader_param/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:material:shader_param/x_pos")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect:material:shader_param/y_pos")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.63 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "start"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:material:shader_param/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.05 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:material:shader_param/x_pos")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.5 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect:material:shader_param/y_pos")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.5 ]
+}
+
+[sub_resource type="Shader" id=6]
+code = "shader_type canvas_item;
+render_mode unshaded;
+ 
+uniform float circle_size : hint_range(0.0, 1.05);
+uniform float screen_width;
+uniform float screen_height;
+uniform float x_pos : hint_range(0.0, 1.0, 0.01);
+uniform float y_pos :hint_range(0.0, 1.0, 0.01);
+ 
+void fragment() {
+	float ratio = screen_width / screen_height;
+	float dist = distance(vec2(x_pos, y_pos), vec2(mix(0.5, UV.x, ratio), UV.y));
+	COLOR.a = step(circle_size, dist);
+}"
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = SubResource( 6 )
+shader_param/circle_size = 0.0
+shader_param/screen_width = 620.0
+shader_param/screen_height = 1100.0
+shader_param/x_pos = 0.0
+shader_param/y_pos = 0.63
 
 [node name="settings" type="Control"]
 anchor_right = 1.0
@@ -65,120 +169,88 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 3 )
 text = "Settings"
 
-[node name="Music" type="Node2D" parent="."]
-
-[node name="Music" type="CheckButton" parent="Music"]
-margin_left = 473.357
-margin_top = 561.817
-margin_right = 549.357
-margin_bottom = 610.817
-rect_scale = Vector2( 2, 2 )
-custom_fonts/font = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MusicLabel" type="Label" parent="Music"]
-margin_left = 502.389
-margin_top = 537.685
-margin_right = 602.389
-margin_bottom = 578.685
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 7 )
-text = "Music"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Effects" type="Node2D" parent="."]
-
-[node name="sounds" type="CheckButton" parent="Effects"]
-margin_left = 480.477
-margin_top = 687.454
-margin_right = 556.477
-margin_bottom = 736.454
-rect_scale = Vector2( 2, 2 )
-custom_fonts/font = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MusicLabel" type="Label" parent="Effects"]
-margin_left = 499.896
-margin_top = 666.89
-margin_right = 604.896
-margin_bottom = 707.89
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 7 )
-text = "Sounds"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Vibrate" type="Node2D" parent="."]
-
-[node name="VibrateLabel" type="Label" parent="Vibrate"]
-margin_left = 44.9232
-margin_top = 614.155
-margin_right = 180.923
-margin_bottom = 655.155
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 7 )
-text = "Vibration"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Vibrate" type="CheckButton" parent="Vibrate"]
-margin_left = 35.372
-margin_top = 634.151
-margin_right = 111.372
-margin_bottom = 674.151
-rect_scale = Vector2( 2, 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Credits" type="Node2D" parent="."]
 
-[node name="CreditsLabel" type="Label" parent="Credits"]
-margin_left = 278.685
-margin_top = 916.964
-margin_right = 382.685
-margin_bottom = 952.964
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 7 )
-text = "Credits"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Credits" type="TouchScreenButton" parent="Credits"]
-position = Vector2( 200.818, 868.327 )
-scale = Vector2( 2.56712, 1.99325 )
-normal = ExtResource( 8 )
-
-[node name="Back" type="Node2D" parent="."]
-
-[node name="BackLabel" type="Label" parent="Back"]
-margin_left = 281.0
-margin_top = 1034.0
-margin_right = 378.0
-margin_bottom = 1075.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 7 )
-text = "Back"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Back" type="Control" parent="."]
+anchor_left = 0.028
+anchor_top = 0.028
+anchor_right = 0.028
+anchor_bottom = 0.042
 
 [node name="Back" type="TouchScreenButton" parent="Back"]
-position = Vector2( 199.355, 999.016 )
-scale = Vector2( 2.5625, 1.59375 )
+scale = Vector2( 0.1, 0.1 )
+normal = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -112.0
+margin_top = -104.5
+margin_right = 112.0
+margin_bottom = 104.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Vibration" type="Label" parent="VBoxContainer"]
+margin_right = 320.0
+margin_bottom = 67.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "Vibration: ON"
+align = 1
+valign = 1
+
+[node name="VibrationButton" type="TouchScreenButton" parent="VBoxContainer/Vibration"]
+position = Vector2( -58, 4 )
+scale = Vector2( 3.88542, 1.04688 )
 normal = ExtResource( 8 )
 
-[connection signal="toggled" from="Music/Music" to="." method="_on_Music_toggled"]
-[connection signal="toggled" from="Effects/sounds" to="." method="_on_sounds_toggled"]
-[connection signal="toggled" from="Vibrate/Vibrate" to="." method="_on_Vibrate_toggled"]
-[connection signal="pressed" from="Credits/Credits" to="." method="_on_Credits_pressed"]
+[node name="Sound" type="Label" parent="VBoxContainer"]
+margin_top = 71.0
+margin_right = 320.0
+margin_bottom = 138.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "Sound: ON"
+align = 1
+valign = 1
+
+[node name="SoundButton" type="TouchScreenButton" parent="VBoxContainer/Sound"]
+position = Vector2( -47, 4 )
+scale = Vector2( 3.38542, 1.04688 )
+normal = ExtResource( 8 )
+
+[node name="Music" type="Label" parent="VBoxContainer"]
+margin_top = 142.0
+margin_right = 320.0
+margin_bottom = 209.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "Music: ON"
+align = 1
+valign = 1
+
+[node name="MusicButton" type="TouchScreenButton" parent="VBoxContainer/Music"]
+position = Vector2( -47, 4 )
+scale = Vector2( 3.57292, 1.04688 )
+normal = ExtResource( 8 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 7 )
+anims/start = SubResource( 8 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource( 9 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -24.0
+margin_bottom = 8.0
+color = Color( 0, 0, 0, 1 )
+
 [connection signal="pressed" from="Back/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="VBoxContainer/Vibration/VibrationButton" to="." method="_on_VibrationButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/Sound/SoundButton" to="." method="_on_SoundButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/Music/MusicButton" to="." method="_on_MusicButton_pressed"]
