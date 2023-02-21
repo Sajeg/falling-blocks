@@ -1,6 +1,21 @@
 extends Control
 
 func _ready():
+	if G.dark_mode:
+		$Title.add_color_override("font_color", Color(1,1,1))
+		$VBoxContainer/Vibration.add_color_override("font_color", Color(1,1,1))
+		$VBoxContainer/Music.add_color_override("font_color", Color(1,1,1))
+		$VBoxContainer/Sound.add_color_override("font_color", Color(1,1,1))
+		$VBoxContainer/Mode.add_color_override("font_color", Color(1,1,1))
+		$Back/Back.set_texture(preload("res://Assets/angle-left-solid_light.png"))
+	else:
+		$Title.add_color_override("font_color", Color(0,0,0))
+		$VBoxContainer/Music.add_color_override("font_color", Color(0,0,0))
+		$VBoxContainer/Sound.add_color_override("font_color", Color(0,0,0))
+		$VBoxContainer/Vibration.add_color_override("font_color", Color(0,0,0))
+		$VBoxContainer/Mode.add_color_override("font_color", Color(0,0,0))
+		$Back/Back.set_texture(preload("res://Assets/angle-left-solid.png"))
+	
 	$AnimationPlayer.play("start")
 	update_Labels()
 
@@ -9,13 +24,14 @@ func save_settings():
 	var config = ConfigFile.new()
 	config.set_value("sounds", "music", G.audio)
 	config.set_value("general", "vibrate", G.vibration)
+	config.set_value("general", "dark_mode", G.dark_mode)
 	config.set_value("sounds", "effects", G.sounds)
 	var err = config.save(G.path)
 
 
 
 func _on_Back_pressed():
-	$AnimationPlayer.play_backwards("start")
+	$AnimationPlayer.play("end")
 	save_settings()
 	yield(get_node("AnimationPlayer"), "animation_finished")
 	get_tree().change_scene("res://Scenes/Main.tscn")
@@ -38,6 +54,11 @@ func _on_VibrationButton_pressed():
 	save_settings()
 	update_Labels()
 
+func _on_ModeButton_pressed():
+	G.dark_mode = !G.dark_mode
+	save_settings()
+	update_Labels()
+
 func update_Labels():
 	print("update")
 	if G.vibration:
@@ -54,3 +75,11 @@ func update_Labels():
 		$VBoxContainer/Sound.text = "Sound: ON"
 	else:
 		$VBoxContainer/Sound.text = "Sound: OFF"
+	
+	if G.dark_mode:
+		$VBoxContainer/Mode.text = "Dark Mode"
+	else:
+		$VBoxContainer/Mode.text = "Light Mode"
+
+
+

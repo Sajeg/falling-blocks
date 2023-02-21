@@ -2,6 +2,27 @@ extends Control
 
 var highscore = G.highscore
 
+func _ready():
+	if G.dark_mode:
+		$Title.add_color_override("default_color", Color(1,1,1))
+		$main/Label.add_color_override("font_color", Color(1,1,1))
+		$again/Label.add_color_override("font_color", Color(1,1,1))
+		$BlockBlue.set_texture(preload("res://Assets/BlockBlueDark.png"))
+		$BlockBlue2.set_texture(preload("res://Assets/BlockBlueDark.png"))
+		$BlockGreen3.set_texture(preload("res://Assets/BlockGreenDark.png"))
+		$BlockGreen2.set_texture(preload("res://Assets/BlockGreenDark.png"))
+		$BlockPink.set_texture(preload("res://Assets/BlockPinkDark.png"))
+		$BlockPink2.set_texture(preload("res://Assets/BlockPinkDark.png"))
+	else:
+		$Title.add_color_override("default_color", Color(0,0,0))
+		$main/Label.add_color_override("font_color", Color(0,0,0))
+		$again/Label.add_color_override("font_color", Color(0,0,0))
+		$BlockBlue.set_texture(preload("res://Assets/BlockBlue.png"))
+		$BlockBlue2.set_texture(preload("res://Assets/BlockBlue.png"))
+		$BlockGreen3.set_texture(preload("res://Assets/BlockGreen.png"))
+		$BlockGreen2.set_texture(preload("res://Assets/BlockGreen.png"))
+		$BlockPink.set_texture(preload("res://Assets/BlockPink.png"))
+		$BlockPink2.set_texture(preload("res://Assets/BlockPink.png"))
 func end():
 	$AnimationPlayer.play("In")
 	if G.mode_dead == false:

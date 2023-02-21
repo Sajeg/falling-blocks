@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-343cd5250fa0d344bf4ad84b1f01e2a7.stex"
+path="res://.import/icon.png-baefae3cf9e954d6765726865ddadf33.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://fastlane/listings/en-US/graphics/icon.png"
-dest_files=[ "res://.import/icon.png-343cd5250fa0d344bf4ad84b1f01e2a7.stex" ]
+source_file="res://fastlane/metadata/android/de/graphics/icon.png"
+dest_files=[ "res://.import/icon.png-baefae3cf9e954d6765726865ddadf33.stex" ]
 
 [params]
 

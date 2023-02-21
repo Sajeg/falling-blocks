@@ -12,3 +12,5 @@ android/build/gradlew.bat
 android/build/gradlew
 android/build/gradle/
 android/build/.gradle/
+*.kra
+*.import
