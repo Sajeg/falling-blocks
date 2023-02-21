@@ -22,7 +22,22 @@ var PlayerX = 310
 var blocks = ["Blocks/Blue", "Blocks/Blue2", "Blocks/Green", "Blocks/Green2", "Blocks/Pink", "Blocks/Pink2"]
 
 func _ready():
-	
+	if G.dark_mode:
+		$UI/Score.add_color_override("font_color", Color(1,1,1))
+		
+		$Player/BlockBlue.set_texture(preload("res://Assets/BlockBlueDark.png"))
+		$Player/BlockGreen.set_texture(preload("res://Assets/BlockGreenDark.png"))
+		$Player/BlockPink.set_texture(preload("res://Assets/BlockPinkDark.png"))
+		$UI/Pause/pause.set_texture(preload("res://Assets/pause_light.png"))
+		$UI/Play/play2.set_texture(preload("res://Assets/play1_light.png"))
+	else:
+		$UI/Score.add_color_override("font_color", Color(0,0,0))
+		
+		$Player/BlockBlue.set_texture(preload("res://Assets/BlockBlue.png"))
+		$Player/BlockGreen.set_texture(preload("res://Assets/BlockGreen.png"))
+		$Player/BlockPink.set_texture(preload("res://Assets/BlockPink.png"))
+		$UI/Pause/pause.set_texture(preload("res://Assets/pause.png"))
+		$UI/Play/play2.set_texture(preload("res://Assets/play1.png"))
 	if G.system == "Windows" or "X11":
 		speed = 3
 		multiplicator = 0.005
@@ -96,7 +111,10 @@ func _on_Area2D_area_entered(area: Area2D):
 		is_touching = true
 		for child in area.get_parent().get_children():
 			if child is AnimationPlayer:
-				child.play("crash")
+				if G.dark_mode:
+					child.play("crash_dark")
+				else:
+					child.play("crash")
 	else:
 		still_touching = true
 		freeze = true
@@ -116,12 +134,18 @@ func animation(block: KinematicBody2D, num):
 	#animation script
 	for child in block.get_children():
 		if child is AnimationPlayer:
-			
-			if G.mode_dead == false:
-				if child.current_animation != "crash":
-					child.play("idle")
+			if G.dark_mode:
+				if G.mode_dead == false:
+					if child.current_animation != "crash_dark":
+						child.play("idle_dark")
+				else:
+					child.play("special_dark")
 			else:
-				child.play("special")
+				if G.mode_dead == false:
+					if child.current_animation != "crash":
+						child.play("idle")
+				else:
+					child.play("special")
 
 
 func gameover(): #Changes the Game screen to Gameover Screen
@@ -183,7 +207,10 @@ func new_pos(Block):
 	
 	for child in Block.get_children():
 		if child is AnimationPlayer:
-			child.play("idle")
+			if G.dark_mode:
+				child.play("idle_dark")
+			else:
+				child.play("idle")
 
 
 
