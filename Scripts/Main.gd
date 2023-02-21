@@ -10,10 +10,13 @@ var _config_file = ConfigFile.new()
 export var audio = true
 export var vibration = true
 export var sounds = true
+export var dark_mode = false
 var path = "user://settings.cfg"
 
 func _ready():
 	#system = OS.get_name()
+	mode()
+	
 	$ColorRect.material.set_shader_param("screen_width", $ColorRect.rect_size.x)
 	$ColorRect.material.set_shader_param("screen_heigth", $ColorRect.rect_size.y)
 	
@@ -33,9 +36,6 @@ func load_data():
 		file.close()
 		return content
 	else:
-		$"/root/G".visible = false
-# warning-ignore:return_value_discarded
-		get_tree().change_scene("res://Scenes/Tutorial.tscn")
 		file.open("user://save.fall", File.WRITE)
 		file.close()
 
@@ -49,9 +49,6 @@ func load_dead_data():
 		file.close()
 		return content
 	else:
-		$"/root/G".visible = false
-# warning-ignore:return_value_discarded
-		get_tree().change_scene("res://Scenes/Tutorial.tscn")
 		file.open("user://dead_score.fall", File.WRITE)
 		file.close()
 
@@ -61,7 +58,8 @@ func load_settings():
 	var default_options = {
 			"music": true,
 			"vibrate": false,
-			"effects": true
+			"effects": true,
+			"dark_mode": false
 			}
 	var err = config.load(path)
 	if err != OK:
@@ -70,9 +68,40 @@ func load_settings():
 	audio = config.get_value("sounds", "music", default_options.music)
 	vibration = config.get_value("general", "vibrate", default_options.vibrate)
 	sounds = config.get_value("sounds", "effects", default_options.effects)
+	dark_mode = config.get_value("general", "dark_mode", default_options.dark_mode)
 	return options
 
-
+func mode():
+	if G.dark_mode:
+		VisualServer.set_default_clear_color(Color(0,0,0))
+		$Title.add_color_override("default_color", Color(1,1,1))
+		$UI/Selection/Start/LabelStart.add_color_override("font_color", Color(1,1,1))
+		$UI/Selection/Quit/Labelquit.add_color_override("font_color", Color(1,1,1))
+		$UI/Selection/Mode/Death/LabelModeDeath.add_color_override("font_color", Color(1,1,1))
+		$UI/Selection/Mode/Normal/LabelModeNormal.add_color_override("font_color", Color(1,1,1))
+		
+		$BlockBlue.set_texture(preload("res://Assets/BlockBlueDark.png"))
+		$BlockBlue2.set_texture(preload("res://Assets/BlockBlueDark.png"))
+		$BlockGreen.set_texture(preload("res://Assets/BlockGreenDark.png"))
+		$BlockGreen2.set_texture(preload("res://Assets/BlockGreenDark.png"))
+		$BlockPink.set_texture(preload("res://Assets/BlockPinkDark.png"))
+		$BlockPink2.set_texture(preload("res://Assets/BlockPinkDark.png"))
+		$UI/settings/gear.set_texture(preload("res://Assets/gear_light.png"))
+	else:
+		VisualServer.set_default_clear_color(Color(1,1,1))
+		$Title.add_color_override("default_color", Color(0,0,0))
+		$UI/Selection/Start/LabelStart.add_color_override("font_color", Color(0,0,0))
+		$UI/Selection/Quit/Labelquit.add_color_override("font_color", Color(0,0,0))
+		$UI/Selection/Mode/Death/LabelModeDeath.add_color_override("font_color", Color(0,0,0))
+		$UI/Selection/Mode/Normal/LabelModeNormal.add_color_override("font_color", Color(0,0,0))
+		
+		$BlockBlue.set_texture(preload("res://Assets/BlockBlue.png"))
+		$BlockBlue2.set_texture(preload("res://Assets/BlockBlue.png"))
+		$BlockGreen.set_texture(preload("res://Assets/BlockGreen.png"))
+		$BlockGreen2.set_texture(preload("res://Assets/BlockGreen.png"))
+		$BlockPink.set_texture(preload("res://Assets/BlockPink.png"))
+		$BlockPink2.set_texture(preload("res://Assets/BlockPink.png"))
+		$UI/settings/gear.set_texture(preload("res://Assets/gear.png"))
 
 
 func _on_quit_pressed():
