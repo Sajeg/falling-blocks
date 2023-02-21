@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Blue.tscn" type="PackedScene" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://Assets/pause.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Music/Song04.wav" type="AudioStream" id=12]
 [ext_resource path="res://Assets/Music/Be Faste.wav" type="AudioStream" id=13]
+[ext_resource path="res://Assets/BlockGreenCrash.png" type="Texture" id=14]
+[ext_resource path="res://Assets/BlockPinkCrash.png" type="Texture" id=15]
 
 [sub_resource type="Animation" id=1]
 resource_name = "MusicFade1000"
@@ -75,11 +77,20 @@ script = ExtResource( 1 )
 [node name="Pink2" parent="Blocks" instance=ExtResource( 3 )]
 position = Vector2( 310, 20 )
 
+[node name="BlockPink" parent="Blocks/Pink2" index="0"]
+texture = ExtResource( 15 )
+
 [node name="Pink" parent="Blocks" instance=ExtResource( 3 )]
 position = Vector2( 520, -580 )
 
+[node name="BlockPink" parent="Blocks/Pink" index="0"]
+texture = ExtResource( 15 )
+
 [node name="Green2" parent="Blocks" instance=ExtResource( 4 )]
 position = Vector2( 520, -180 )
+
+[node name="BlockGreen" parent="Blocks/Green2" index="0"]
+texture = ExtResource( 14 )
 
 [node name="Green" parent="Blocks" instance=ExtResource( 4 )]
 position = Vector2( 310, -780 )
@@ -192,4 +203,10 @@ margin_bottom = 21.1047
 [connection signal="pressed" from="UI/Pause/pause2" to="." method="_on_pause2_pressed"]
 [connection signal="pressed" from="UI/Play/play" to="." method="_on_play_pressed"]
 
+[editable path="Blocks/Pink2"]
+[editable path="Blocks/Pink"]
+[editable path="Blocks/Green2"]
+[editable path="Blocks/Green"]
+[editable path="Blocks/Blue2"]
+[editable path="Blocks/Blue"]
 [editable path="Player"]

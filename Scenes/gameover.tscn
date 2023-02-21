@@ -13,7 +13,7 @@
 resource_name = "In"
 length = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("RichTextLabel:rect_position")
+tracks/0/path = NodePath("Title:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -84,7 +84,7 @@ tracks/0/keys = {
 resource_name = "out"
 length = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("RichTextLabel:rect_position")
+tracks/0/path = NodePath("Title:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -158,7 +158,7 @@ position = Vector2( 61.457, 599.251 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 3 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Title" type="RichTextLabel" parent="."]
 margin_left = 29.0
 margin_top = 99.0
 margin_right = 732.0
@@ -208,9 +208,6 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = ExtResource( 8 )
 text = "0"
 align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ScoreLabel" type="Label" parent="Score2"]
 margin_left = 216.0
