@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://FontData/Title.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/BlockBlue.png" type="Texture" id=3]
@@ -13,7 +13,7 @@
 resource_name = "In"
 length = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("RichTextLabel:rect_position")
+tracks/0/path = NodePath("Title:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -49,11 +49,42 @@ tracks/2/keys = {
 "values": [ Vector2( 636.302, 652 ), Vector2( 344, 652.138 ) ]
 }
 
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:material:shader_param/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.05 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "change_scene"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:material:shader_param/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.05, 0.0 ]
+}
+
 [sub_resource type="Animation" id=2]
 resource_name = "out"
 length = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("RichTextLabel:rect_position")
+tracks/0/path = NodePath("Title:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -89,6 +120,30 @@ tracks/2/keys = {
 "values": [ Vector2( 344, 652.138 ), Vector2( 636.302, 652 ) ]
 }
 
+[sub_resource type="Shader" id=8]
+code = "shader_type canvas_item;
+render_mode unshaded;
+ 
+uniform float circle_size : hint_range(0.0, 1.05);
+uniform float screen_width;
+uniform float screen_height;
+uniform float x_pos : hint_range(0.0, 1.0, 0.01);
+uniform float y_pos :hint_range(0.0, 1.0, 0.01);
+ 
+void fragment() {
+	float ratio = screen_width / screen_height;
+	float dist = distance(vec2(x_pos, y_pos), vec2(mix(0.5, UV.x, ratio), UV.y));
+	COLOR.a = step(circle_size, dist);
+}"
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = SubResource( 8 )
+shader_param/circle_size = 1.05
+shader_param/screen_width = 620.0
+shader_param/screen_height = 1100.0
+shader_param/x_pos = 0.5
+shader_param/y_pos = 0.55
+
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -103,10 +158,11 @@ position = Vector2( 61.457, 599.251 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 3 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Title" type="RichTextLabel" parent="."]
 margin_left = 29.0
+margin_top = 99.0
 margin_right = 732.0
-margin_bottom = 404.0
+margin_bottom = 503.0
 rect_rotation = -15.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = ExtResource( 1 )
@@ -152,9 +208,6 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = ExtResource( 8 )
 text = "0"
 align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ScoreLabel" type="Label" parent="Score2"]
 margin_left = 216.0
@@ -204,10 +257,10 @@ scale = Vector2( 2.77183, 1.33409 )
 normal = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="main"]
-margin_left = 636.302
-margin_top = 652.0
-margin_right = 1091.3
-margin_bottom = 785.0
+margin_left = 344.0
+margin_top = 652.138
+margin_right = 798.998
+margin_bottom = 785.138
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 8 )
 text = "Menu"
@@ -223,9 +276,9 @@ scale = Vector2( 3.24043, 1.50113 )
 normal = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="again"]
-margin_left = 632.0
+margin_left = 260.0
 margin_top = 542.0
-margin_right = 971.0
+margin_right = 599.0
 margin_bottom = 811.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 8 )
@@ -237,7 +290,18 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/In = SubResource( 1 )
+anims/RESET = SubResource( 10 )
+anims/change_scene = SubResource( 3 )
 anims/out = SubResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource( 9 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -24.0
+margin_top = -19.0
+margin_bottom = 8.0
+color = Color( 0, 0, 0, 1 )
 
 [connection signal="pressed" from="main/Main" to="." method="_on_Main_pressed"]
 [connection signal="pressed" from="again/again" to="." method="_on_again_pressed"]

@@ -119,7 +119,7 @@ android {
         manifestPlaceholders = [godotEditorVersion: getGodotEditorVersion()]
         applicationId 'org.sajeg.fallingblocks'
         versionCode 1
-        versionName '1.4'
+        versionName '1.5'
 
         // Feel free to modify the application id to your own.
         minSdkVersion getExportMinSdkVersion()
