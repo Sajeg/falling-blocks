@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="org.sajeg.fallingblocks"
     android:versionCode="1"
-    android:versionName="1.4"
+    android:versionName="1.5"
     android:installLocation="auto" >
 
     <!-- Adding custom text to the manifest is fine, but do it outside the custom USER and APPLICATION BEGIN/END comments, -->
