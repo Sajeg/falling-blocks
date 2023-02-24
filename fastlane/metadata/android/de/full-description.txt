@@ -5,4 +5,6 @@
     * modernes Design
     * Open-Source
     * Werbefrei
-    * Für immer kostenloss
+    * Für immer kostenlos
+    * Dark Mode
+    * Offline spielbar
