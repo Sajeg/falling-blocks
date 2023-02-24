@@ -117,6 +117,8 @@ func _on_Area2D_area_entered(area: Area2D):
 				else:
 					child.play("crash")
 	else:
+		if gameover:
+			return
 		still_touching = true
 		freeze = true
 		yield(get_tree().create_timer(0.1), "timeout")
