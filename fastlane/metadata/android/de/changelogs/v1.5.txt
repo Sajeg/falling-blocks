@@ -1,0 +1,10 @@
+Das Spiel hat nun auch ein Dark Mode. Du kannst den in den einstellungen aktivieren
+
+Verbesserungen:
+- Neue Einstellungs UI
+- UI Verbesserungen
+- Code Verbesserungen
+- Bug behoben
+- Dark Mode hinzu gefügt
+- Besserer Support für verschiedene Bildschirmgrößen
+- Tutorial entfernt, da es dem Standart nicht mehr entsprach
