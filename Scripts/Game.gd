@@ -19,7 +19,7 @@ var is_touching = false
 var still_touching = false
 
 var PlayerX = 310
-var blocks = ["Blocks/Blue", "Blocks/Blue2", "Blocks/Green", "Blocks/Green2", "Blocks/Pink", "Blocks/Pink2"]
+var blocks = ["Blocks/Blue", "Blocks/Blue2", "Blocks/Blue3", "Blocks/Green", "Blocks/Green2", "Blocks/Green3", "Blocks/Pink", "Blocks/Pink2", "Blocks/Pink3"]
 
 func _ready():
 	if G.dark_mode:
@@ -66,41 +66,42 @@ func _ready():
 
 func _process(delta):
 	$Player.position.x = PlayerX
-	if freeze == false:
-		#Controls for the Desktop version
+	if freeze == true:
+		return
+	#Controls for the Desktop version
+	
+	if Input.is_action_just_pressed("left"):
+		PlayerX = pos1
+	if Input.is_action_just_pressed("middle"):
+		PlayerX = pos2
+	if Input.is_action_just_pressed("right"):
+		PlayerX = pos3
+	
+	G.score = score
+	
+	#Displays the Score
+	$UI/Score.text = str(score)
+	
+	
+	for BlockNum in blocks.size():
+		animation(blocks[BlockNum], BlockNum)
 		
-		if Input.is_action_just_pressed("left"):
-			PlayerX = pos1
-		if Input.is_action_just_pressed("middle"):
-			PlayerX = pos2
-		if Input.is_action_just_pressed("right"):
-			PlayerX = pos3
+		#The Script for falling
+		blocks[BlockNum].position.y += speed
 		
-		G.score = score
-		
-		#Displays the Score
-		$UI/Score.text = str(score)
-		
-		
-		for BlockNum in blocks.size():
-			animation(blocks[BlockNum], BlockNum)
-			
-			#The Script for falling
-			blocks[BlockNum].position.y += speed
-			
-			#Detects the postions from the blocks
-			if blocks[BlockNum].position.y > 1400:
-				new_pos(blocks[BlockNum])
-		
-		
-		if score >= 1000 and music_changed == false and bool(G.audio) == true:
-			music_change()
-		
-		if is_touching:
-			if bool(G.vibration) == true:
-				Input.vibrate_handheld(5)
-			score += 1
-			speed += multiplicator
+		#Detects the postions from the blocks
+		if blocks[BlockNum].position.y > 1800:
+			new_pos(blocks[BlockNum])
+	
+	
+	if score >= 1000 and music_changed == false and bool(G.audio) == true:
+		music_change()
+	
+	if is_touching:
+		if bool(G.vibration) == true:
+			Input.vibrate_handheld(5)
+		score += 1
+		speed += multiplicator
 
 func _on_Area2D_area_entered(area: Area2D):
 	if playername == area.name:
@@ -149,8 +150,12 @@ func animation(block: KinematicBody2D, num):
 
 
 func gameover(): #Changes the Game screen to Gameover Screen
+	if gameover:
+		return
+	gameover = true
 	freeze = true
 	$UI/Pause.visible = false
+	$UI/Play.visible = false
 	$Sound/MusicUnder1000.stop()
 	$Sound/MusicOver1000.stop()
 	$UI/Score.visible = false
@@ -159,14 +164,15 @@ func gameover(): #Changes the Game screen to Gameover Screen
 		for BlockNum in blocks.size():
 			blocks[BlockNum].play("idle")
 	
-	gameover = true
+	
 	#Block animation
 	for BlockNum in blocks.size():
 		if G.sounds == true:
 			$Sound/SoundFX.play()
-		for i in 25: 
-			blocks[BlockNum].scale.x += -0.01
-			blocks[BlockNum].scale.y += -0.01
+		for i in 25:
+			if blocks[BlockNum].position.y > 0:
+				blocks[BlockNum].scale.x += -0.01
+				blocks[BlockNum].scale.y += -0.01
 			yield(get_tree().create_timer(0.01), "timeout")
 		blocks[BlockNum].visible = false
 	#Player animation
