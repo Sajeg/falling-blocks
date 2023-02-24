@@ -6,3 +6,5 @@
     * Open-Source
     * Adfree
     * free
+    * Dark Mode
+    * Playable offline
