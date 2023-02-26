@@ -120,10 +120,10 @@ android {
         applicationId 'org.sajeg.fallingblocks'
         versionCode 2
         versionName '1.5'
+        minSdk 19
+        targetSdk 32
 
         // Feel free to modify the application id to your own.
-        minSdkVersion getExportMinSdkVersion()
-        targetSdkVersion getExportTargetSdkVersion()
 
         missingDimensionStrategy 'products', 'template'
 //CHUNK_ANDROID_DEFAULTCONFIG_BEGIN
