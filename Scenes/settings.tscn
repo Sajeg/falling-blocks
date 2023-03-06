@@ -214,8 +214,6 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 3 )
 text = "Settings"
 
-[node name="Credits" type="Node2D" parent="."]
-
 [node name="Back" type="Control" parent="."]
 anchor_left = 0.028
 anchor_top = 0.028
@@ -312,7 +310,7 @@ margin_left = -24.0
 margin_bottom = 8.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="Label" type="Label" parent="."]
+[node name="Credits" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -324,7 +322,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 11 )
 text = "Made by Sajeg with Godot Engine"
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="Label"]
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Credits"]
 position = Vector2( -63.496, -22.2238 )
 scale = Vector2( 6.48976, 1.34725 )
 normal = ExtResource( 8 )
@@ -334,4 +332,4 @@ normal = ExtResource( 8 )
 [connection signal="pressed" from="VBoxContainer/Sound/SoundButton" to="." method="_on_SoundButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/Music/MusicButton" to="." method="_on_MusicButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/Mode/ModeButton" to="." method="_on_ModeButton_pressed"]
-[connection signal="pressed" from="Label/TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]
+[connection signal="pressed" from="Credits/TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]

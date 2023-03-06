@@ -38,7 +38,9 @@ func load_data():
 		return content
 	else:
 		file.open("user://save.fall", File.WRITE)
+		file.store_string("0")
 		file.close()
+		return 0
 
 func load_dead_data():
 	#loads the highscore data in Death mode
