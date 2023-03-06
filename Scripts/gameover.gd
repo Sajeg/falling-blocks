@@ -30,7 +30,7 @@ func end():
 		G.load_data()
 		$Score/Score.text = str(G.score)
 		highscore = G.highscore
-		if highscore < G.score:
+		if int(highscore) < G.score:
 			highscore = G.score
 			save(highscore)
 			G.highscore = highscore
