@@ -1,0 +1,63 @@
+name: Android Upload
+
+on:
+  push:
+    branches:
+    - release/*
+
+env:
+  RELEASE_KEY_STORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+  DEBUG_KEY_STORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_DEBUG_BASE64 }}
+  EXPORT_PRESET_CFG: ${{ secrets.GODOT_EXPORTS_PRESET_CFG }}
+
+
+jobs:
+  compile:
+    runs-on: ubuntu-20.04
+    steps: 
+    - name: Checkout source code
+      uses: actions/checkout@v3
+    
+    - name: Create release keystore
+      run: echo $RELEASE_KEY_STORE_BASE64 | base64 --decode > keystore.keystore
+    
+    - name: Create debug keystore
+      run: echo $DEBUG_KEY_STORE_BASE64 | base64 --decode > debug.keystore
+    
+    - name: Set version number and version code
+      run: |
+          echo "VERSION_NAME=$(cat version | cut -f1 -d-)" >> $GITHUB_ENV
+          echo "VERSION_CODE=$(cat version | cut -f2 -d-)" >> $GITHUB_ENV
+    
+    - name: Create and config export_presets.cfg
+      run: |
+        mv /fdroid/export.cfg $WORKING_DIRECTORY/export_presets.cfg
+        sed -i "s/signed=false/signed=true" $WORKING_DIRECTORY/export_presets.cfg
+        sed -i "s|KEYSTORE_PATH|$GITHUB_WORKSPACE/keystore.keystore|g" $WORKING_DIRECTORY/export_presets.cfg
+        sed -i "s|VERSION_CODE|$VERSION_CODE|g" $WORKING_DIRECTORY/export_presets.cfg
+        sed -i "s|VERSION_NAME|$VERSION_NAME|g" $WORKING_DIRECTORY/export_presets.cfg
+
+    
+    - name: Godot Android Export
+      uses: dulvui/godot-android-export@2f9f5c296119091b3d98c662019ff0c10a0fa974
+      with:
+        working-directory: .
+        godot-version: 3.5.1
+    
+    - name: Bundle aab to apk
+      run: |
+          wget -q https://github.com/google/bundletool/releases/download/1.14.0/bundletool-all-1.14.0.jar
+          java -jar bundletool-all-1.14.0.jar build-apks --bundle=Ball2Box.aab --output=Ball2Box.apks \
+          --ks=keystore.keystore --ks-pass=pass:${{ secrets.ANDROID_STORE_PASSWORD }} --ks-key-alias=${{ secrets.ANDROID_KEYSTORE_ALIAS }} \
+          --key-pass=pass:${{ secrets.ANDROID_KEYSTORE_PASSWORD }} --mode=universal
+          unzip -p fallingblocks.apks universal.apk > fallingblocks.apk
+          
+    - name: Upload binaries to Github release
+      uses: svenstaro/upload-release-action@v2
+      with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./fallingblocks.apk
+          asset_name: fallingblocks.apk
+          tag: "v${{ env.VERSION_NAME }}"
+          overwrite: true
+          body: "Falling Blocks - version: v${{ env.VERSION_NAME }}"      
