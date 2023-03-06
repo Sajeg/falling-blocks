@@ -1,8 +1,4 @@
 # Falling Blocks
----
-⚠️ **ATTENTION** ⚠️
-At the moment the F-Droid version is broken.
----
 [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
     alt="Get it on F-Droid"
     height="80">](https://f-droid.org/packages/org.sajeg.fallingblocks/)
@@ -24,7 +20,7 @@ Falling Blocks is a small mobile Game, where you are a block. There are other bl
 - adfree
 
 ## Screenshots
-<img src="https://github.com/Sajeg/falling-blocks/blob/main/screenshots/screen_1.jpg" title="screenshots_1" alt="Screenshot 1" height="550px" width="310px"><img src="https://github.com/Sajeg/falling-blocks/blob/main/screenshots/screen_2.jpg" title="screenshots_2" alt="Screenshot 2" height="550px" width="310px"><img src="https://github.com/Sajeg/falling-blocks/blob/main/screenshots/death_mode.gif" title="death_mode" alt="death_mode" height="550px" width="310px">
+<img src="https://raw.githubusercontent.com/Sajeg/falling-blocks/main/fastlane/metadata/android/en-US/images/phoneScreenshots/1.jpg" title="screenshots_1" alt="Screenshot 1" height="480px" width="270px"><img src="https://raw.githubusercontent.com/Sajeg/falling-blocks/main/fastlane/metadata/android/en-US/images/phoneScreenshots/2.jpg" title="screenshots_2" alt="Screenshot 2" height="480px" width="270px"><img src="https://raw.githubusercontent.com/Sajeg/falling-blocks/main/fastlane/metadata/android/en-US/images/phoneScreenshots/3.jpg" title="screenshots_3" alt="Screenshot 3" height="480px" width="270px"><img src="https://raw.githubusercontent.com/Sajeg/falling-blocks/main/fastlane/metadata/android/en-US/images/phoneScreenshots/4.jpg" title="screenshots_4" alt="Screenshot 4" height="480px" width="270px">
 
 ## Installation
 ### Android
