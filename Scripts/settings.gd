@@ -97,3 +97,7 @@ func update_Labels():
 
 
 
+
+
+func _on_TouchScreenButton_pressed():
+	OS.shell_open("https://github.com/Sajeg/falling-blocks/")

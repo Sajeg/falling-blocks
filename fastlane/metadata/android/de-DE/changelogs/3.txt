@@ -1,0 +1,14 @@
+Patch v1.5.1:
+Dies ist nur ein kleiner Patch der ein paar Fehler behebt und kleine Verbesserungen hinzufügt.
+
+Änderungen von Version v1.5:
+Das Spiel hat nun auch ein Dark Mode. Du kannst den in den einstellungen aktivieren
+
+Verbesserungen:
+- Neue Einstellungs UI
+- UI Verbesserungen
+- Code Verbesserungen
+- Bug behoben
+- Dark Mode hinzu gefügt
+- Besserer Support für verschiedene Bildschirmgrößen
+- Tutorial entfernt, da es dem Standart nicht mehr entsprach
