@@ -3,6 +3,7 @@ extends Control
 func _ready():
 	if G.dark_mode:
 		$Title.add_color_override("font_color", Color(1,1,1))
+		$Credits.add_color_override("font_color", Color(1,1,1))
 		$VBoxContainer/Vibration.add_color_override("font_color", Color(1,1,1))
 		$VBoxContainer/Music.add_color_override("font_color", Color(1,1,1))
 		$VBoxContainer/Sound.add_color_override("font_color", Color(1,1,1))
@@ -17,6 +18,7 @@ func _ready():
 		$BlockPink2.set_texture(preload("res://Assets/BlockPinkDark.png"))
 	else:
 		$Title.add_color_override("font_color", Color(0,0,0))
+		$Credits.add_color_override("font_color", Color(0,0,0))
 		$VBoxContainer/Music.add_color_override("font_color", Color(0,0,0))
 		$VBoxContainer/Sound.add_color_override("font_color", Color(0,0,0))
 		$VBoxContainer/Vibration.add_color_override("font_color", Color(0,0,0))
