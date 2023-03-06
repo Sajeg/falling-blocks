@@ -529,9 +529,6 @@ custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = ExtResource( 1 )
 text = "Falling
 	Blocks"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 5 )
@@ -636,6 +633,7 @@ normal = ExtResource( 6 )
 pressed = ExtResource( 6 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 material = SubResource( 7 )
 anchor_right = 1.0
 anchor_bottom = 1.0

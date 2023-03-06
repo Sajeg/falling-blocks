@@ -15,6 +15,7 @@ var path = "user://settings.cfg"
 
 func _ready():
 	#system = OS.get_name()
+	$ColorRect.visible = true
 	mode()
 	
 	$ColorRect.material.set_shader_param("screen_width", $ColorRect.rect_size.x)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/settings.gd" type="Script" id=1]
 [ext_resource path="res://Assets/angle-left-solid.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/BlockBlue.png" type="Texture" id=6]
 [ext_resource path="res://FontData/Text.tres" type="DynamicFont" id=7]
 [ext_resource path="res://Assets/nothing.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Fonts/Neu/RobotoSlab-Medium.ttf" type="DynamicFontData" id=9]
 
 [sub_resource type="Animation" id=7]
 length = 0.001
@@ -151,6 +152,10 @@ shader_param/screen_width = 620.0
 shader_param/screen_height = 1100.0
 shader_param/x_pos = 0.0
 shader_param/y_pos = 0.63
+
+[sub_resource type="DynamicFont" id=11]
+size = 32
+font_data = ExtResource( 9 )
 
 [node name="settings" type="Control"]
 anchor_right = 1.0
@@ -306,6 +311,18 @@ anchor_bottom = 1.0
 margin_left = -24.0
 margin_bottom = 8.0
 color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -253.0
+margin_top = -60.0
+margin_right = 253.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "Made by Sajeg with Godot Engine"
 
 [connection signal="pressed" from="Back/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="VBoxContainer/Vibration/VibrationButton" to="." method="_on_VibrationButton_pressed"]
