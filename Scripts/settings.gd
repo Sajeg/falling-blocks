@@ -8,6 +8,13 @@ func _ready():
 		$VBoxContainer/Sound.add_color_override("font_color", Color(1,1,1))
 		$VBoxContainer/Mode.add_color_override("font_color", Color(1,1,1))
 		$Back/Back.set_texture(preload("res://Assets/angle-left-solid_light.png"))
+		
+		$BlockBlue.set_texture(preload("res://Assets/BlockBlueDark.png"))
+		$BlockBlue2.set_texture(preload("res://Assets/BlockBlueDark.png"))
+		$BlockGreen.set_texture(preload("res://Assets/BlockGreenDark.png"))
+		$BlockGreen2.set_texture(preload("res://Assets/BlockGreenDark.png"))
+		$BlockPink.set_texture(preload("res://Assets/BlockPinkDark.png"))
+		$BlockPink2.set_texture(preload("res://Assets/BlockPinkDark.png"))
 	else:
 		$Title.add_color_override("font_color", Color(0,0,0))
 		$VBoxContainer/Music.add_color_override("font_color", Color(0,0,0))
@@ -15,6 +22,13 @@ func _ready():
 		$VBoxContainer/Vibration.add_color_override("font_color", Color(0,0,0))
 		$VBoxContainer/Mode.add_color_override("font_color", Color(0,0,0))
 		$Back/Back.set_texture(preload("res://Assets/angle-left-solid.png"))
+		
+		$BlockBlue.set_texture(preload("res://Assets/BlockBlue.png"))
+		$BlockBlue2.set_texture(preload("res://Assets/BlockBlue.png"))
+		$BlockGreen.set_texture(preload("res://Assets/BlockGreen.png"))
+		$BlockGreen2.set_texture(preload("res://Assets/BlockGreen.png"))
+		$BlockPink.set_texture(preload("res://Assets/BlockPink.png"))
+		$BlockPink2.set_texture(preload("res://Assets/BlockPink.png"))
 	
 	$AnimationPlayer.play("start")
 	update_Labels()
