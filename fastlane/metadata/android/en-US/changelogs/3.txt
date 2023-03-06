@@ -1,0 +1,14 @@
+Patch v1.5.1:
+This is only a small patch, which fixes some small issues.
+
+Changelog v1.5:
+Now the Game has also a Dark mode. You can turn it on in the settings.
+
+improvements:
+- New Settings UI
+- Tweaked the UI
+- Code improvements
+- better Support for different screen sizes
+- fixed some bugs
+- added a Dark mode
+- removed tutorial, because it was at low quality
