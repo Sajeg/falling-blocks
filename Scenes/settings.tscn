@@ -324,8 +324,14 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 11 )
 text = "Made by Sajeg with Godot Engine"
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Label"]
+position = Vector2( -63.496, -22.2238 )
+scale = Vector2( 6.48976, 1.34725 )
+normal = ExtResource( 8 )
+
 [connection signal="pressed" from="Back/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="VBoxContainer/Vibration/VibrationButton" to="." method="_on_VibrationButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/Sound/SoundButton" to="." method="_on_SoundButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/Music/MusicButton" to="." method="_on_MusicButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/Mode/ModeButton" to="." method="_on_ModeButton_pressed"]
+[connection signal="pressed" from="Label/TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]
