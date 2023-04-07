@@ -32,6 +32,8 @@ func _ready():
 		$BlockPink.set_texture(preload("res://Assets/BlockPink.png"))
 		$BlockPink2.set_texture(preload("res://Assets/BlockPink.png"))
 	
+	if G.fdroid_version:
+		$VBoxContainer/Vibration.queue_free()
 	$AnimationPlayer.play("start")
 	update_Labels()
 
