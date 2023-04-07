@@ -11,6 +11,7 @@ export var audio = true
 export var vibration = true
 export var sounds = true
 export var dark_mode = false
+export var fdroid_version = true
 var path = "user://settings.cfg"
 
 func _ready():
@@ -25,6 +26,8 @@ func _ready():
 	dead_highscore = load_dead_data()
 	load_settings()
 	yield(get_tree().create_timer(0.3), "timeout")
+	if fdroid_version:
+		vibration == false
 	$AnimationPlayer.play("in")
 
 func load_data(): 
