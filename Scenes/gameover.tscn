@@ -1,9 +1,7 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://FontData/Title.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Assets/BlockBlue.png" type="Texture" id=3]
-[ext_resource path="res://Assets/BlockGreen.png" type="Texture" id=4]
-[ext_resource path="res://Assets/BlockPink.png" type="Texture" id=5]
+[ext_resource path="res://Assets/BlockWhite.svg" type="Texture" id=2]
 [ext_resource path="res://Scripts/gameover.gd" type="Script" id=6]
 [ext_resource path="res://Assets/nothing.png" type="Texture" id=7]
 [ext_resource path="res://FontData/Text_menu.tres" type="DynamicFont" id=8]
@@ -153,10 +151,46 @@ margin_right = -7.30811
 margin_bottom = -4.49487
 script = ExtResource( 6 )
 
+[node name="BlockGreen" type="Sprite" parent="."]
+modulate = Color( 0.682353, 0.909804, 0.505882, 1 )
+position = Vector2( -297.414, 1394.41 )
+scale = Vector2( 0.37, 0.37 )
+texture = ExtResource( 2 )
+offset = Vector2( 687.5, -670 )
+
+[node name="BlockGreen2" type="Sprite" parent="."]
+modulate = Color( 0.682353, 0.909804, 0.505882, 1 )
+position = Vector2( 432.586, 857.414 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 2 )
+offset = Vector2( 687.5, -670 )
+
 [node name="BlockBlue" type="Sprite" parent="."]
-position = Vector2( 61.457, 599.251 )
+modulate = Color( 0.509804, 0.717647, 0.909804, 1 )
+position = Vector2( -208.414, 867.414 )
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
+offset = Vector2( 687.5, -670 )
+
+[node name="BlockBlue2" type="Sprite" parent="."]
+modulate = Color( 0.509804, 0.717647, 0.909804, 1 )
+position = Vector2( 503.586, 1333.41 )
+scale = Vector2( 0.27, 0.27 )
+texture = ExtResource( 2 )
+
+[node name="BlockPink" type="Sprite" parent="."]
+modulate = Color( 0.858824, 0.505882, 0.909804, 1 )
+position = Vector2( 150.586, 1151.41 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 2 )
+offset = Vector2( 687.5, -670 )
+
+[node name="BlockPink2" type="Sprite" parent="."]
+modulate = Color( 0.858824, 0.505882, 0.909804, 1 )
+position = Vector2( -163.414, 1813.41 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 2 )
+offset = Vector2( 687.5, -670 )
 
 [node name="Title" type="RichTextLabel" parent="."]
 margin_left = 29.0
@@ -172,31 +206,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BlockGreen2" type="Sprite" parent="."]
-position = Vector2( 638.759, 656.268 )
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 4 )
-
-[node name="BlockPink" type="Sprite" parent="."]
-position = Vector2( 323.658, 983.267 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 5 )
-
-[node name="BlockGreen3" type="Sprite" parent="."]
-position = Vector2( -35.2991, 1153.94 )
-scale = Vector2( 0.363122, 0.384176 )
-texture = ExtResource( 4 )
-
-[node name="BlockBlue2" type="Sprite" parent="."]
-position = Vector2( 491.09, 1323.71 )
-scale = Vector2( 0.261131, 0.28324 )
-texture = ExtResource( 3 )
-
-[node name="BlockPink2" type="Sprite" parent="."]
-position = Vector2( 114.088, 1543.9 )
-scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 5 )
-
 [node name="Score2" type="Node2D" parent="."]
 
 [node name="Score" type="Label" parent="Score2"]
@@ -210,10 +219,10 @@ text = "0"
 align = 1
 
 [node name="ScoreLabel" type="Label" parent="Score2"]
-margin_left = 216.0
+margin_left = 228.0
 margin_top = 882.0
-margin_right = 431.0
-margin_bottom = 959.0
+margin_right = 443.0
+margin_bottom = 962.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = ExtResource( 9 )
 text = "Record"
@@ -233,9 +242,6 @@ custom_fonts/font = ExtResource( 8 )
 text = "1000
 "
 align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ScoreLabel" type="Label" parent="Score"]
 margin_left = 4.0
@@ -252,41 +258,35 @@ __meta__ = {
 [node name="main" type="Node2D" parent="."]
 
 [node name="Main" type="TouchScreenButton" parent="main"]
-position = Vector2( 362.619, 680.647 )
+position = Vector2( 350, 680.647 )
 scale = Vector2( 2.77183, 1.33409 )
 normal = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="main"]
-margin_left = 344.0
+margin_left = 350.0
 margin_top = 652.138
-margin_right = 798.998
+margin_right = 804.997
 margin_bottom = 785.138
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 8 )
 text = "Menu"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="again" type="Node2D" parent="."]
 
 [node name="again" type="TouchScreenButton" parent="again"]
-position = Vector2( 291.56, 561.372 )
-scale = Vector2( 3.24043, 1.50113 )
+position = Vector2( 280, 561.372 )
+scale = Vector2( 3.6, 1.501 )
 normal = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="again"]
-margin_left = 260.0
+margin_left = 280.0
 margin_top = 542.0
-margin_right = 599.0
+margin_right = 619.0
 margin_bottom = 811.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 8 )
 text = "Restart
 "
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/In = SubResource( 1 )

@@ -1,11 +1,9 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/settings.gd" type="Script" id=1]
 [ext_resource path="res://Assets/angle-left-solid.png" type="Texture" id=2]
 [ext_resource path="res://FontData/Title.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Assets/BlockGreen.png" type="Texture" id=4]
-[ext_resource path="res://Assets/BlockPink.png" type="Texture" id=5]
-[ext_resource path="res://Assets/BlockBlue.png" type="Texture" id=6]
+[ext_resource path="res://Assets/BlockWhite.svg" type="Texture" id=4]
 [ext_resource path="res://FontData/Text.tres" type="DynamicFont" id=7]
 [ext_resource path="res://Assets/nothing.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Fonts/Neu/RobotoSlab-Medium.ttf" type="DynamicFontData" id=9]
@@ -165,44 +163,46 @@ margin_right = 0.890869
 rect_pivot_offset = Vector2( -731.955, -77.3008 )
 script = ExtResource( 1 )
 
-[node name="BlockGreen2" type="Sprite" parent="."]
-position = Vector2( -35.2991, 1153.94 )
-scale = Vector2( 0.363122, 0.384176 )
-texture = ExtResource( 4 )
-
-[node name="BlockBlue2" type="Sprite" parent="."]
-position = Vector2( 491.09, 1323.71 )
-scale = Vector2( 0.261131, 0.28324 )
-texture = ExtResource( 6 )
-
-[node name="BlockPink2" type="Sprite" parent="."]
-position = Vector2( 114.088, 1543.9 )
-scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 5 )
-
 [node name="BlockGreen" type="Sprite" parent="."]
-position = Vector2( 638.759, 656.268 )
+modulate = Color( 0.682353, 0.909804, 0.505882, 1 )
+position = Vector2( -297.414, 1394.41 )
+scale = Vector2( 0.37, 0.37 )
+texture = ExtResource( 4 )
+offset = Vector2( 687.5, -670 )
+
+[node name="BlockGreen2" type="Sprite" parent="."]
+modulate = Color( 0.682353, 0.909804, 0.505882, 1 )
+position = Vector2( 432.586, 857.414 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
+offset = Vector2( 687.5, -670 )
 
 [node name="BlockBlue" type="Sprite" parent="."]
-position = Vector2( 61.457, 599.251 )
+modulate = Color( 0.509804, 0.717647, 0.909804, 1 )
+position = Vector2( -208.414, 867.414 )
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 6 )
-__meta__ = {
-"_edit_lock_": true
-}
+texture = ExtResource( 4 )
+offset = Vector2( 687.5, -670 )
+
+[node name="BlockBlue2" type="Sprite" parent="."]
+modulate = Color( 0.509804, 0.717647, 0.909804, 1 )
+position = Vector2( 503.586, 1333.41 )
+scale = Vector2( 0.27, 0.27 )
+texture = ExtResource( 4 )
 
 [node name="BlockPink" type="Sprite" parent="."]
-position = Vector2( 323.658, 983.267 )
+modulate = Color( 0.858824, 0.505882, 0.909804, 1 )
+position = Vector2( 150.586, 1151.41 )
 scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 5 )
-__meta__ = {
-"_edit_lock_": true
-}
+texture = ExtResource( 4 )
+offset = Vector2( 687.5, -670 )
+
+[node name="BlockPink2" type="Sprite" parent="."]
+modulate = Color( 0.858824, 0.505882, 0.909804, 1 )
+position = Vector2( -163.414, 1813.41 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 4 )
+offset = Vector2( 687.5, -670 )
 
 [node name="Title" type="Label" parent="."]
 margin_left = 7.93695
