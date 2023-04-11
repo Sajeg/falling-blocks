@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg2"
+   width="998"
+   height="928"
+   viewBox="0 0 998 928"
+   sodipodi:docname="BlockWhite.svg"
+   inkscape:export-filename="..\..\..\..\Pictures\BlockWhite.png"
+   inkscape:export-xdpi="100"
+   inkscape:export-ydpi="100"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1054"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,100,0,1 @ F,0,0,1,0,100,0,1 @ F,0,0,1,0,100,0,1 @ F,0,0,1,0,100,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="100"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.85642086"
+     inkscape:cx="406.34228"
+     inkscape:cy="171.64458"
+     inkscape:current-layer="g8" />
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g8">
+    <path
+       id="rect845"
+       d="M 100,0 H 898 A 100,100 45 0 1 998,100 V 828 A 100,100 135 0 1 898,928 H 100 A 100,100 45 0 1 0,828 V 100 A 100,100 135 0 1 100,0 Z"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:24;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:64.8;stroke-opacity:0.423729;paint-order:markers fill stroke;stop-color:#000000" />
+  </g>
+</svg>
