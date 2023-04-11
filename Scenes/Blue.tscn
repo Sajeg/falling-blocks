@@ -1,10 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Assets/BlockBlue.png" type="Texture" id=1]
 [ext_resource path="res://Assets/nothing.png" type="Texture" id=2]
-[ext_resource path="res://Assets/BlockBlueCrash.png" type="Texture" id=3]
-[ext_resource path="res://Assets/BlockBlueCrashDark.png" type="Texture" id=4]
-[ext_resource path="res://Assets/BlockBlueDark.png" type="Texture" id=5]
+[ext_resource path="res://Assets/BlockWhiteCrash.svg" type="Texture" id=3]
+[ext_resource path="res://Assets/BlockWhite.svg" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "crash"
@@ -35,7 +33,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ), ExtResource( 2 ) ]
+"values": [ ExtResource( 3 ), ExtResource( 2 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -52,7 +50,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 6 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -69,7 +67,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 6 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -85,7 +83,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ), ExtResource( 2 ) ]
+"values": [ ExtResource( 6 ), ExtResource( 2 ) ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -101,7 +99,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ), ExtResource( 2 ) ]
+"values": [ ExtResource( 6 ), ExtResource( 2 ) ]
 }
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -113,8 +111,9 @@ extents = Vector2( 99.6093, 92.7088 )
 [node name="Blue" type="KinematicBody2D"]
 
 [node name="BlockBlue" type="Sprite" parent="."]
+modulate = Color( 0.509804, 0.717647, 0.909804, 1 )
 scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/crash = SubResource( 1 )

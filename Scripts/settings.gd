@@ -10,12 +10,12 @@ func _ready():
 		$VBoxContainer/Mode.add_color_override("font_color", Color(1,1,1))
 		$Back/Back.set_texture(preload("res://Assets/angle-left-solid_light.png"))
 		
-		$BlockBlue.set_texture(preload("res://Assets/BlockBlueDark.png"))
-		$BlockBlue2.set_texture(preload("res://Assets/BlockBlueDark.png"))
-		$BlockGreen.set_texture(preload("res://Assets/BlockGreenDark.png"))
-		$BlockGreen2.set_texture(preload("res://Assets/BlockGreenDark.png"))
-		$BlockPink.set_texture(preload("res://Assets/BlockPinkDark.png"))
-		$BlockPink2.set_texture(preload("res://Assets/BlockPinkDark.png"))
+		$BlockBlue.modulate = Color("3F7CB4")
+		$BlockBlue2.modulate = Color("3F7CB4")
+		$BlockGreen.modulate = Color("81C24E")
+		$BlockGreen2.modulate = Color("81C24E")
+		$BlockPink.modulate = Color("A842B7")
+		$BlockPink2.modulate = Color("A842B7")
 	else:
 		$Title.add_color_override("font_color", Color(0,0,0))
 		$Credits.add_color_override("font_color", Color(0,0,0))
@@ -25,12 +25,12 @@ func _ready():
 		$VBoxContainer/Mode.add_color_override("font_color", Color(0,0,0))
 		$Back/Back.set_texture(preload("res://Assets/angle-left-solid.png"))
 		
-		$BlockBlue.set_texture(preload("res://Assets/BlockBlue.png"))
-		$BlockBlue2.set_texture(preload("res://Assets/BlockBlue.png"))
-		$BlockGreen.set_texture(preload("res://Assets/BlockGreen.png"))
-		$BlockGreen2.set_texture(preload("res://Assets/BlockGreen.png"))
-		$BlockPink.set_texture(preload("res://Assets/BlockPink.png"))
-		$BlockPink2.set_texture(preload("res://Assets/BlockPink.png"))
+		$BlockBlue.modulate = Color("82B7E8")
+		$BlockBlue2.modulate = Color("82B7E8")
+		$BlockGreen.modulate = Color("AEE881")
+		$BlockGreen2.modulate = Color("AEE881")
+		$BlockPink.modulate = Color("DB81E8")
+		$BlockPink2.modulate = Color("DB81E8")
 	
 	if G.fdroid_version:
 		$VBoxContainer/Vibration.queue_free()

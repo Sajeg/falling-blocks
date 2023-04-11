@@ -86,12 +86,12 @@ func mode():
 		$UI/Selection/Mode/Death/LabelModeDeath.add_color_override("font_color", Color(1,1,1))
 		$UI/Selection/Mode/Normal/LabelModeNormal.add_color_override("font_color", Color(1,1,1))
 		
-		$BlockBlue.set_texture(preload("res://Assets/BlockBlueDark.png"))
-		$BlockBlue2.set_texture(preload("res://Assets/BlockBlueDark.png"))
-		$BlockGreen.set_texture(preload("res://Assets/BlockGreenDark.png"))
-		$BlockGreen2.set_texture(preload("res://Assets/BlockGreenDark.png"))
-		$BlockPink.set_texture(preload("res://Assets/BlockPinkDark.png"))
-		$BlockPink2.set_texture(preload("res://Assets/BlockPinkDark.png"))
+		$BlockBlue.modulate = Color("3F7CB4")
+		$BlockBlue2.modulate = Color("3F7CB4")
+		$BlockGreen.modulate = Color("81C24E")
+		$BlockGreen2.modulate = Color("81C24E")
+		$BlockPink.modulate = Color("A842B7")
+		$BlockPink2.modulate = Color("A842B7")
 		$UI/settings/gear.set_texture(preload("res://Assets/gear_light.png"))
 	else:
 		VisualServer.set_default_clear_color(Color(1,1,1))
@@ -101,12 +101,12 @@ func mode():
 		$UI/Selection/Mode/Death/LabelModeDeath.add_color_override("font_color", Color(0,0,0))
 		$UI/Selection/Mode/Normal/LabelModeNormal.add_color_override("font_color", Color(0,0,0))
 		
-		$BlockBlue.set_texture(preload("res://Assets/BlockBlue.png"))
-		$BlockBlue2.set_texture(preload("res://Assets/BlockBlue.png"))
-		$BlockGreen.set_texture(preload("res://Assets/BlockGreen.png"))
-		$BlockGreen2.set_texture(preload("res://Assets/BlockGreen.png"))
-		$BlockPink.set_texture(preload("res://Assets/BlockPink.png"))
-		$BlockPink2.set_texture(preload("res://Assets/BlockPink.png"))
+		$BlockBlue.modulate = Color("82B7E8")
+		$BlockBlue2.modulate = Color("82B7E8")
+		$BlockGreen.modulate = Color("AEE881")
+		$BlockGreen2.modulate = Color("AEE881")
+		$BlockPink.modulate = Color("DB81E8")
+		$BlockPink2.modulate = Color("DB81E8")
 		$UI/settings/gear.set_texture(preload("res://Assets/gear.png"))
 
 
