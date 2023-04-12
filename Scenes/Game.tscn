@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Blue.tscn" type="PackedScene" id=2]
@@ -13,18 +13,8 @@
 [ext_resource path="res://Assets/pause.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Music/Song04.wav" type="AudioStream" id=12]
 [ext_resource path="res://Assets/Music/Be Faste.wav" type="AudioStream" id=13]
-[ext_resource path="res://Assets/BlockGreenCrash.png" type="Texture" id=14]
-[ext_resource path="res://Assets/BlockPinkCrash.png" type="Texture" id=15]
-[ext_resource path="res://Assets/BlockPinkCrashDark.png" type="Texture" id=16]
-[ext_resource path="res://Assets/BlockBlueCrash.png" type="Texture" id=17]
-[ext_resource path="res://Assets/BlockBlueCrashDark.png" type="Texture" id=18]
-[ext_resource path="res://Assets/BlockGreenCrashDark.png" type="Texture" id=19]
-[ext_resource path="res://Assets/BlockPink.png" type="Texture" id=20]
-[ext_resource path="res://Assets/BlockGreen.png" type="Texture" id=21]
-[ext_resource path="res://Assets/BlockBlue.png" type="Texture" id=22]
-[ext_resource path="res://Assets/BlockGreenDark.png" type="Texture" id=23]
-[ext_resource path="res://Assets/BlockBlueDark.png" type="Texture" id=24]
-[ext_resource path="res://Assets/BlockPinkDark.png" type="Texture" id=25]
+[ext_resource path="res://Assets/BlockWhiteCrash.svg" type="Texture" id=14]
+[ext_resource path="res://Assets/BlockWhite.svg" type="Texture" id=26]
 
 [sub_resource type="Animation" id=2]
 resource_name = "crash"
@@ -39,23 +29,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ), ExtResource( 7 ) ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "crash_dark"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("BlockPink:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 16 ), ExtResource( 7 ) ]
+"values": [ ExtResource( 14 ), ExtResource( 7 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -71,24 +45,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 20 ) ]
-}
-
-[sub_resource type="Animation" id=5]
-resource_name = "idle_dark"
-length = 0.5
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("BlockPink:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 25 ) ]
+"values": [ ExtResource( 26 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -103,23 +60,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 20 ), ExtResource( 7 ) ]
-}
-
-[sub_resource type="Animation" id=7]
-resource_name = "special_dark"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("BlockPink:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 25 ), ExtResource( 7 ) ]
+"values": [ ExtResource( 26 ), ExtResource( 7 ) ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -138,22 +79,6 @@ tracks/0/keys = {
 "values": [ ExtResource( 14 ), ExtResource( 7 ) ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "crash_dark"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("BlockGreen:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 19 ), ExtResource( 7 ) ]
-}
-
 [sub_resource type="Animation" id=10]
 length = 0.5
 loop = true
@@ -167,24 +92,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 21 ) ]
-}
-
-[sub_resource type="Animation" id=11]
-resource_name = "idle_dark"
-length = 0.5
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("BlockGreen:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 23 ) ]
+"values": [ ExtResource( 26 ) ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -199,23 +107,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ), ExtResource( 21 ) ]
-}
-
-[sub_resource type="Animation" id=13]
-resource_name = "special_dark"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("BlockGreen:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 7 ), ExtResource( 23 ) ]
+"values": [ ExtResource( 7 ), ExtResource( 26 ) ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -231,23 +123,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 17 ), ExtResource( 7 ) ]
-}
-
-[sub_resource type="Animation" id=15]
-resource_name = "crash_dark"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("BlockBlue:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 18 ), ExtResource( 7 ) ]
+"values": [ ExtResource( 14 ), ExtResource( 7 ) ]
 }
 
 [sub_resource type="Animation" id=16]
@@ -264,24 +140,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 22 ) ]
-}
-
-[sub_resource type="Animation" id=17]
-resource_name = "idle_dark"
-length = 0.5
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("BlockBlue:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 24 ) ]
+"values": [ ExtResource( 26 ) ]
 }
 
 [sub_resource type="Animation" id=18]
@@ -297,23 +156,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 22 ), ExtResource( 7 ) ]
-}
-
-[sub_resource type="Animation" id=19]
-resource_name = "special_dark"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("BlockBlue:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 24 ), ExtResource( 7 ) ]
+"values": [ ExtResource( 26 ), ExtResource( 7 ) ]
 }
 
 [sub_resource type="Animation" id=1]
@@ -377,48 +220,27 @@ script = ExtResource( 1 )
 [node name="Pink3" parent="Blocks" instance=ExtResource( 3 )]
 position = Vector2( 536.737, -1220 )
 
-[node name="BlockPink" parent="Blocks/Pink3" index="0"]
-texture = ExtResource( 15 )
-
 [node name="AnimationPlayer" parent="Blocks/Pink3" index="1"]
 anims/crash = SubResource( 2 )
-anims/crash_dark = SubResource( 3 )
 anims/idle = SubResource( 4 )
-anims/idle_dark = SubResource( 5 )
 anims/special = SubResource( 6 )
-anims/special_dark = SubResource( 7 )
 
 [node name="Pink2" parent="Blocks" instance=ExtResource( 3 )]
 position = Vector2( 310, 20 )
 
-[node name="BlockPink" parent="Blocks/Pink2" index="0"]
-texture = ExtResource( 15 )
-
 [node name="Pink" parent="Blocks" instance=ExtResource( 3 )]
 position = Vector2( 520, -580 )
-
-[node name="BlockPink" parent="Blocks/Pink" index="0"]
-texture = ExtResource( 15 )
 
 [node name="Green3" parent="Blocks" instance=ExtResource( 4 )]
 position = Vector2( 315.712, -1440 )
 
-[node name="BlockGreen" parent="Blocks/Green3" index="0"]
-texture = ExtResource( 14 )
-
 [node name="AnimationPlayer" parent="Blocks/Green3" index="1"]
 anims/crash = SubResource( 8 )
-anims/crash_dark = SubResource( 9 )
 anims/idle = SubResource( 10 )
-anims/idle_dark = SubResource( 11 )
 anims/special = SubResource( 12 )
-anims/special_dark = SubResource( 13 )
 
 [node name="Green2" parent="Blocks" instance=ExtResource( 4 )]
 position = Vector2( 520, -180 )
-
-[node name="BlockGreen" parent="Blocks/Green2" index="0"]
-texture = ExtResource( 14 )
 
 [node name="Green" parent="Blocks" instance=ExtResource( 4 )]
 position = Vector2( 310, -780 )
@@ -428,11 +250,8 @@ position = Vector2( 102.245, -1660 )
 
 [node name="AnimationPlayer" parent="Blocks/Blue3" index="1"]
 anims/crash = SubResource( 14 )
-anims/crash_dark = SubResource( 15 )
 anims/idle = SubResource( 16 )
-anims/idle_dark = SubResource( 17 )
 anims/special = SubResource( 18 )
-anims/special_dark = SubResource( 19 )
 
 [node name="Blue2" parent="Blocks" instance=ExtResource( 2 )]
 position = Vector2( 100, -380 )
