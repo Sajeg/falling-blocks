@@ -130,10 +130,7 @@ func _on_Area2D_area_entered(area: Area2D):
 		is_touching = true
 		for child in area.get_parent().get_children():
 			if child is AnimationPlayer:
-				if G.dark_mode:
-					child.play("crash_dark")
-				else:
-					child.play("crash")
+				child.play("crash")
 	else:
 		if gameover:
 			return
@@ -155,18 +152,11 @@ func animation(block: KinematicBody2D, num):
 	#animation script
 	for child in block.get_children():
 		if child is AnimationPlayer:
-			if G.dark_mode:
-				if G.mode_dead == false:
-					if child.current_animation != "crash_dark":
-						child.play("idle_dark")
-				else:
-					child.play("special_dark")
+			if G.mode_dead == false:
+				if child.current_animation != "crash":
+					child.play("idle")
 			else:
-				if G.mode_dead == false:
-					if child.current_animation != "crash":
-						child.play("idle")
-				else:
-					child.play("special")
+				child.play("special")
 
 
 func gameover(): #Changes the Game screen to Gameover Screen
@@ -233,10 +223,7 @@ func new_pos(Block):
 	
 	for child in Block.get_children():
 		if child is AnimationPlayer:
-			if G.dark_mode:
-				child.play("idle_dark")
-			else:
-				child.play("idle")
+			child.play("idle")
 
 
 
