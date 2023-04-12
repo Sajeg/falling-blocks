@@ -25,19 +25,37 @@ func _ready():
 	if G.dark_mode:
 		$UI/Score.add_color_override("font_color", Color(1,1,1))
 		
-		$Player/BlockBlue.set_texture(preload("res://Assets/BlockBlueDark.png"))
-		$Player/BlockGreen.set_texture(preload("res://Assets/BlockGreenDark.png"))
-		$Player/BlockPink.set_texture(preload("res://Assets/BlockPinkDark.png"))
+		$Player/BlockBlue.modulate = Color("3F7CB4")
+		$Player/BlockGreen.modulate = Color("81C24E")
+		$Player/BlockPink.modulate = Color("A842B7")
 		$UI/Pause/pause.set_texture(preload("res://Assets/pause_light.png"))
 		$UI/Play/play2.set_texture(preload("res://Assets/play1_light.png"))
+		$Blocks/Blue/BlockBlue.modulate = Color("3F7CB4")
+		$Blocks/Blue2/BlockBlue.modulate = Color("3F7CB4")
+		$Blocks/Blue3/BlockBlue.modulate = Color("3F7CB4")
+		$Blocks/Green/BlockGreen.modulate = Color("81C24E")
+		$Blocks/Green2/BlockGreen.modulate = Color("81C24E")
+		$Blocks/Green3/BlockGreen.modulate = Color("81C24E")
+		$Blocks/Pink/BlockPink.modulate = Color("A842B7")
+		$Blocks/Pink2/BlockPink.modulate = Color("A842B7")
+		$Blocks/Pink3/BlockPink.modulate = Color("A842B7")
 	else:
 		$UI/Score.add_color_override("font_color", Color(0,0,0))
 		
-		$Player/BlockBlue.set_texture(preload("res://Assets/BlockBlue.png"))
-		$Player/BlockGreen.set_texture(preload("res://Assets/BlockGreen.png"))
-		$Player/BlockPink.set_texture(preload("res://Assets/BlockPink.png"))
+		$Player/BlockBlue.modulate = Color("82B7E8")
+		$Player/BlockGreen.modulate = Color("AEE881")
+		$Player/BlockPink.modulate = Color("DB81E8")
 		$UI/Pause/pause.set_texture(preload("res://Assets/pause.png"))
 		$UI/Play/play2.set_texture(preload("res://Assets/play1.png"))
+		$Blocks/Blue/BlockBlue.modulate = Color("82B7E8")
+		$Blocks/Blue2/BlockBlue.modulate = Color("82B7E8")
+		$Blocks/Blue3/BlockBlue.modulate = Color("82B7E8")
+		$Blocks/Green/BlockGreen.modulate = Color("AEE881")
+		$Blocks/Green2/BlockGreen.modulate = Color("AEE881")
+		$Blocks/Green3/BlockGreen.modulate = Color("AEE881")
+		$Blocks/Pink/BlockPink.modulate = Color("DB81E8")
+		$Blocks/Pink2/BlockPink.modulate = Color("DB81E8")
+		$Blocks/Pink3/BlockPink.modulate = Color("DB81E8")
 	if G.system == "Windows" or "X11":
 		speed = 3
 		multiplicator = 0.005
@@ -112,10 +130,7 @@ func _on_Area2D_area_entered(area: Area2D):
 		is_touching = true
 		for child in area.get_parent().get_children():
 			if child is AnimationPlayer:
-				if G.dark_mode:
-					child.play("crash_dark")
-				else:
-					child.play("crash")
+				child.play("crash")
 	else:
 		if gameover:
 			return
@@ -137,18 +152,11 @@ func animation(block: KinematicBody2D, num):
 	#animation script
 	for child in block.get_children():
 		if child is AnimationPlayer:
-			if G.dark_mode:
-				if G.mode_dead == false:
-					if child.current_animation != "crash_dark":
-						child.play("idle_dark")
-				else:
-					child.play("special_dark")
+			if G.mode_dead == false:
+				if child.current_animation != "crash":
+					child.play("idle")
 			else:
-				if G.mode_dead == false:
-					if child.current_animation != "crash":
-						child.play("idle")
-				else:
-					child.play("special")
+				child.play("special")
 
 
 func gameover(): #Changes the Game screen to Gameover Screen
@@ -215,10 +223,7 @@ func new_pos(Block):
 	
 	for child in Block.get_children():
 		if child is AnimationPlayer:
-			if G.dark_mode:
-				child.play("idle_dark")
-			else:
-				child.play("idle")
+			child.play("idle")
 
 
 
