@@ -79,10 +79,11 @@ func _on_ModeButton_pressed():
 
 func update_Labels():
 	print("update")
-	if G.vibration:
-		$VBoxContainer/Vibration.text = "Vibration: ON"
-	else:
-		$VBoxContainer/Vibration.text = "Vibration: OFF"
+	if get_node_or_null("$VBoxContainer/Vibration"):
+		if G.vibration:
+			$VBoxContainer/Vibration.text = "Vibration: ON"
+		else:
+			$VBoxContainer/Vibration.text = "Vibration: OFF"
 	
 	if G.audio:
 		$VBoxContainer/Music.text = "Music: ON"
