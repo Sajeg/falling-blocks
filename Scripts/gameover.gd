@@ -3,27 +3,25 @@ extends Control
 var highscore = G.highscore
 
 func _ready():
+	$BlockBlue.modulate = Color8(G.block0[0], G.block0[1], G.block0[2])
+	$BlockBlue2.modulate = Color8(G.block0[0], G.block0[1], G.block0[2])
+	$BlockGreen.modulate = Color8(G.block1[0], G.block1[1], G.block1[2])
+	$BlockGreen2.modulate = Color8(G.block1[0], G.block1[1], G.block1[2])
+	$BlockPink.modulate = Color8(G.block2[0], G.block2[1], G.block2[2])
+	$BlockPink2.modulate = Color8(G.block2[0], G.block2[1], G.block2[2])
+	
 	if G.dark_mode:
 		$Title.add_color_override("default_color", Color(1,1,1))
 		$main/Label.add_color_override("font_color", Color(1,1,1))
 		$again/Label.add_color_override("font_color", Color(1,1,1))
-		$BlockBlue.modulate = Color("3F7CB4")
-		$BlockBlue2.modulate = Color("3F7CB4")
-		$BlockGreen.modulate = Color("81C24E")
-		$BlockGreen2.modulate = Color("81C24E")
-		$BlockPink.modulate = Color("A842B7")
-		$BlockPink2.modulate = Color("A842B7")
 	else:
 		$Title.add_color_override("default_color", Color(0,0,0))
 		$main/Label.add_color_override("font_color", Color(0,0,0))
 		$again/Label.add_color_override("font_color", Color(0,0,0))
-		$BlockBlue.modulate = Color("82B7E8")
-		$BlockBlue2.modulate = Color("82B7E8")
-		$BlockGreen.modulate = Color("AEE881")
-		$BlockGreen2.modulate = Color("AEE881")
-		$BlockPink.modulate = Color("DB81E8")
-		$BlockPink2.modulate = Color("DB81E8")
+
+
 func end():
+	$ColorRect.visible = false
 	$AnimationPlayer.play("In")
 	if G.mode_dead == false:
 		#In NORMAL mode this script checks and displays the score and highscore

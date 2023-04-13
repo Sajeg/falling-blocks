@@ -22,40 +22,31 @@ var PlayerX = 310
 var blocks = ["Blocks/Blue", "Blocks/Blue2", "Blocks/Blue3", "Blocks/Green", "Blocks/Green2", "Blocks/Green3", "Blocks/Pink", "Blocks/Pink2", "Blocks/Pink3"]
 
 func _ready():
+	$Blocks/Blue/BlockBlue.modulate = Color8(G.block0[0], G.block0[1], G.block0[2])
+	$Blocks/Blue2/BlockBlue.modulate = Color8(G.block0[0], G.block0[1], G.block0[2])
+	$Blocks/Blue3/BlockBlue.modulate = Color8(G.block0[0], G.block0[1], G.block0[2])
+	$Blocks/Green/BlockGreen.modulate = Color8(G.block1[0], G.block1[1], G.block1[2])
+	$Blocks/Green2/BlockGreen.modulate = Color8(G.block1[0], G.block1[1], G.block1[2])
+	$Blocks/Green3/BlockGreen.modulate = Color8(G.block1[0], G.block1[1], G.block1[2])
+	$Blocks/Pink/BlockPink.modulate = Color8(G.block2[0], G.block2[1], G.block2[2])
+	$Blocks/Pink2/BlockPink.modulate = Color8(G.block2[0], G.block2[1], G.block2[2])
+	$Blocks/Pink3/BlockPink.modulate = Color8(G.block2[0], G.block2[1], G.block2[2])
+	$Player/BlockBlue.modulate = Color8(G.block0[0], G.block0[1], G.block0[2])
+	$Player/BlockGreen.modulate = Color8(G.block1[0], G.block1[1], G.block1[2])
+	$Player/BlockPink.modulate = Color8(G.block2[0], G.block2[1], G.block2[2])
+	
 	if G.dark_mode:
 		$UI/Score.add_color_override("font_color", Color(1,1,1))
 		
-		$Player/BlockBlue.modulate = Color("3F7CB4")
-		$Player/BlockGreen.modulate = Color("81C24E")
-		$Player/BlockPink.modulate = Color("A842B7")
+		
 		$UI/Pause/pause.set_texture(preload("res://Assets/pause_light.png"))
 		$UI/Play/play2.set_texture(preload("res://Assets/play1_light.png"))
-		$Blocks/Blue/BlockBlue.modulate = Color("3F7CB4")
-		$Blocks/Blue2/BlockBlue.modulate = Color("3F7CB4")
-		$Blocks/Blue3/BlockBlue.modulate = Color("3F7CB4")
-		$Blocks/Green/BlockGreen.modulate = Color("81C24E")
-		$Blocks/Green2/BlockGreen.modulate = Color("81C24E")
-		$Blocks/Green3/BlockGreen.modulate = Color("81C24E")
-		$Blocks/Pink/BlockPink.modulate = Color("A842B7")
-		$Blocks/Pink2/BlockPink.modulate = Color("A842B7")
-		$Blocks/Pink3/BlockPink.modulate = Color("A842B7")
+		
 	else:
 		$UI/Score.add_color_override("font_color", Color(0,0,0))
 		
-		$Player/BlockBlue.modulate = Color("82B7E8")
-		$Player/BlockGreen.modulate = Color("AEE881")
-		$Player/BlockPink.modulate = Color("DB81E8")
 		$UI/Pause/pause.set_texture(preload("res://Assets/pause.png"))
 		$UI/Play/play2.set_texture(preload("res://Assets/play1.png"))
-		$Blocks/Blue/BlockBlue.modulate = Color("82B7E8")
-		$Blocks/Blue2/BlockBlue.modulate = Color("82B7E8")
-		$Blocks/Blue3/BlockBlue.modulate = Color("82B7E8")
-		$Blocks/Green/BlockGreen.modulate = Color("AEE881")
-		$Blocks/Green2/BlockGreen.modulate = Color("AEE881")
-		$Blocks/Green3/BlockGreen.modulate = Color("AEE881")
-		$Blocks/Pink/BlockPink.modulate = Color("DB81E8")
-		$Blocks/Pink2/BlockPink.modulate = Color("DB81E8")
-		$Blocks/Pink3/BlockPink.modulate = Color("DB81E8")
 	if G.system == "Windows" or "X11":
 		speed = 3
 		multiplicator = 0.005
