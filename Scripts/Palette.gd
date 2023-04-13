@@ -2,6 +2,7 @@ extends Control
 
 var edited_block #For the Name of the current edited block
 var tmp_block #The Global Colors of the current edited block
+var is_changing_color = false
 
 func _ready():
 	update_labels()
@@ -103,7 +104,10 @@ func save_colors():
 
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
-		_on_Back_pressed()
+		if is_changing_color:
+			_on_CancelButton_pressed()
+		else:
+			_on_Back_pressed()
 
 
 func _on_Back_pressed():
@@ -143,6 +147,7 @@ func _on_ColorName_text_changed(new_text):
 
 
 func _on_Color0Button_pressed():
+	is_changing_color = true
 	$AnimationPlayer.play("ChangeColor0")
 	yield(get_node("AnimationPlayer"), "animation_finished")
 	edited_block = "block0"
@@ -151,6 +156,7 @@ func _on_Color0Button_pressed():
 
 
 func _on_Color1Button_pressed():
+	is_changing_color = true
 	$AnimationPlayer.play("ChangeColor1")
 	yield(get_node("AnimationPlayer"), "animation_finished")
 	edited_block = "block1"
@@ -159,6 +165,7 @@ func _on_Color1Button_pressed():
 
 
 func _on_Color2Button_pressed():
+	is_changing_color = true
 	$AnimationPlayer.play("ChangeColor2")
 	yield(get_node("AnimationPlayer"), "animation_finished")
 	edited_block = "block2"
@@ -167,6 +174,7 @@ func _on_Color2Button_pressed():
 
 
 func _on_CancelButton_pressed():
+	is_changing_color = false
 	$ChangeColor.visible = false
 	$Colors.visible = true
 	if edited_block == "block0":
@@ -178,6 +186,7 @@ func _on_CancelButton_pressed():
 
 
 func _on_SaveButton_pressed():
+	is_changing_color = false
 	$ChangeColor.visible = false
 	$Colors.visible = true
 	

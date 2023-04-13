@@ -3,10 +3,10 @@
 [ext_resource path="res://FontData/Title.tres" type="DynamicFont" id=1]
 [ext_resource path="res://FontData/Text_menu.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/BlockWhite.svg" type="Texture" id=3]
+[ext_resource path="res://Assets/brush.png" type="Texture" id=4]
 [ext_resource path="res://Assets/nothing.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=7]
 [ext_resource path="res://Assets/gear.png" type="Texture" id=8]
-[ext_resource path="res://Assets/angle-left-solid.png" type="Texture" id=9]
 
 [sub_resource type="Animation" id=5]
 length = 0.001
@@ -528,16 +528,6 @@ scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 3 )
 offset = Vector2( 687.5, -670 )
 
-[node name="Back" type="Control" parent="."]
-anchor_left = 0.028
-anchor_top = 0.028
-anchor_right = 0.028
-anchor_bottom = 0.042
-
-[node name="Back" type="TouchScreenButton" parent="Back"]
-scale = Vector2( 0.1, 0.1 )
-normal = ExtResource( 9 )
-
 [node name="Title" type="RichTextLabel" parent="."]
 margin_left = -10.8647
 margin_top = 105.702
@@ -640,6 +630,10 @@ anchor_left = 0.94
 anchor_top = 0.035
 anchor_right = 0.943
 anchor_bottom = 0.056
+margin_left = -10.2142
+margin_top = 6.91425
+margin_right = -10.2142
+margin_bottom = 6.91425
 
 [node name="gear" type="Sprite" parent="UI/settings"]
 rotation = 0.174533
@@ -652,7 +646,18 @@ scale = Vector2( 0.90992, 1.3241 )
 normal = ExtResource( 6 )
 pressed = ExtResource( 6 )
 
+[node name="Palette" type="Control" parent="UI"]
+anchor_left = 0.028
+anchor_top = 0.028
+anchor_right = 0.028
+anchor_bottom = 0.042
+
+[node name="Palette" type="TouchScreenButton" parent="UI/Palette"]
+scale = Vector2( 0.1, 0.1 )
+normal = ExtResource( 4 )
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 material = SubResource( 7 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -661,9 +666,9 @@ margin_bottom = 8.0
 color = Color( 0, 0, 0, 1 )
 
 [connection signal="resized" from="." to="." method="_on_Main_resized"]
-[connection signal="pressed" from="Back/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="UI/Selection/Start/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="UI/Selection/Quit/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="UI/Selection/Mode/Normal/Normal" to="." method="_on_Normal_pressed"]
 [connection signal="pressed" from="UI/Selection/Mode/Death/death" to="." method="_on_death_pressed"]
 [connection signal="pressed" from="UI/settings/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="UI/Palette/Palette" to="." method="_on_Back_pressed"]

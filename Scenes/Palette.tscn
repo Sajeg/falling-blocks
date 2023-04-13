@@ -930,17 +930,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -175.0
-margin_top = -150.5
-margin_right = 175.0
-margin_bottom = -50.5
+margin_left = 136.5
+margin_top = 400.0
+margin_right = 486.5
+margin_bottom = 500.0
 
 [node name="Color" type="ColorRect" parent="Colors/Color0"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -50.0
 margin_right = 100.0
-margin_bottom = 50.0
+margin_bottom = 100.0
 color = Color( 0.784314, 0.137255, 0.137255, 1 )
 
 [node name="ColorName" type="Label" parent="Colors/Color0"]
@@ -949,10 +948,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -193.0
-margin_top = -33.5
-margin_right = 115.0
-margin_bottom = 72.5
+margin_left = 157.0
+margin_top = 16.5
+margin_right = 465.0
+margin_bottom = 122.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 3 )
 text = "#c82323"
@@ -976,9 +975,8 @@ margin_bottom = 149.5
 [node name="Color" type="ColorRect" parent="Colors/Color1"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -50.0
 margin_right = 100.0
-margin_bottom = 50.0
+margin_bottom = 100.0
 color = Color( 0.784314, 0.137255, 0.137255, 1 )
 
 [node name="ColorName" type="Label" parent="Colors/Color1"]
@@ -1012,9 +1010,8 @@ margin_bottom = 349.5
 [node name="Color" type="ColorRect" parent="Colors/Color2"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -50.0
 margin_right = 100.0
-margin_bottom = 50.0
+margin_bottom = 100.0
 color = Color( 0.784314, 0.137255, 0.137255, 1 )
 
 [node name="ColorName" type="Label" parent="Colors/Color2"]
