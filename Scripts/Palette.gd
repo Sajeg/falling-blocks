@@ -101,6 +101,11 @@ func save_colors():
 	var err = config.save(G.color_path)
 
 
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
+		_on_Back_pressed()
+
+
 func _on_Back_pressed():
 	$ColorRect.visible = true
 	$AnimationPlayer.play("end")
