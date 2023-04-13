@@ -9,6 +9,7 @@ var player_name = "Player"
 var _config_file = ConfigFile.new()
 var path = "user://settings.cfg"
 var color_path = "user://colors.cfg"
+var is_selecting_game_mode = false
 
 export var audio = true
 export var vibration = true
@@ -142,6 +143,7 @@ func _on_quit_pressed():
 
 
 func _on_start_pressed():
+	is_selecting_game_mode = true
 	$AnimationPlayer.play("mode")
 
 
@@ -151,6 +153,12 @@ func _on_settings_pressed():
 	get_tree().change_scene("res://Scenes/settings.tscn")
 	$"/root/G".visible = false
 
+
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
+		if is_selecting_game_mode:
+			is_selecting_game_mode = false
+			$AnimationPlayer.play_backwards("mode")
 
 func _on_death_pressed():
 	G.mode_dead = true
@@ -171,7 +179,6 @@ func _on_Normal_pressed():
 func _on_Main_resized():
 	$ColorRect.material.set_shader_param("screen_width", $ColorRect.rect_size.x)
 	$ColorRect.material.set_shader_param("screen_heigth", $ColorRect.rect_size.y)
-	print($ColorRect.material.get_shader_param("screen_heigth"))
 
 
 func _on_Back_pressed():

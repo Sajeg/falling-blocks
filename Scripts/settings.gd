@@ -71,7 +71,6 @@ func _on_ModeButton_pressed():
 	update_Labels()
 
 func update_Labels():
-	print("update")
 	
 	if G.audio:
 		$VBoxContainer/Music.text = "Music: ON"
@@ -97,7 +96,9 @@ func update_Labels():
 		$VBoxContainer/Vibration.text = "Vibration: OFF"
 
 
-
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
+		_on_Back_pressed()
 
 
 func _on_TouchScreenButton_pressed():

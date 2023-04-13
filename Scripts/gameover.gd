@@ -71,3 +71,8 @@ func _on_Main_pressed(): #Button for the Main screen
 func _on_again_pressed(): #Button for restart game
 	$AnimationPlayer.play("out")
 	get_tree().change_scene("res://Scenes/Game.tscn")
+
+
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
+		_on_Main_pressed()
