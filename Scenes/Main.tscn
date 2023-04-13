@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://FontData/Title.tres" type="DynamicFont" id=1]
 [ext_resource path="res://FontData/Text_menu.tres" type="DynamicFont" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/nothing.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=7]
 [ext_resource path="res://Assets/gear.png" type="Texture" id=8]
+[ext_resource path="res://Assets/angle-left-solid.png" type="Texture" id=9]
 
 [sub_resource type="Animation" id=5]
 length = 0.001
@@ -527,6 +528,16 @@ scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 3 )
 offset = Vector2( 687.5, -670 )
 
+[node name="Back" type="Control" parent="."]
+anchor_left = 0.028
+anchor_top = 0.028
+anchor_right = 0.028
+anchor_bottom = 0.042
+
+[node name="Back" type="TouchScreenButton" parent="Back"]
+scale = Vector2( 0.1, 0.1 )
+normal = ExtResource( 9 )
+
 [node name="Title" type="RichTextLabel" parent="."]
 margin_left = -10.8647
 margin_top = 105.702
@@ -650,6 +661,7 @@ margin_bottom = 8.0
 color = Color( 0, 0, 0, 1 )
 
 [connection signal="resized" from="." to="." method="_on_Main_resized"]
+[connection signal="pressed" from="Back/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="UI/Selection/Start/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="UI/Selection/Quit/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="UI/Selection/Mode/Normal/Normal" to="." method="_on_Normal_pressed"]

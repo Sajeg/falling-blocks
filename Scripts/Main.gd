@@ -7,18 +7,26 @@ var settings
 var mode_dead = false
 var player_name = "Player"
 var _config_file = ConfigFile.new()
+var path = "user://settings.cfg"
+var color_path = "user://colors.cfg"
+
 export var audio = true
 export var vibration = true
 export var sounds = true
 export var dark_mode = false
-export var fdroid_version = true
-var path = "user://settings.cfg"
+export var fdroid_version = false
+
+#The Colors of the Blocks
+var block0 = [130, 183, 232]
+var block1 = [174, 232, 129]
+var block2 = [219, 129, 232]
 
 func _ready():
 	#system = OS.get_name()
 	$ColorRect.visible = true
 	mode()
-	
+	load_colors()
+	update_background()
 	$ColorRect.material.set_shader_param("screen_width", $ColorRect.rect_size.x)
 	$ColorRect.material.set_shader_param("screen_heigth", $ColorRect.rect_size.y)
 	
@@ -45,6 +53,7 @@ func load_data():
 		file.close()
 		return 0
 
+
 func load_dead_data():
 	#loads the highscore data in Death mode
 	var file = File.new()
@@ -57,6 +66,7 @@ func load_dead_data():
 	else:
 		file.open("user://dead_score.fall", File.WRITE)
 		file.close()
+
 
 func load_settings():
 	#loads the settings
@@ -77,6 +87,26 @@ func load_settings():
 	dark_mode = config.get_value("general", "dark_mode", default_options.dark_mode)
 	return options
 
+
+func load_colors():
+	var config = ConfigFile.new()
+	var default_options = {
+			"block0": [130, 183, 232],
+			"block1": [174, 232, 129],
+			"block2": [219, 129, 232]
+			}
+	var err = config.load(color_path)
+	if err != OK:
+		config.set_value("color", "block0", block0)
+		config.set_value("color", "block1", block1)
+		config.set_value("color", "block2", block2)
+		err = config.save(color_path)
+		load_colors()
+	block0 = config.get_value("color", "block0")
+	block1 = config.get_value("color", "block1")
+	block2 = config.get_value("color", "block2")
+
+
 func mode():
 	if G.dark_mode:
 		VisualServer.set_default_clear_color(Color(0,0,0))
@@ -85,13 +115,6 @@ func mode():
 		$UI/Selection/Quit/Labelquit.add_color_override("font_color", Color(1,1,1))
 		$UI/Selection/Mode/Death/LabelModeDeath.add_color_override("font_color", Color(1,1,1))
 		$UI/Selection/Mode/Normal/LabelModeNormal.add_color_override("font_color", Color(1,1,1))
-		
-		$BlockBlue.modulate = Color("3F7CB4")
-		$BlockBlue2.modulate = Color("3F7CB4")
-		$BlockGreen.modulate = Color("81C24E")
-		$BlockGreen2.modulate = Color("81C24E")
-		$BlockPink.modulate = Color("A842B7")
-		$BlockPink2.modulate = Color("A842B7")
 		$UI/settings/gear.set_texture(preload("res://Assets/gear_light.png"))
 	else:
 		VisualServer.set_default_clear_color(Color(1,1,1))
@@ -100,21 +123,22 @@ func mode():
 		$UI/Selection/Quit/Labelquit.add_color_override("font_color", Color(0,0,0))
 		$UI/Selection/Mode/Death/LabelModeDeath.add_color_override("font_color", Color(0,0,0))
 		$UI/Selection/Mode/Normal/LabelModeNormal.add_color_override("font_color", Color(0,0,0))
-		
-		$BlockBlue.modulate = Color("82B7E8")
-		$BlockBlue2.modulate = Color("82B7E8")
-		$BlockGreen.modulate = Color("AEE881")
-		$BlockGreen2.modulate = Color("AEE881")
-		$BlockPink.modulate = Color("DB81E8")
-		$BlockPink2.modulate = Color("DB81E8")
 		$UI/settings/gear.set_texture(preload("res://Assets/gear.png"))
+
+
+func update_background():
+	$BlockBlue.modulate = Color8(block0[0], block0[1], block0[2])
+	$BlockBlue2.modulate = Color8(block0[0], block0[1], block0[2])
+	$BlockGreen.modulate = Color8(block1[0], block1[1], block1[2])
+	$BlockGreen2.modulate = Color8(block1[0], block1[1], block1[2])
+	$BlockPink.modulate = Color8(block2[0], block2[1], block2[2])
+	$BlockPink2.modulate = Color8(block2[0], block2[1], block2[2])
 
 
 func _on_quit_pressed():
 	$AnimationPlayer.play("out")
 	yield(get_node("AnimationPlayer"), "animation_finished")
 	get_tree().quit()
-
 
 
 func _on_start_pressed():
@@ -126,7 +150,6 @@ func _on_settings_pressed():
 	yield(get_node("AnimationPlayer"), "animation_finished")
 	get_tree().change_scene("res://Scenes/settings.tscn")
 	$"/root/G".visible = false
-
 
 
 func _on_death_pressed():
@@ -145,8 +168,14 @@ func _on_Normal_pressed():
 	$"/root/G".visible = false
 
 
-
 func _on_Main_resized():
 	$ColorRect.material.set_shader_param("screen_width", $ColorRect.rect_size.x)
 	$ColorRect.material.set_shader_param("screen_heigth", $ColorRect.rect_size.y)
 	print($ColorRect.material.get_shader_param("screen_heigth"))
+
+
+func _on_Back_pressed():
+	$AnimationPlayer.play("change_scene")
+	yield(get_node("AnimationPlayer"), "animation_finished")
+	get_tree().change_scene("res://Scenes/Palette.tscn")
+	$"/root/G".visible = false

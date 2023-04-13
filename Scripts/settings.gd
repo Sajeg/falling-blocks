@@ -1,6 +1,12 @@
 extends Control
 
 func _ready():
+	$BlockBlue.modulate = Color8(G.block0[0], G.block0[1], G.block0[2])
+	$BlockBlue2.modulate = Color8(G.block0[0], G.block0[1], G.block0[2])
+	$BlockGreen.modulate = Color8(G.block1[0], G.block1[1], G.block1[2])
+	$BlockGreen2.modulate = Color8(G.block1[0], G.block1[1], G.block1[2])
+	$BlockPink.modulate = Color8(G.block2[0], G.block2[1], G.block2[2])
+	$BlockPink2.modulate = Color8(G.block2[0], G.block2[1], G.block2[2])
 	if G.dark_mode:
 		$Title.add_color_override("font_color", Color(1,1,1))
 		$Credits.add_color_override("font_color", Color(1,1,1))
@@ -10,12 +16,6 @@ func _ready():
 		$VBoxContainer/Mode.add_color_override("font_color", Color(1,1,1))
 		$Back/Back.set_texture(preload("res://Assets/angle-left-solid_light.png"))
 		
-		$BlockBlue.modulate = Color("3F7CB4")
-		$BlockBlue2.modulate = Color("3F7CB4")
-		$BlockGreen.modulate = Color("81C24E")
-		$BlockGreen2.modulate = Color("81C24E")
-		$BlockPink.modulate = Color("A842B7")
-		$BlockPink2.modulate = Color("A842B7")
 	else:
 		$Title.add_color_override("font_color", Color(0,0,0))
 		$Credits.add_color_override("font_color", Color(0,0,0))
@@ -24,13 +24,6 @@ func _ready():
 		$VBoxContainer/Vibration.add_color_override("font_color", Color(0,0,0))
 		$VBoxContainer/Mode.add_color_override("font_color", Color(0,0,0))
 		$Back/Back.set_texture(preload("res://Assets/angle-left-solid.png"))
-		
-		$BlockBlue.modulate = Color("82B7E8")
-		$BlockBlue2.modulate = Color("82B7E8")
-		$BlockGreen.modulate = Color("AEE881")
-		$BlockGreen2.modulate = Color("AEE881")
-		$BlockPink.modulate = Color("DB81E8")
-		$BlockPink2.modulate = Color("DB81E8")
 	
 	if G.fdroid_version:
 		$VBoxContainer/Vibration.queue_free()
@@ -79,11 +72,6 @@ func _on_ModeButton_pressed():
 
 func update_Labels():
 	print("update")
-	if get_node_or_null("$VBoxContainer/Vibration"):
-		if G.vibration:
-			$VBoxContainer/Vibration.text = "Vibration: ON"
-		else:
-			$VBoxContainer/Vibration.text = "Vibration: OFF"
 	
 	if G.audio:
 		$VBoxContainer/Music.text = "Music: ON"
@@ -99,6 +87,14 @@ func update_Labels():
 		$VBoxContainer/Mode.text = "Dark Mode"
 	else:
 		$VBoxContainer/Mode.text = "Light Mode"
+	
+	if G.fdroid_version:
+		return
+	
+	if G.vibration:
+		$VBoxContainer/Vibration.text = "Vibration: ON"
+	else:
+		$VBoxContainer/Vibration.text = "Vibration: OFF"
 
 
 

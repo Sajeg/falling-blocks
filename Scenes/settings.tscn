@@ -127,7 +127,7 @@ tracks/2/keys = {
 "values": [ 0.5 ]
 }
 
-[sub_resource type="Shader" id=6]
+[sub_resource type="Shader" id=12]
 code = "shader_type canvas_item;
 render_mode unshaded;
  
@@ -144,7 +144,7 @@ void fragment() {
 }"
 
 [sub_resource type="ShaderMaterial" id=9]
-shader = SubResource( 6 )
+shader = SubResource( 12 )
 shader_param/circle_size = 0.0
 shader_param/screen_width = 620.0
 shader_param/screen_height = 1100.0
