@@ -6,7 +6,15 @@ var tmp_block #The Global Colors of the current edited block
 func _ready():
 	update_labels()
 	mode()
-	
+	$Colors/Color0.visible = true
+	$Colors/Color0/Color0Button.visible = true
+	$Colors/Color0/ColorName.visible = true
+	$Colors/Color1.visible = true
+	$Colors/Color1/Color1Button.visible = true
+	$Colors/Color1/ColorName.visible = true
+	$Colors/Color2.visible = true
+	$Colors/Color2/Color2Button.visible = true
+	$Colors/Color2/ColorName.visible = true
 	$AnimationPlayer.play("start")
 	yield(get_node("AnimationPlayer"), "animation_finished")
 	$ColorRect.visible = false
@@ -130,18 +138,24 @@ func _on_ColorName_text_changed(new_text):
 
 
 func _on_Color0Button_pressed():
+	$AnimationPlayer.play("ChangeColor0")
+	yield(get_node("AnimationPlayer"), "animation_finished")
 	edited_block = "block0"
 	tmp_block = G.block0
 	change_color()
 
 
 func _on_Color1Button_pressed():
+	$AnimationPlayer.play("ChangeColor1")
+	yield(get_node("AnimationPlayer"), "animation_finished")
 	edited_block = "block1"
 	tmp_block = G.block1
 	change_color()
 
 
 func _on_Color2Button_pressed():
+	$AnimationPlayer.play("ChangeColor2")
+	yield(get_node("AnimationPlayer"), "animation_finished")
 	edited_block = "block2"
 	tmp_block = G.block2
 	change_color()
@@ -150,17 +164,29 @@ func _on_Color2Button_pressed():
 func _on_CancelButton_pressed():
 	$ChangeColor.visible = false
 	$Colors.visible = true
+	if edited_block == "block0":
+		$AnimationPlayer.play("ChangeColor0Save")
+	elif edited_block == "block1":
+		$AnimationPlayer.play("ChangeColor1Save")
+	elif edited_block == "block2":
+		$AnimationPlayer.play("ChangeColor2Save")
 
 
 func _on_SaveButton_pressed():
+	$ChangeColor.visible = false
+	$Colors.visible = true
+	
 	if edited_block == "block0":
 		G.block0 = tmp_block
+		$AnimationPlayer.play("ChangeColor0Save")
 	elif edited_block == "block1":
 		G.block1 = tmp_block
+		$AnimationPlayer.play("ChangeColor1Save")
 	elif edited_block == "block2":
 		G.block2 = tmp_block
+		$AnimationPlayer.play("ChangeColor2Save")
 	update_labels()
 	G.update_background()
 	save_colors()
+	yield(get_node("AnimationPlayer"), "animation_finished")
 	$ChangeColor.visible = false
-	$Colors.visible = true
