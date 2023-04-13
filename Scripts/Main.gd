@@ -117,6 +117,7 @@ func mode():
 		$UI/Selection/Mode/Death/LabelModeDeath.add_color_override("font_color", Color(1,1,1))
 		$UI/Selection/Mode/Normal/LabelModeNormal.add_color_override("font_color", Color(1,1,1))
 		$UI/settings/gear.set_texture(preload("res://Assets/gear_light.png"))
+		$UI/Palette/Palette.set_texture(preload("res://Assets/brush_light.png"))
 	else:
 		VisualServer.set_default_clear_color(Color(1,1,1))
 		$Title.add_color_override("default_color", Color(0,0,0))
@@ -125,6 +126,7 @@ func mode():
 		$UI/Selection/Mode/Death/LabelModeDeath.add_color_override("font_color", Color(0,0,0))
 		$UI/Selection/Mode/Normal/LabelModeNormal.add_color_override("font_color", Color(0,0,0))
 		$UI/settings/gear.set_texture(preload("res://Assets/gear.png"))
+		$UI/Palette/Palette.set_texture(preload("res://Assets/brush.png"))
 
 
 func update_background():
