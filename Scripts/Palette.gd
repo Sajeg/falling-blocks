@@ -52,6 +52,8 @@ func mode():
 		$ChangeColor/G/Label.add_color_override("font_color", Color(1,1,1))
 		$ChangeColor/B/Label.add_color_override("font_color", Color(1,1,1))
 		$ChangeColor/ColorName.add_color_override("font_color", Color(1,1,1))
+		$ChangeColor/CancelButton/Label.add_color_override("font_color", Color(1,1,1))
+		$ChangeColor/SaveButton/Label.add_color_override("font_color", Color(1,1,1))
 	else:
 		VisualServer.set_default_clear_color(Color(1,1,1))
 		$Title.add_color_override("font_color", Color(0,0,0))
@@ -63,6 +65,8 @@ func mode():
 		$ChangeColor/G/Label.add_color_override("font_color", Color(0,0,0))
 		$ChangeColor/B/Label.add_color_override("font_color", Color(0,0,0))
 		$ChangeColor/ColorName.add_color_override("font_color", Color(0,0,0))
+		$ChangeColor/CancelButton/Label.add_color_override("font_color", Color(0,0,0))
+		$ChangeColor/SaveButton/Label.add_color_override("font_color", Color(0,0,0))
 
 
 func rgb_to_hex(r:int, g:int, b:int) -> String:
