@@ -20,6 +20,7 @@ var still_touching = false
 
 var PlayerX = 310
 var blocks = ["Blocks/Blue", "Blocks/Blue2", "Blocks/Blue3", "Blocks/Green", "Blocks/Green2", "Blocks/Green3", "Blocks/Pink", "Blocks/Pink2", "Blocks/Pink3"]
+var blocks_animation = ["Blocks/Blue/AnimationPlayer", "Blocks/Blue2/AnimationPlayer", "Blocks/Blue3/AnimationPlayer", "Blocks/Green/AnimationPlayer", "Blocks/Green2/AnimationPlayer", "Blocks/Green3/AnimationPlayer", "Blocks/Pink/AnimationPlayer", "Blocks/Pink2/AnimationPlayer", "Blocks/Pink3/AnimationPlayer"]
 
 func _ready():
 	$Blocks/Blue/BlockBlue.modulate = Color8(G.block0[0], G.block0[1], G.block0[2])
@@ -60,6 +61,7 @@ func _ready():
 	
 	for BlockNum in blocks.size():
 		blocks[BlockNum] = get_node(blocks[BlockNum])
+		blocks_animation[BlockNum] = get_node(blocks_animation[BlockNum])
 	
 	#Player Color:
 	var rand = randi()%3
@@ -162,8 +164,8 @@ func gameover(): #Changes the Game screen to Gameover Screen
 	$UI/Score.visible = false
 	
 	if G.mode_dead == true:
-		for BlockNum in blocks.size():
-			blocks[BlockNum].play("idle")
+		for BlockNum in blocks_animation.size():
+			blocks_animation[BlockNum].play("idle")
 	
 	
 	#Block animation
