@@ -127,6 +127,10 @@ tracks/2/keys = {
 "values": [ 0.5 ]
 }
 
+[sub_resource type="DynamicFont" id=11]
+size = 32
+font_data = ExtResource( 9 )
+
 [sub_resource type="Shader" id=12]
 code = "shader_type canvas_item;
 render_mode unshaded;
@@ -150,10 +154,6 @@ shader_param/screen_width = 620.0
 shader_param/screen_height = 1100.0
 shader_param/x_pos = 0.0
 shader_param/y_pos = 0.63
-
-[sub_resource type="DynamicFont" id=11]
-size = 32
-font_data = ExtResource( 9 )
 
 [node name="settings" type="Control"]
 anchor_right = 1.0
@@ -301,14 +301,6 @@ anims/RESET = SubResource( 7 )
 anims/end = SubResource( 10 )
 anims/start = SubResource( 8 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource( 9 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -24.0
-margin_bottom = 8.0
-color = Color( 0, 0, 0, 1 )
-
 [node name="Credits" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
@@ -316,7 +308,7 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -253.0
 margin_top = -60.0
-margin_right = 253.0
+margin_right = 254.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 11 )
 text = "Made by Sajeg with Godot Engine"
@@ -325,6 +317,14 @@ text = "Made by Sajeg with Godot Engine"
 position = Vector2( -63.496, -22.2238 )
 scale = Vector2( 6.48976, 1.34725 )
 normal = ExtResource( 8 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource( 9 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -24.0
+margin_bottom = 8.0
+color = Color( 0, 0, 0, 1 )
 
 [connection signal="pressed" from="Back/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="VBoxContainer/Vibration/VibrationButton" to="." method="_on_VibrationButton_pressed"]

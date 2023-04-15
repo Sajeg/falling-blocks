@@ -334,16 +334,19 @@ texture = ExtResource( 11 )
 scale = Vector2( 0.735592, 1.08009 )
 normal = ExtResource( 7 )
 
-[node name="Play" type="Node2D" parent="UI"]
+[node name="Play" type="Control" parent="UI"]
 visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 
 [node name="play" type="TouchScreenButton" parent="UI/Play"]
-position = Vector2( 99.2257, 348.131 )
+position = Vector2( -213, -213 )
 scale = Vector2( 4.17088, 6.22932 )
 normal = ExtResource( 7 )
 
 [node name="play2" type="Sprite" parent="UI/Play"]
-position = Vector2( 310, 550 )
 texture = ExtResource( 10 )
 
 [node name="Control" parent="." instance=ExtResource( 9 )]
