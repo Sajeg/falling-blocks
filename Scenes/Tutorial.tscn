@@ -1,0 +1,652 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/Fonts/Neu/RobotoSlab-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://FontData/Title.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/nothing.png" type="Texture" id=3]
+[ext_resource path="res://Assets/BlockWhite.svg" type="Texture" id=4]
+[ext_resource path="res://Scripts/Tutorial.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 81.5, 63 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Text/Title:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "Falling
+	Blocks" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Text/Title:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -15.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Text/Title:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -10.8647, 105.702 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Text/Title:custom_fonts/normal_font:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 150 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Text/Content:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "The Game, where you play as a block" ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Text/Content:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 64.9113, 586.089 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Text/Content:bbcode_text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "[center]Try to move the block by taping[/center]" ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Text/TapNote:rect_position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 70.1585, 718.006 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Text/TapNote:text")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "" ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Blocks/Player/BlockBlue:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Text/Content:custom_fonts/normal_font:size")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 30 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Blocks/Blue:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Blocks/Pink:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Blocks/Green:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Text/Title:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Blocks/Green:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 310, -100 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Blocks/Pink:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 100, -100 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "tutorial"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Text/Title:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "Welcome to...", "Falling
+	Blocks" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Text/Title:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -15.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Text/Title:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 10, 105.702 ), Vector2( -10.8647, 105.702 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Text/Title:custom_fonts/normal_font:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 100, 150 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Text/Content:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.5, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 103, 586.089 ), Vector2( 103, 586.089 ), Vector2( 103, 893.332 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Text/Content:bbcode_text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.5, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "", "[center]The Game, where you play as a block[/center]", "[center]Try to move the block by taping[/center]" ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Text/TapNote:rect_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 5, 5.7, 6, 6.8, 7, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 60, 720 ), Vector2( 60, 720 ), Vector2( 235, 720 ), Vector2( 235, 720 ), Vector2( 440, 720 ), Vector2( 440, 720 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Text/TapNote:text")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 5, 6, 7, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "Here", "Here", "or Here", "" ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Blocks/Player/BlockBlue:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 4.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Blocks/Blue:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Blocks/Pink:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Blocks/Green:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Text/Title:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "tutorial_2"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Text/Content:bbcode_text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "[center]Fantastic![/center]", "[center]Now try to collect this one.[/center]" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Blocks/Blue:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Text/Title:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "tutorial_3"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Text/Content:bbcode_text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "[center]And now dodge the blocks that have a different color[/center]" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Text/Content:custom_fonts/normal_font:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 30 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Blocks/Green:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Blocks/Pink:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Blocks/Green:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 310, -100 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Blocks/Pink:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 100, -300 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "tutorial_4"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Text/Content:bbcode_text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "[center]Amazing!
+Now you can play the Game[/center]" ]
+}
+
+[node name="Tutorial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="Touch" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="pos1" type="TouchScreenButton" parent="Touch"]
+position = Vector2( -1.68176, 217.991 )
+scale = Vector2( 2, 13.7026 )
+normal = ExtResource( 3 )
+
+[node name="pos2" type="TouchScreenButton" parent="Touch"]
+position = Vector2( 205.514, 214.477 )
+scale = Vector2( 2, 13.8576 )
+normal = ExtResource( 3 )
+
+[node name="pos3" type="TouchScreenButton" parent="Touch"]
+position = Vector2( 420, 211.604 )
+scale = Vector2( 2.10511, 13.8204 )
+normal = ExtResource( 3 )
+
+[node name="Blocks" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Blue" type="Node2D" parent="Blocks"]
+position = Vector2( 310, 470 )
+
+[node name="BlockBlue" type="Sprite" parent="Blocks/Blue"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 4 )
+
+[node name="Blue" type="Area2D" parent="Blocks/Blue"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocks/Blue/Blue"]
+position = Vector2( 0, 0.289001 )
+shape = SubResource( 6 )
+
+[node name="Pink" type="Node2D" parent="Blocks"]
+visible = false
+position = Vector2( 100, -100 )
+
+[node name="BlockPink" type="Sprite" parent="Blocks/Pink"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 4 )
+
+[node name="Pink" type="Area2D" parent="Blocks/Pink"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocks/Pink/Pink"]
+position = Vector2( 0, 0.289001 )
+shape = SubResource( 6 )
+
+[node name="Green" type="Node2D" parent="Blocks"]
+visible = false
+position = Vector2( 310, -100 )
+
+[node name="BlockGreen" type="Sprite" parent="Blocks/Green"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 4 )
+
+[node name="Green" type="Area2D" parent="Blocks/Green"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocks/Green/Green"]
+position = Vector2( 0, 0.289001 )
+shape = SubResource( 6 )
+
+[node name="Player" type="Node2D" parent="Blocks"]
+position = Vector2( 310, 745.211 )
+
+[node name="BlockBlue" type="Sprite" parent="Blocks/Player"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="Blocks/Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocks/Player/Area2D"]
+position = Vector2( 0.5, -0.210999 )
+shape = SubResource( 6 )
+
+[node name="Text" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Title" type="RichTextLabel" parent="Text"]
+visible = false
+margin_left = -10.8647
+margin_top = 105.702
+margin_right = 740.135
+margin_bottom = 530.702
+rect_rotation = -15.0
+rect_scale = Vector2( 0.9, 0.9 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 2 )
+text = "Falling
+	Blocks"
+
+[node name="Content" type="RichTextLabel" parent="Text"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 44.9113
+margin_top = 566.089
+margin_right = 456.911
+margin_bottom = 682.089
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Try to move the block by taping[/center]"
+text = "Try to move the block by taping"
+
+[node name="TapNote" type="Label" parent="Text"]
+margin_left = 70.1585
+margin_top = 718.006
+margin_right = 209.159
+margin_bottom = 771.006
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/tutorial = SubResource( 3 )
+anims/tutorial_2 = SubResource( 5 )
+anims/tutorial_3 = SubResource( 7 )
+anims/tutorial_4 = SubResource( 8 )
+
+[connection signal="pressed" from="Touch/pos1" to="." method="_on_pos1_pressed"]
+[connection signal="pressed" from="Touch/pos2" to="." method="_on_pos2_pressed"]
+[connection signal="pressed" from="Touch/pos3" to="." method="_on_pos3_pressed"]
+[connection signal="area_entered" from="Blocks/Player/Area2D" to="." method="_on_Area2D_area_entered"]
