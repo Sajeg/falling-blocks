@@ -8,6 +8,7 @@
 - <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#features">Features</a>
 - <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#screenshots">Screenshots</a>
 - <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#installation">Installation</a>
+- <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#contact">Contact</a>
 
 ## Overview
 Falling Blocks is a small mobile Game, where you are a block. There are other blocks, which are falling down, and you're not allowed to touch the blocks if your block has an other color. Made with <a href="https://github.com/godotengine/godot">Godot Engine</a>. 
@@ -38,3 +39,6 @@ The recommend way is to use <a href="https://f-droid.org/packages/org.sajeg.fall
 1. Download the .zip file from <a href="https://github.com/Sajeg/falling-blocks/releases">releases</a> or from <a href="https://sajeg.itch.io/falling-blocks">itch.io</a>.
 2. Extrakt this file.
 3. run the .exe file.
+
+## Contact
+If you have feedback or anything else you can always open an issue or write me on Discord: **Sajeg#8062**
