@@ -27,7 +27,7 @@ Falling Blocks is a small mobile Game, where you are a block. There are other bl
 The recommend way is to use <a href="https://f-droid.org/packages/org.sajeg.fallingblocks/">F-Droid</a>
 1. Download the .apk file from <a href="https://github.com/Sajeg/falling-blocks/releases">releases</a> or from <a href="https://sajeg.itch.io/falling-blocks">itch.io</a>.
 2. Click on the downloaded file. If you become a warning "For you security, your phone is not allowed to install unknown apps from this source.", go to settings and allow install unknown apps from this source.
-3. Click on install and Android will automatic install this app.
+3. Click on install and Android will automatically install this app.
 
 ### Linux
 1. Download the .zip file from <a href="https://github.com/Sajeg/falling-blocks/releases">releases</a> or from <a href="https://sajeg.itch.io/falling-blocks">itch.io</a>.
