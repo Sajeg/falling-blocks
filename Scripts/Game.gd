@@ -14,7 +14,6 @@ var playername = null
 var vibrate
 var gameover = false
 var lastblock_num = 0
-var music_changed = false
 var is_touching = false
 var still_touching = false
 
@@ -55,9 +54,8 @@ func _ready():
 		speed = 6
 	
 	freeze = false
-	if bool(G.audio) == true:
-		$Sound/MusicUnder1000.volume_db = 0
-		$Sound/MusicUnder1000.play()
+	if G.audio == true:
+		$Sound/Music.play()
 	
 	for BlockNum in blocks.size():
 		blocks[BlockNum] = get_node(blocks[BlockNum])
@@ -105,8 +103,6 @@ func _process(delta):
 			new_pos(blocks[BlockNum])
 	
 	
-	if score >= 1000 and music_changed == false and bool(G.audio) == true:
-		music_change()
 	
 	if is_touching:
 		if bool(G.vibration) == true:
@@ -159,8 +155,7 @@ func gameover(): #Changes the Game screen to Gameover Screen
 	freeze = true
 	$UI/Pause.visible = false
 	$UI/Play.visible = false
-	$Sound/MusicUnder1000.stop()
-	$Sound/MusicOver1000.stop()
+	$Sound/Music.stop()
 	$UI/Score.visible = false
 	
 	if G.mode_dead == true:
@@ -227,11 +222,6 @@ func _on_pos2_pressed():
 	PlayerX = 310
 func _on_pos3_pressed():
 	PlayerX = 520
-
-
-func music_change():
-	$Sound/MusicFade.play("MusicFade1000")
-	music_changed = true
 
 
 func _on_pause2_pressed():
