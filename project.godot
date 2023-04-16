@@ -15,6 +15,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Falling Blocks"
+config/description="No Description"
 run/main_scene="res://Scenes/Main.tscn"
 config/use_custom_user_dir=true
 boot_splash/image="res://Assets/splash_screen.png"

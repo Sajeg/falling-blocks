@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Blue.tscn" type="PackedScene" id=2]
@@ -11,8 +11,7 @@
 [ext_resource path="res://Scenes/gameover.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/play1.png" type="Texture" id=10]
 [ext_resource path="res://Assets/pause.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Music/Song04.wav" type="AudioStream" id=12]
-[ext_resource path="res://Assets/Music/Be Faste.wav" type="AudioStream" id=13]
+[ext_resource path="res://Assets/Music/music_falling_blocks.mp3" type="AudioStream" id=12]
 [ext_resource path="res://Assets/BlockWhiteCrash.svg" type="Texture" id=14]
 [ext_resource path="res://Assets/BlockWhite.svg" type="Texture" id=26]
 
@@ -159,57 +158,6 @@ tracks/0/keys = {
 "values": [ ExtResource( 26 ), ExtResource( 7 ) ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "MusicFade1000"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sound/MusicUnder1000:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.6 ),
-"transitions": PoolRealArray( 2.2974, 1 ),
-"update": 0,
-"values": [ 0.0, -80.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sound/MusicOver1000:volume_db")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ -80.0, 0.0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sound/MusicOver1000:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0.5 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sound/MusicUnder1000:playing")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0.6 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-
 [node name="Game" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -282,22 +230,12 @@ normal = ExtResource( 7 )
 
 [node name="Sound" type="Node2D" parent="."]
 
-[node name="MusicUnder1000" type="AudioStreamPlayer2D" parent="Sound"]
-position = Vector2( 310, 820 )
-stream = ExtResource( 12 )
-volume_db = -80.0
-
-[node name="MusicOver1000" type="AudioStreamPlayer2D" parent="Sound"]
-position = Vector2( 310, 820 )
-stream = ExtResource( 13 )
-
 [node name="SoundFX" type="AudioStreamPlayer2D" parent="Sound"]
 position = Vector2( 310, 820 )
 stream = ExtResource( 8 )
 
-[node name="MusicFade" type="AnimationPlayer" parent="Sound"]
-root_node = NodePath("../..")
-anims/MusicFade1000 = SubResource( 1 )
+[node name="Music" type="AudioStreamPlayer2D" parent="Sound"]
+stream = ExtResource( 12 )
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
