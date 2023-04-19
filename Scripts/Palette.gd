@@ -1,7 +1,7 @@
 extends Control
 
 var edited_block #For the Name of the current edited block
-var tmp_block #The Global Colors of the current edited block
+var tmp_block #The Global Colors of the  current edited block
 var is_changing_color = false
 
 func _ready():
@@ -178,11 +178,16 @@ func _on_CancelButton_pressed():
 	$ChangeColor.visible = false
 	$Colors.visible = true
 	if edited_block == "block0":
+		G.block0 = hex_to_rgb($Colors/Color0/Color.get_frame_color().to_html(false))
 		$AnimationPlayer.play("ChangeColor0Save")
 	elif edited_block == "block1":
+		G.block1 = hex_to_rgb($Colors/Color1/Color.get_frame_color().to_html(false))
 		$AnimationPlayer.play("ChangeColor1Save")
 	elif edited_block == "block2":
+		G.block2 = hex_to_rgb($Colors/Color2/Color.get_frame_color().to_html(false))
 		$AnimationPlayer.play("ChangeColor2Save")
+	tmp_block = null
+	edited_block = null
 
 
 func _on_SaveButton_pressed():
@@ -191,16 +196,12 @@ func _on_SaveButton_pressed():
 	$Colors.visible = true
 	
 	if edited_block == "block0":
-		G.block0 = tmp_block
 		$AnimationPlayer.play("ChangeColor0Save")
 	elif edited_block == "block1":
-		G.block1 = tmp_block
 		$AnimationPlayer.play("ChangeColor1Save")
 	elif edited_block == "block2":
-		G.block2 = tmp_block
 		$AnimationPlayer.play("ChangeColor2Save")
 	update_labels()
-	G.update_background()
 	save_colors()
 	yield(get_node("AnimationPlayer"), "animation_finished")
 	$ChangeColor.visible = false
