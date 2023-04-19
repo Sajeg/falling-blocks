@@ -229,8 +229,7 @@ func _on_pause2_pressed():
 	$pos2.visible = false
 	$pos3.visible = false
 	freeze = true
-	$Sound/MusicUnder1000.set_stream_paused(true)
-	$Sound/MusicOver1000.set_stream_paused(true)
+	$Sound/Music.set_stream_paused(true)
 	$UI/Play.visible = true
 	$UI/Pause.visible = false
 	$UI/Score.visible = false
@@ -241,10 +240,7 @@ func _on_play_pressed():
 	$pos2.visible = true
 	$pos3.visible = true
 	freeze = false
-	if score > 1000:
-		$Sound/MusicOver1000.set_stream_paused(false)
-	else:
-		$Sound/MusicUnder1000.set_stream_paused(false)
+	$Sound/Music.set_stream_paused(false)
 	$UI/Play.visible = false
 	$UI/Pause.visible = true
 	$UI/Score.visible = true
