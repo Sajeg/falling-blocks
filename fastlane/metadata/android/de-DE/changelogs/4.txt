@@ -1,0 +1,8 @@
+Die Highlights in diesem Update sind:
+- Ein Neuer Soundtrack von Alexander Shesha
+- Die Option zum änderen der farben der Blöcke
+
+Weitere Änderungen sind:
+- Änderung der Block Textur von .png zu .svg (Dank an @Eiim)
+- Unterstützung für den Zurück Button in Android
+- Fehler behoben

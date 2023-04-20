@@ -1,0 +1,8 @@
+The Highlights of this update are:
+- A brand new Soundtrack made by Alexander Shesha
+- New option to customise the Color of the blocks
+
+Other Changes included in this release are:
+- Change the block texture from .png to .svg (Thanks to @Eiim)
+- added support for the back button in Android
+- fixed a few issues
