@@ -235,6 +235,7 @@ position = Vector2( 310, 820 )
 stream = ExtResource( 8 )
 
 [node name="Music" type="AudioStreamPlayer2D" parent="Sound"]
+position = Vector2( 310, 820 )
 stream = ExtResource( 12 )
 
 [node name="UI" type="Control" parent="."]
