@@ -41,4 +41,4 @@ The recommend way is to use <a href="https://f-droid.org/packages/org.sajeg.fall
 3. run the .exe file.
 
 ## Contact
-If you have feedback or anything else you can always open an issue or write me on Discord: **Sajeg#8062**
+If you have feedback or anything else you can always open an issue, write me on Discord: **Sajeg#8062** or write me an email <a href="mailto:info@sajeg.org">info@sajeg.org</a>
