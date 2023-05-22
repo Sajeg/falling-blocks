@@ -52,6 +52,8 @@ func load_data():
 		file.open("user://save.fall", File.WRITE)
 		file.store_string("0")
 		file.close()
+		get_tree().change_scene("res://Scenes/Tutorial.tscn")
+		$"/root/G".visible = false
 		return 0
 
 

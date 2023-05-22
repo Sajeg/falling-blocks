@@ -1,0 +1,241 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://FontData/Title.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Fonts/Neu/RobotoSlab-Medium.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://FontData/Text_big.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scripts/TutorialShort.gd" type="Script" id=4]
+[ext_resource path="res://FontData/Text.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Assets/nothing.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 35
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:material:shader_param/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:material:shader_param/x_pos")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect:material:shader_param/y_pos")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.63 ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "end"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:material:shader_param/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.05, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:material:shader_param/x_pos")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.5 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect:material:shader_param/y_pos")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.5 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "start"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:material:shader_param/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.05 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:material:shader_param/x_pos")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.5 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect:material:shader_param/y_pos")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.5 ]
+}
+
+[sub_resource type="Shader" id=12]
+code = "shader_type canvas_item;
+render_mode unshaded;
+ 
+uniform float circle_size : hint_range(0.0, 1.05);
+uniform float screen_width;
+uniform float screen_height;
+uniform float x_pos : hint_range(0.0, 1.0, 0.01);
+uniform float y_pos :hint_range(0.0, 1.0, 0.01);
+ 
+void fragment() {
+	float ratio = screen_width / screen_height;
+	float dist = distance(vec2(x_pos, y_pos), vec2(mix(0.5, UV.x, ratio), UV.y));
+	COLOR.a = step(circle_size, dist);
+}"
+
+[sub_resource type="ShaderMaterial" id=16]
+shader = SubResource( 12 )
+shader_param/circle_size = 0.0
+shader_param/screen_width = 620.0
+shader_param/screen_height = 1100.0
+shader_param/x_pos = 0.0
+shader_param/y_pos = 0.63
+
+[node name="Tutorial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -1412, 433 )
+script = ExtResource( 4 )
+
+[node name="ShortTutorial" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -272.5
+margin_top = -117.0
+margin_right = 272.5
+margin_bottom = 395.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "How to play the Game:
+You’ll see a block at the bottom of your screen that doesn’t move. You can control this block by tapping in the middle to the right or left. Your goal is to collect the blocks with your color and avoid the others. Note: You can only move left or right, not up and down."
+
+[node name="Title" type="RichTextLabel" parent="."]
+margin_left = -10.8647
+margin_top = 105.702
+margin_right = 740.135
+margin_bottom = 530.702
+rect_rotation = -15.0
+rect_scale = Vector2( 0.9, 0.9 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Falling
+	Blocks"
+
+[node name="DarkModeLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -154.5
+margin_top = -175.0
+margin_right = 154.5
+margin_bottom = -95.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Dark Mode"
+align = 1
+
+[node name="DarkMode" type="TouchScreenButton" parent="DarkModeLabel"]
+position = Vector2( 16.5, 4 )
+scale = Vector2( 3.03125, 1 )
+normal = ExtResource( 6 )
+
+[node name="PlayLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -154.5
+margin_top = -100.0
+margin_right = 154.5
+margin_bottom = -20.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Play"
+align = 1
+
+[node name="Play" type="TouchScreenButton" parent="PlayLabel"]
+position = Vector2( -24.5, 12 )
+scale = Vector2( 4.02083, 1.14063 )
+normal = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 13 )
+anims/end = SubResource( 14 )
+anims/start = SubResource( 15 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource( 16 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -24.0
+margin_bottom = 8.0
+color = Color( 0, 0, 0, 1 )
+
+[connection signal="pressed" from="DarkModeLabel/DarkMode" to="." method="_on_TouchScreenButton_pressed"]
+[connection signal="pressed" from="PlayLabel/Play" to="." method="_on_Play_pressed"]

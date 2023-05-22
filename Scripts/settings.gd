@@ -65,10 +65,19 @@ func _on_VibrationButton_pressed():
 	save_settings()
 	update_Labels()
 
+
 func _on_ModeButton_pressed():
 	G.dark_mode = !G.dark_mode
 	save_settings()
 	update_Labels()
+
+
+func _on_Tutorial_pressed():
+	$AnimationPlayer.play("end")
+	save_settings()
+	yield(get_node("AnimationPlayer"), "animation_finished")
+	get_tree().change_scene("res://Scenes/Tutorial.tscn")
+
 
 func update_Labels():
 	

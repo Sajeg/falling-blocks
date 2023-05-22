@@ -229,10 +229,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -112.0
-margin_top = -104.5
-margin_right = 112.0
-margin_bottom = 104.5
+margin_left = -160.0
+margin_top = -144.5
+margin_right = 160.0
+margin_bottom = 206.5
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -296,6 +296,21 @@ position = Vector2( -47, 4 )
 scale = Vector2( 4.11797, 1.04688 )
 normal = ExtResource( 8 )
 
+[node name="Tutorial" type="Label" parent="VBoxContainer"]
+margin_top = 284.0
+margin_right = 320.0
+margin_bottom = 351.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "Tutorial"
+align = 1
+valign = 1
+
+[node name="Tutorial" type="TouchScreenButton" parent="VBoxContainer/Tutorial"]
+position = Vector2( -47, 4 )
+scale = Vector2( 4.11797, 1.04688 )
+normal = ExtResource( 8 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 7 )
 anims/end = SubResource( 10 )
@@ -331,4 +346,5 @@ color = Color( 0, 0, 0, 1 )
 [connection signal="pressed" from="VBoxContainer/Sound/SoundButton" to="." method="_on_SoundButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/Music/MusicButton" to="." method="_on_MusicButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/Mode/ModeButton" to="." method="_on_ModeButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/Tutorial/Tutorial" to="." method="_on_Tutorial_pressed"]
 [connection signal="pressed" from="Credits/TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]
