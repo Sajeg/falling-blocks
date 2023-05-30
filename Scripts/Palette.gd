@@ -78,7 +78,7 @@ func mode():
 		$ChangeColor/SaveButton/Label.add_color_override("font_color", Color(0,0,0))
 
 
-func rgb_to_hex(r:int, g:int, b:int) -> String:
+func rgb_to_hex(r:int, g:int, b:int) -> String: # Thank you Bing
 	var hex_r = str("%02x" % r)
 	var hex_g = str("%02x" % g)
 	var hex_b = str("%02x" % b)
@@ -205,3 +205,15 @@ func _on_SaveButton_pressed():
 	save_colors()
 	yield(get_node("AnimationPlayer"), "animation_finished")
 	$ChangeColor.visible = false
+
+
+func _on_Reset_pressed():
+	edited_block = "block0"
+	tmp_block = [130, 183, 232]
+	save_colors()
+	edited_block = "block1"
+	tmp_block = [174, 232, 129]
+	save_colors()
+	edited_block = "block2"
+	tmp_block = [219, 129, 232]
+	save_colors()

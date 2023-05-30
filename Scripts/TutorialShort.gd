@@ -43,6 +43,6 @@ func save_colors():
 
 
 func _on_Play_pressed():
-	#$AnimationPlayer.play("end")
-	#yield(get_node("AnimationPlayer"), "animation_finished")
-	get_tree().change_scene("res://Scenes/main.tscn")
+	$AnimationPlayer.play("end")
+	yield(get_node("AnimationPlayer"), "animation_finished")
+	get_tree().change_scene("res://Scenes/Main.tscn")
