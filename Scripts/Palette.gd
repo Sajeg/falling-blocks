@@ -63,6 +63,7 @@ func mode():
 		$ChangeColor/ColorName.add_color_override("font_color", Color(1,1,1))
 		$ChangeColor/CancelButton/Label.add_color_override("font_color", Color(1,1,1))
 		$ChangeColor/SaveButton/Label.add_color_override("font_color", Color(1,1,1))
+		$Colors/Reset/Label.add_color_override("font_color", Color(1,1,1))
 	else:
 		VisualServer.set_default_clear_color(Color(1,1,1))
 		$Title.add_color_override("font_color", Color(0,0,0))
@@ -76,6 +77,7 @@ func mode():
 		$ChangeColor/ColorName.add_color_override("font_color", Color(0,0,0))
 		$ChangeColor/CancelButton/Label.add_color_override("font_color", Color(0,0,0))
 		$ChangeColor/SaveButton/Label.add_color_override("font_color", Color(0,0,0))
+		$Colors/Reset/Label.add_color_override("font_color", Color(0,0,0))
 
 
 func rgb_to_hex(r:int, g:int, b:int) -> String: # Thank you Bing
@@ -208,12 +210,13 @@ func _on_SaveButton_pressed():
 
 
 func _on_Reset_pressed():
-	edited_block = "block0"
-	tmp_block = [130, 183, 232]
-	save_colors()
-	edited_block = "block1"
-	tmp_block = [174, 232, 129]
-	save_colors()
-	edited_block = "block2"
-	tmp_block = [219, 129, 232]
+	if G.dark_mode:
+		G.block0 = [63, 124, 180]
+		G.block1 = [129, 194, 78]
+		G.block2 = [168, 66, 183]
+	else:
+		G.block0 = [130, 183, 232]
+		G.block1 = [174, 232, 129]
+		G.block2 = [219, 129, 232]
+	update_labels()
 	save_colors()

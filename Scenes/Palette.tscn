@@ -1097,9 +1097,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -20.0
-margin_top = -96.0
+margin_top = -123.0
 margin_right = 20.0
-margin_bottom = -56.0
+margin_bottom = -83.0
 
 [node name="Label" type="Label" parent="Colors/Reset"]
 anchor_left = 0.5
