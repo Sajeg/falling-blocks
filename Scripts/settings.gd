@@ -1,6 +1,13 @@
 extends Control
 
 func _ready():
+	update_ui()
+	if G.fdroid_version:
+		$VBoxContainer/Vibration.queue_free()
+	$AnimationPlayer.play("start")
+	update_Labels()
+
+func update_ui():
 	$BlockBlue.modulate = Color8(G.block0[0], G.block0[1], G.block0[2])
 	$BlockBlue2.modulate = Color8(G.block0[0], G.block0[1], G.block0[2])
 	$BlockGreen.modulate = Color8(G.block1[0], G.block1[1], G.block1[2])
@@ -8,27 +15,38 @@ func _ready():
 	$BlockPink.modulate = Color8(G.block2[0], G.block2[1], G.block2[2])
 	$BlockPink2.modulate = Color8(G.block2[0], G.block2[1], G.block2[2])
 	if G.dark_mode:
+		VisualServer.set_default_clear_color(Color(0,0,0))
 		$Title.add_color_override("font_color", Color(1,1,1))
 		$Credits.add_color_override("font_color", Color(1,1,1))
 		$VBoxContainer/Vibration.add_color_override("font_color", Color(1,1,1))
 		$VBoxContainer/Music.add_color_override("font_color", Color(1,1,1))
 		$VBoxContainer/Sound.add_color_override("font_color", Color(1,1,1))
 		$VBoxContainer/Mode.add_color_override("font_color", Color(1,1,1))
+		$VBoxContainer/Tutorial.add_color_override("font_color", Color(1,1,1))
 		$Back/Back.set_texture(preload("res://Assets/angle-left-solid_light.png"))
 		
 	else:
+		VisualServer.set_default_clear_color(Color(1,1,1))
 		$Title.add_color_override("font_color", Color(0,0,0))
 		$Credits.add_color_override("font_color", Color(0,0,0))
 		$VBoxContainer/Music.add_color_override("font_color", Color(0,0,0))
 		$VBoxContainer/Sound.add_color_override("font_color", Color(0,0,0))
 		$VBoxContainer/Vibration.add_color_override("font_color", Color(0,0,0))
 		$VBoxContainer/Mode.add_color_override("font_color", Color(0,0,0))
+		$VBoxContainer/Tutorial.add_color_override("font_color", Color(0,0,0))
 		$Back/Back.set_texture(preload("res://Assets/angle-left-solid.png"))
+
+func update_block_color():
+	if G.dark_mode and G.block0 == [130, 183, 232]: #and G.block1 == [174, 232, 129] and G.block2 == [219, 129, 232]:
+		G.block0 = [63, 124, 180]
+		G.block1 = [129, 194, 78]
+		G.block2 = [168, 66, 183]
+	elif G.dark_mode == false and G.block0 == [63, 124, 180]: #and G.block1 == [129, 194, 78] and G.block2 == [168, 66, 183]:
+		G.block0 = [130, 183, 232]
+		G.block1 = [174, 232, 129]
+		G.block2 = [219, 129, 232]
 	
-	if G.fdroid_version:
-		$VBoxContainer/Vibration.queue_free()
-	$AnimationPlayer.play("start")
-	update_Labels()
+	
 
 func save_settings():
 	#Saves the configuartion
@@ -38,7 +56,6 @@ func save_settings():
 	config.set_value("general", "dark_mode", G.dark_mode)
 	config.set_value("sounds", "effects", G.sounds)
 	var err = config.save(G.path)
-
 
 
 func _on_Back_pressed():
@@ -67,9 +84,15 @@ func _on_VibrationButton_pressed():
 
 
 func _on_ModeButton_pressed():
+	$AnimationPlayer.play("end")
+	yield(get_node("AnimationPlayer"), "animation_finished")
 	G.dark_mode = !G.dark_mode
+	update_block_color()
+	update_ui()
 	save_settings()
+	save_colors()
 	update_Labels()
+	$AnimationPlayer.play("start")
 
 
 func _on_Tutorial_pressed():
@@ -109,6 +132,13 @@ func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
 		_on_Back_pressed()
 
+func save_colors():
+	#Saves the configuration
+	var config = ConfigFile.new()
+	config.set_value("color", "block0", G.block0)
+	config.set_value("color", "block1", G.block1)
+	config.set_value("color", "block2", G.block2)
+	var err = config.save(G.color_path)
 
 func _on_TouchScreenButton_pressed():
 	OS.shell_open("https://github.com/Sajeg/falling-blocks/")
