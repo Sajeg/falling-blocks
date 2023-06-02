@@ -1,0 +1,6 @@
+This is a small update with a few QOL improvements and bug fixes.
+- fixed mono audio bug (thanks to  @GameOverFlowChart for reporting it)
+- Added the ability to reset the Color Palette to default.
+- Added that it changes directly to dark mode, without the need to reopen the settings.
+- Added that now the Color of the blocks changes between light and dark mode, when they are the default colors.
+- Added a short Tutorial.

@@ -1,0 +1,6 @@
+Dies ist nur ein kleines Update mit QOL verbesserungen und ein paar Bugfixes.
+- Mono Audio Bug behoben (Danke an @GameOverFlowChart für den Hinweis)
+- Hinzufügen eines Reset Buttons, um die Farb Palette zurückzusetzen.
+- Änderung der Block Farbe zwischen Dark und Light Mode, wenn es die Standard Farben sind.
+- Besseren wechsel zwischen Dark und Light Mode.
+- Und ein kleines Tutorial.
