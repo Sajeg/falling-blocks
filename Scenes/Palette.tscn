@@ -1170,7 +1170,6 @@ margin_right = 30.0
 margin_bottom = 11.0
 rect_scale = Vector2( 2, 2 )
 theme = SubResource( 12 )
-min_value = 1.0
 max_value = 255.0
 value = 50.0
 
@@ -1208,7 +1207,6 @@ margin_right = 30.0
 margin_bottom = 10.5
 rect_scale = Vector2( 2, 2 )
 theme = SubResource( 12 )
-min_value = 1.0
 max_value = 255.0
 value = 1.0
 
@@ -1246,7 +1244,6 @@ margin_right = 30.0
 margin_bottom = 10.5
 rect_scale = Vector2( 2, 2 )
 theme = SubResource( 12 )
-min_value = 1.0
 max_value = 255.0
 value = 1.0
 

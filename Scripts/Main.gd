@@ -159,11 +159,6 @@ func _on_settings_pressed():
 	$"/root/G".visible = false
 
 
-func _unhandled_key_input(event):
-	get_tree().change_scene("res://Scenes/Tutorial.tscn")
-	$"/root/G".visible = false
-
-
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
 		if is_selecting_game_mode:
