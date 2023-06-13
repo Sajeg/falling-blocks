@@ -3,21 +3,23 @@ extends Control
 
 func _ready():
 	$AnimationPlayer.play("start")
+	update_mode()
 
 
 func _on_TouchScreenButton_pressed():
 	G.dark_mode = !G.dark_mode
 	update_mode()
 	yield(get_node("AnimationPlayer"), "animation_finished")
-	if G.dark_mode:
-		$DarkModeLabel.text = "Light Mode"
-	else:
-		$DarkModeLabel.text = "Dark Mode"
+	
 
 
 func update_mode():
 	$AnimationPlayer.play("end")
 	yield(get_node("AnimationPlayer"), "animation_finished")
+	if G.dark_mode:
+		$DarkModeLabel.text = "Light Mode"
+	else:
+		$DarkModeLabel.text = "Dark Mode"
 	if G.dark_mode:
 		VisualServer.set_default_clear_color(Color(0,0,0))
 		$Title.add_color_override("default_color", Color(1,1,1))
