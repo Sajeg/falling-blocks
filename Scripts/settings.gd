@@ -115,9 +115,9 @@ func update_Labels():
 		$VBoxContainer/Sound.text = "Sound: OFF"
 	
 	if G.dark_mode:
-		$VBoxContainer/Mode.text = "Dark Mode"
-	else:
 		$VBoxContainer/Mode.text = "Light Mode"
+	else:
+		$VBoxContainer/Mode.text = "Dark Mode"
 	
 	if G.fdroid_version:
 		return
