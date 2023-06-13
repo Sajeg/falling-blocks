@@ -1,0 +1,5 @@
+This Patch fixes some major issues:
+- fixed Hex Color changeing not working
+- fixed Tutorial not accessible through the Settings
+- fixed RGB Slider starting at 01 and not 00
+- and much more

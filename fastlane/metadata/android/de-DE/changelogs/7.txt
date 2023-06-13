@@ -1,0 +1,5 @@
+Dieser Patch behebt einige wichtige Probleme:
+- Hex-Farben-Änderung funktioniert nicht
+- behoben Tutorial nicht über die Einstellungen zugänglich
+- behoben RGB-Schieberegler beginnt bei 01 und nicht bei 00
+- und vieles mehr
