@@ -187,26 +187,37 @@ func gameover(): #Changes the Game screen to Gameover Screen
 func new_pos(Block):
 	#if a block isn't visible this script
 	#set the block on the top with a new postion
-	Block.position.y = -100
+	var block_positions = [
+		$Blocks/Blue.position.y, 
+		$Blocks/Blue2.position.y, 
+		$Blocks/Blue3.position.y,
+		$Blocks/Green.position.y,
+		$Blocks/Green2.position.y,
+		$Blocks/Green3.position.y,
+		$Blocks/Pink.position.y,
+		$Blocks/Pink2.position.y,
+		$Blocks/Pink3.position.y]
+	
+	var min_position = 0
+	for i in range(1, block_positions.size()):
+		if block_positions[i] < min_position:
+			min_position = i
+	
+	if min_position - 200 > -100:
+		Block.position.y = min_position - 200
+	else:
+		Block.position.y = -100
+	
 	var randpos = randi()%3
 	if randpos == 0:
-		if lastblock_num == 0:
-			Block 
-		else:
-			Block.position.x = pos1
-			lastblock_num = 0
+		Block.position.x = pos1
+		lastblock_num = 0
 	if randpos == 1:
-		if lastblock_num == 1:
-			new_pos(Block)
-		else:
-			Block.position.x = pos2
-			lastblock_num = 1
+		Block.position.x = pos2
+		lastblock_num = 1
 	if randpos == 2:
-		if lastblock_num == 2:
-			new_pos(Block)
-		else:
-			Block.position.x = pos3
-			lastblock_num = 2
+		Block.position.x = pos3
+		lastblock_num = 2
 	Block.visible = true
 	
 	for child in Block.get_children():
