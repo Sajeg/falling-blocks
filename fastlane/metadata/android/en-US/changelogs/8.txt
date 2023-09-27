@@ -1,0 +1,3 @@
+This update is only a small update
+- changed the behavoiur of the block spawn algorithm
+- updated Godot to 3.5.3
