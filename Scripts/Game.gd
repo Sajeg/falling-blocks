@@ -4,7 +4,7 @@ const pos1 = 100
 const pos2 = 310
 const pos3 = 520
 
-export var speed = 6
+export var speed = 250
 export var multiplicator = 0.01
 
 var score = 0
@@ -47,11 +47,6 @@ func _ready():
 		
 		$UI/Pause/pause.set_texture(preload("res://Assets/pause.png"))
 		$UI/Play/play2.set_texture(preload("res://Assets/play1.png"))
-	if G.system == "Windows" or "X11":
-		speed = 3
-		multiplicator = 0.005
-	if G.system == "Android":
-		speed = 6
 	
 	freeze = false
 	if G.audio == true:
@@ -96,7 +91,7 @@ func _process(delta):
 		animation(blocks[BlockNum], BlockNum)
 		
 		#The Script for falling
-		blocks[BlockNum].position.y += speed
+		blocks[BlockNum].position.y += speed * delta
 		
 		#Detects the postions from the blocks
 		if blocks[BlockNum].position.y > 1800:
