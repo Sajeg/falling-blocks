@@ -141,7 +141,9 @@ func _on_B_value_changed(value):
 
 
 func _on_ColorName_text_changed(new_text):
-	if String(new_text).is_valid_hex_number():
+	print("New Color")
+	if String(new_text).length() == 6:
+		print("Is valid")
 		var rgb = hex_to_rgb(new_text)
 		tmp_block = rgb
 		$ChangeColor/Color.color = Color8(tmp_block[0], tmp_block[1], tmp_block[2])
@@ -198,11 +200,15 @@ func _on_SaveButton_pressed():
 	$Colors.visible = true
 	
 	if edited_block == "block0":
+		G.block0 = tmp_block
 		$AnimationPlayer.play("ChangeColor0Save")
 	elif edited_block == "block1":
+		G.block1 = tmp_block
 		$AnimationPlayer.play("ChangeColor1Save")
 	elif edited_block == "block2":
+		G.block2 = tmp_block
 		$AnimationPlayer.play("ChangeColor2Save")
+	
 	update_labels()
 	save_colors()
 	yield(get_node("AnimationPlayer"), "animation_finished")

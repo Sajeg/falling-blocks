@@ -8,10 +8,6 @@
 
 config_version=4
 
-_global_script_classes=[  ]
-_global_script_class_icons={
-}
-
 [application]
 
 config/name="Falling Blocks"
@@ -27,6 +23,9 @@ config/quit_on_go_back=false
 [autoload]
 
 G="*res://Scenes/Main.tscn"
+GamesSignInClient="*res://addons/google_play_game_services_manager/GamesSignInClient.gd"
+AchievementsClient="*res://addons/google_play_game_services_manager/AchievementsClient.gd"
+LeaderboardsClient="*res://addons/google_play_game_services_manager/LeaderboardsClient.gd"
 
 [display]
 
@@ -37,6 +36,10 @@ window/size/test_height=640
 window/handheld/orientation="portrait"
 window/stretch/mode="2d"
 window/stretch/aspect="keep_width"
+
+[editor_plugins]
+
+enabled=PoolStringArray(  )
 
 [input]
 
