@@ -15,3 +15,5 @@ android/build/.gradle/
 *.kra
 *.import
 export_presets.cfg
+
+android/build/
