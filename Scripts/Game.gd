@@ -135,11 +135,11 @@ func animation(block: KinematicBody2D, num):
 	#animation script
 	for child in block.get_children():
 		if child is AnimationPlayer:
-			if G.mode_dead == false:
-				if child.current_animation != "crash":
+			if child.current_animation != "crash":
+				if G.mode_dead == false:
 					child.play("idle")
-			else:
-				child.play("special")
+				else:
+					child.play("special")
 
 
 func gameover(): #Changes the Game screen to Gameover Screen
