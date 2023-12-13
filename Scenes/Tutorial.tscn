@@ -165,18 +165,26 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -272.5
-margin_top = -117.0
-margin_right = 272.5
-margin_bottom = 395.0
+margin_left = -260.0
+margin_top = -113.0
+margin_right = 273.0
+margin_bottom = 386.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 1 )
-text = "How to play the Game:
-You’ll see a block at the bottom of your screen that doesn’t move. You can control this block by tapping in the middle to the right or left. Your goal is to collect the blocks with your color and avoid the others. Note: You can only move left or right, not up and down."
+bbcode_text = "- Navigate the block by tapping left, right, or in the center.
+- Merge blocks of your color to progress.
+- Steer clear of blocks that differ from your color.
+
+Remember, your movement is restricted to horizontal movement."
+text = "- Navigate the block by tapping left, right, or in the center.
+- Merge blocks of your color to progress.
+- Steer clear of blocks that differ from your color.
+
+Remember, your movement is restricted to horizontal movement."
 
 [node name="Title" type="RichTextLabel" parent="."]
-margin_left = -10.8647
-margin_top = 105.702
+margin_left = -10.0
+margin_top = 125.0
 margin_right = 740.135
 margin_bottom = 530.702
 rect_rotation = -15.0
