@@ -15,7 +15,7 @@ config/description="No Description"
 run/main_scene="res://Scenes/Main.tscn"
 config/use_custom_user_dir=true
 boot_splash/image="res://Assets/splash_screen.png"
-boot_splash/bg_color=Color( 0, 0, 0, 1 )
+boot_splash/bg_color=Color( 1, 1, 1, 1 )
 config/icon="res://icon.png"
 config/windows_native_icon="res://icon.ico"
 config/quit_on_go_back=false
@@ -39,7 +39,7 @@ window/stretch/aspect="keep_width"
 
 [editor_plugins]
 
-enabled=PoolStringArray(  )
+enabled=PoolStringArray( "res://addons/google_play_game_services_manager/plugin.cfg" )
 
 [input]
 

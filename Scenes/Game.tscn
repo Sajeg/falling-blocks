@@ -166,7 +166,7 @@ script = ExtResource( 1 )
 [node name="Blocks" type="Node2D" parent="."]
 
 [node name="Pink3" parent="Blocks" instance=ExtResource( 3 )]
-position = Vector2( 536.737, -1220 )
+position = Vector2( 310, -1220 )
 
 [node name="AnimationPlayer" parent="Blocks/Pink3" index="1"]
 anims/crash = SubResource( 2 )
@@ -180,7 +180,7 @@ position = Vector2( 310, 20 )
 position = Vector2( 520, -580 )
 
 [node name="Green3" parent="Blocks" instance=ExtResource( 4 )]
-position = Vector2( 315.712, -1440 )
+position = Vector2( 100, -1440 )
 
 [node name="AnimationPlayer" parent="Blocks/Green3" index="1"]
 anims/crash = SubResource( 8 )
@@ -194,7 +194,7 @@ position = Vector2( 520, -180 )
 position = Vector2( 310, -780 )
 
 [node name="Blue3" parent="Blocks" instance=ExtResource( 2 )]
-position = Vector2( 102.245, -1660 )
+position = Vector2( 520, -1660 )
 
 [node name="AnimationPlayer" parent="Blocks/Blue3" index="1"]
 anims/crash = SubResource( 14 )
