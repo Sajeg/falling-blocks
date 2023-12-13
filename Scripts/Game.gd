@@ -4,8 +4,8 @@ const pos1 = 100
 const pos2 = 310
 const pos3 = 520
 
-export var speed = 250
-export var multiplicator = 0.01
+export var speed = 255
+export var multiplicator = 0.3
 
 var score = 0
 
