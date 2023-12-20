@@ -214,18 +214,18 @@ position = Vector2( 100, 820 )
 wait_time = 0.5
 
 [node name="pos1" type="TouchScreenButton" parent="."]
-position = Vector2( 0, 223.036 )
-scale = Vector2( 2, 13.7026 )
+position = Vector2( 0, 160 )
+scale = Vector2( 2, 25.7188 )
 normal = ExtResource( 7 )
 
 [node name="pos2" type="TouchScreenButton" parent="."]
-position = Vector2( 205.514, 214.477 )
-scale = Vector2( 2, 13.8576 )
+position = Vector2( 205.514, 7.99998 )
+scale = Vector2( 2, 27.5938 )
 normal = ExtResource( 7 )
 
 [node name="pos3" type="TouchScreenButton" parent="."]
-position = Vector2( 420, 211.604 )
-scale = Vector2( 2.10511, 13.8204 )
+position = Vector2( 420, 1.99998 )
+scale = Vector2( 2.10511, 26.7344 )
 normal = ExtResource( 7 )
 
 [node name="Sound" type="Node2D" parent="."]
