@@ -55,9 +55,6 @@ func _ready():
 		blocks[BlockNum] = get_node(blocks[BlockNum])
 		blocks_animation[BlockNum] = get_node(blocks_animation[BlockNum])
 	
-	#Set multiplicator to 0
-	if score > 3500 and score < 3600 and multiplicator != 0:
-		multiplicator = 0
 	
 	#Player Color:
 	var rand = randi()%3
@@ -100,7 +97,9 @@ func _process(delta):
 		if blocks[BlockNum].position.y > 1800:
 			new_pos(blocks[BlockNum])
 	
-	
+	#Set multiplicator to 0
+	if score > 3500 and score < 3600 and multiplicator != 0:
+		multiplicator = 0
 	
 	if is_touching:
 		if bool(G.vibration) == true:
