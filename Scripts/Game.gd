@@ -4,8 +4,7 @@ const pos1 = 100
 const pos2 = 310
 const pos3 = 520
 
-export var speed = 255
-export var multiplicator = 0.3
+export var speed = 260
 
 var score = 0
 
@@ -97,20 +96,18 @@ func _process(delta):
 		if blocks[BlockNum].position.y > 1800:
 			new_pos(blocks[BlockNum])
 	
-	#Set multiplicator to 0
-	if score > 3500 and score < 3600 and multiplicator != 0:
-		multiplicator = 0
 	
 	if is_touching:
 		if bool(G.vibration) == true:
 			Input.vibrate_handheld(5)
 		score += 1
-		speed += multiplicator
+		if speed <= 4000:
+			speed = 0.0000000000192 * pow(score,4) - 0.000000165 *  pow(score,3) + 0.00041083333333 * pow(score,2) + 0.005 * score + 260
+		else:
+			speed = 5 * sqrt(score - 4000) + 1340
 
 func _on_Area2D_area_entered(area: Area2D):
 	if playername == area.name:
-		score += 1
-		speed += multiplicator
 		if bool(G.vibration) == true:
 			Input.vibrate_handheld(5)
 		is_touching = true
