@@ -8,6 +8,8 @@
 - <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#features">Features</a>
 - <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#screenshots">Screenshots</a>
 - <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#installation">Installation</a>
+- <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#speed_calculation">Speed calculation</a>
+- <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#issues">Issues</a>
 - <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#contact">Contact</a>
 
 ## Overview
@@ -40,8 +42,16 @@ The recommend way is to use <a href="https://f-droid.org/packages/org.sajeg.fall
 2. Extrakt this file.
 3. run the .exe file.
 
-### Issues
-A Issue, that some reported, is that they can't uninstall the Game. In this case please try it with ADB.
+## Speed calculation
+This is for those interested in how the speed is calculated in relation to the score. $x$ is the score.  
+This function is for $0 < x < 4000$:
+$$f(x) = 0.0000000000192 * x^4 - 0.000000165 * x^3 + 0.00041083333333 * x^2 + 0.005 * x + 260$$
+and this is the function for $4000 < x$:
+$$g(x) = 5 * \sqrt{x - 4000} + 1340$$ 
+
+## Issues
+A Issue, that some reported, is that they can't uninstall the Game. In this case please try it with ADB. This would be the command to uninstall the game with adb: ``` adb uninstall org.sajeg.fallingblocks ```.  
 I am very sorry that this happens sometimes, however I never had this Problem and therefore I don't know how I could fix this bug.
+
 ## Contact
-If you have feedback or anything else you can always open an issue, write me on Discord: **Sajeg** or write me an email <a href="mailto:sajeg@posteo.de">sajeg@posteo.de</a>
+If you have feedback or anything else you can always open an issue, write me on Discord: **Sajeg** or write me an email <a href="mailto:jfxg@posteo.de">sajeg@posteo.de</a>
