@@ -8,7 +8,7 @@
 - <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#features">Features</a>
 - <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#screenshots">Screenshots</a>
 - <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#installation">Installation</a>
-- <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#speed_calculation">Speed calculation</a>
+- <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#speed-calculation">Speed calculation</a>
 - <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#issues">Issues</a>
 - <a href="https://github.com/Sajeg/falling-blocks/blob/main/README.md#contact">Contact</a>
 
