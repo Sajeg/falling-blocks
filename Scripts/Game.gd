@@ -104,7 +104,7 @@ func _process(delta):
 		if speed <= 4000:
 			speed = 0.0000000000192 * pow(score,4) - 0.000000165 *  pow(score,3) + 0.00041083333333 * pow(score,2) + 0.005 * score + 260
 		else:
-			speed = 5 * sqrt(score - 4000) + 1340
+			speed = 5 * sqrt(score - 4000) + 1209
 
 func _on_Area2D_area_entered(area: Area2D):
 	if playername == area.name:
