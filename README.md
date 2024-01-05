@@ -47,7 +47,7 @@ This is for those interested in how the speed is calculated in relation to the s
 This function is for $0 < x < 4000$:
 $$f(x) = 0.0000000000192 * x^4 - 0.000000165 * x^3 + 0.00041083333333 * x^2 + 0.005 * x + 260$$
 and this is the function for $4000 < x$:
-$$g(x) = 5 * \sqrt{x - 4000} + 1340$$ 
+$$g(x) = 5 * \sqrt{x - 4000} + 1209$$ 
 
 ## Issues
 A Issue, that some reported, is that they can't uninstall the Game. In this case please try it with ADB. This would be the command to uninstall the game with adb: ``` adb uninstall org.sajeg.fallingblocks ```.  
