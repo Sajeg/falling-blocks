@@ -216,9 +216,14 @@ func _on_SaveButton_pressed():
 
 
 func _on_Reset_pressed():
-	G.block0 = [63, 124, 180]
-	G.block1 = [129, 194, 78]
-	G.block2 = [168, 66, 183]
+	if G.dark_mode:
+		G.block0 = [63, 124, 180]
+		G.block1 = [129, 194, 78]
+		G.block2 = [168, 66, 183]
+	else:
+		G.block0 = [130, 183, 232]
+		G.block1 = [174, 232, 129]
+		G.block2 = [219, 129, 232]
 	
 	update_labels()
 	save_colors()
