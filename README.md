@@ -55,3 +55,5 @@ I am very sorry that this happens sometimes, however I never had this Problem an
 
 ## Contact
 If you have feedback or anything else you can always open an issue, write me on Discord: **Sajeg** or write me an email <a href="mailto:jfxg@posteo.de">sajeg@posteo.de</a>
+
+*Google Play and the Google Play logo are trademarks of Google LLC.*
