@@ -1,0 +1,1 @@
+In dieser Version wurde ein Fehler behoben, wo die Farbe der Blöcke nicht korrekt dargestellt wurde.

@@ -1,0 +1,1 @@
+In this version we fixed a bug related to the appereance of the blocks
