@@ -18,9 +18,10 @@ export var dark_mode = false
 export var fdroid_version = false
 
 #The Colors of the Blocks
-var block0 = [130, 183, 232]
-var block1 = [174, 232, 129]
-var block2 = [219, 129, 232]
+var block0 = [63, 124, 180]
+var block1 = [129, 194, 78]
+var block2 = [168, 66, 183]
+
 
 func _ready():
 	#system = OS.get_name()
@@ -92,18 +93,19 @@ func load_settings():
 	return options
 
 
+
 func load_colors():
 	var config = ConfigFile.new()
 	var default_options = {
-			"block0": [130, 183, 232],
-			"block1": [174, 232, 129],
-			"block2": [219, 129, 232]
+			"block0": [63, 124, 180],
+			"block1": [129, 194, 78],
+			"block2": [168, 66, 183]
 			}
 	var err = config.load(color_path)
 	if err != OK:
-		config.set_value("color", "block0", block0)
-		config.set_value("color", "block1", block1)
-		config.set_value("color", "block2", block2)
+		config.set_value("color", "block0", [63, 124, 180])
+		config.set_value("color", "block1", [129, 194, 78])
+		config.set_value("color", "block2", [168, 66, 183])
 		err = config.save(color_path)
 		load_colors()
 	block0 = config.get_value("color", "block0")

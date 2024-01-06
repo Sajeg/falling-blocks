@@ -26,20 +26,12 @@ func update_mode():
 		$ShortTutorial.add_color_override("default_color", Color(1,1,1))
 		$DarkModeLabel.add_color_override("font_color", Color(1,1,1))
 		$PlayLabel.add_color_override("font_color", Color(1,1,1))
-		if G.block0 == [130, 183, 232] and G.block1 == [174, 232, 129] and G.block2 == [219, 129, 232]:
-			G.block0 = [63, 124, 180]
-			G.block1 = [129, 194, 78]
-			G.block2 = [168, 66, 183]
 	else:
 		VisualServer.set_default_clear_color(Color(1,1,1))
 		$Title.add_color_override("default_color", Color(0,0,0))
 		$ShortTutorial.add_color_override("default_color", Color(0,0,0))
 		$DarkModeLabel.add_color_override("font_color", Color(0,0,0))
 		$PlayLabel.add_color_override("font_color", Color(0,0,0))
-		if G.block0 == [63, 124, 180] and G.block1 == [129, 194, 78] and G.block2 == [168, 66, 183]:
-			G.block0 = [130, 183, 232]
-			G.block1 = [174, 232, 129]
-			G.block2 = [219, 129, 232]
 	save_colors()
 	$AnimationPlayer.play("start")
 

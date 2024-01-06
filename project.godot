@@ -39,7 +39,7 @@ window/stretch/aspect="keep_width"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/google_play_game_services_manager/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [input]
 
