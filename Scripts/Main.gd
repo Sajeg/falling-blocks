@@ -37,7 +37,7 @@ func _ready():
 	load_settings()
 	yield(get_tree().create_timer(0.3), "timeout")
 	if fdroid_version:
-		vibration == false
+		vibration = false
 	$AnimationPlayer.play("in")
 
 func load_data(): 
