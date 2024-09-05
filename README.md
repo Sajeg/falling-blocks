@@ -54,6 +54,6 @@ A Issue, that some reported, is that they can't uninstall the Game. In this case
 I am very sorry that this happens sometimes, however I never had this Problem and therefore I don't know how I could fix this bug.
 
 ## Contact
-If you have feedback or anything else you can always open an issue, write me on Discord: **Sajeg** or write me an email <a href="mailto:jfxg@posteo.de">sajeg@posteo.de</a>
+If you have feedback or anything else you can always open an issue, write me on Discord: **Sajeg** or write me an email <a href="mailto:sajeg.dev@gmail.com">sajeg.dev@gmail.com</a>
 
 *Google Play and the Google Play logo are trademarks of Google LLC.*
